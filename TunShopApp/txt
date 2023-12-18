@@ -1,0 +1,28 @@
+    error = ""
+    error1 = ""
+    if request.method=="POST":
+        try:
+            data = adminRegistrationModel.objects.get(email = request.POST['email'])
+            print(request.POST)
+            email = request.POST['email']
+            password1 = request.POST['password']
+            a = data.username
+            b = data.password
+            aa = "sunder"
+            bb = "12345"
+            user = auth.authenticate(request,username = aa,password = bb)
+            if user is not None:
+                auth.login(request,user)
+                if a==email and b == password1:
+                    return redirect('index')
+                
+                else:
+                    error = "Email Id Or Password is Wrong"
+        
+        except:
+            error1 = "User Does'nt Exixts"
+
+    context={
+        'error' :error,
+        'error1':error1
+    }    
