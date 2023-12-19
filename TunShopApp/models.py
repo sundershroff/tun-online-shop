@@ -3,6 +3,8 @@ import random
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save,pre_save
+from django.dispatch import receiver
 
 
 class adminRegistrationModel(models.Model):
@@ -25,6 +27,7 @@ class userRegistrationModel(models.Model):
         if not self.uid:
             self.uid = generate_unique_uid()
         super().save(*args, **kwargs)
+        return self.uid
 
     name = models.TextField(null=True)
     email = models.EmailField(max_length=100, null=True)
@@ -38,11 +41,8 @@ class userRegistrationModel(models.Model):
     mobile = models.IntegerField(null=True)
     password = models.CharField(max_length=50, null=True)
 
-    def __str__(self):
-        if self.user:
-            return str(self.user)
-        else:
-            return f"User Registration - {self.uid}"
+    def uidd(self):
+        return self.uid
 
 
 def getFileName(request, filename):
@@ -82,7 +82,7 @@ class Product(models.Model):
     size = models.CharField(max_length=50, null=True)
     quantity = models.IntegerField(null=True, blank=True)
     original_price = models.FloatField(null=False, blank=False, )
-    selling_price = models.FloatField(null=False, blank=False)
+    selling_price = models.IntegerField(null=False, blank=False)
     discount = models.IntegerField(null=False, blank=False)
     description = models.TextField(max_length=500, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -92,13 +92,28 @@ class Product(models.Model):
 
 
 class CartItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=0, null=True)
-    user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,to_field='id',db_column="product", on_delete=models.CASCADE,null=True)
+    quantity = models.IntegerField(default=0)
+    # user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
+    user=models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    total=models.IntegerField(blank=True, null=True)
 
-    def __str__(self):
-        return f'{self.quantity} x {self.product.name}'
+# # Signal handler function to update the total field for the specific instance
+# @receiver(post_save, sender=CartItem)
+# def update_total(sender, instance, **kwargs):
+#     # Retrieve the related values
+#     field1_value = instance.quantity
+#     field2_some_field_value = instance.product.selling_price
+
+#     # Calculate the product
+#     total_value = field1_value * field2_some_field_value
+
+#     # Update the total field for the specific instance
+#     CartItem.objects.filter(pk=instance.pk).update(total=total_value)
+
+# # Connect the signal
+# post_save.connect(update_total, sender=CartItem)
 
 
 class WishList(models.Model):

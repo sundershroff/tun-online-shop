@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from TunShopApp import views
+from userapp import user_views
 from django.conf.urls.static import static
 from django.conf import settings
 
 
 urlpatterns = [
+    #admin
     path('admin/', admin.site.urls),
     path('login_admin/', views.login),
     path('logout/', views.logoutbutton),
@@ -43,6 +45,19 @@ urlpatterns = [
     path('Product_Delete/<uid>', views.Product_Delete),
     path('edit_product/<uid>', views.edit_product),
 
+#user app
+    path('user_index/', user_views.user_index),
+    path('logoutbutton/', user_views.logoutbutton),
+    path('user_logged_index/', user_views.user_logged_index),
+    path('about/', user_views.about),
+    path('my-account/', user_views.my_account),
+    path('wishlist/', user_views.wishlist),
+    path('cart/', user_views.cart),
+    path('delete/<id>',user_views.remove_from_cart),
+    path('product-details/<uid>', user_views.product_details),
+    path('checkout/', user_views.checkout),
+    path('shop/', user_views.shop),
+    path('contact/', user_views.contact),
 
 
 
