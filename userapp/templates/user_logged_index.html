@@ -123,480 +123,7 @@
          </svg>
     </div>
       <!-- back to top end -->
-      
-    <!-- header-start -->
-    <header class="header d-blue-bg" style="background-color: #681768;">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="header-inner-start">
-                                 <div class="header__currency border-right">
-                                    <div class="s-name">
-                                        <span>Language: </span>
-                                    </div>
-                                    <select>
-                                        <option>English</option>
-                                        <option>Deutsch</option>
-                                        <option>Français</option>
-                                        <option>Espanol</option>
-                                    </select>
-                                </div>
-                                <div class="header__lang border-right">
-                                    <div class="s-name">
-                                        <span>Currency: </span>
-                                    </div>
-                                    <select>
-                                        <option> USD</option>
-                                        <option>EUR</option>
-                                        <option>INR</option>
-                                        <option>BDT</option>
-                                        <option>BGD</option>
-                                    </select>
-                                </div> 
-                                <!-- <div class="support d-none d-sm-block">
-                                    <p>Need Help? <a href="tel:+001123456789">+91 98947 09871 </a></p>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 d-lg-block">
-                            <div class="header-inner-end text-md-end">
-                                <div class="ovic-menu-wrapper">
-                                    <ul>
-                                        <li><a href="/about/">About Us</a></li>
-                                         <!-- <li><a href="contact.html">Order Tracking</a></li>  -->
-                                         <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li> 
-                                         <li><a href="/logoutbutton/">LogOut </a></li> 
-
-                                             <!-- <li><a href="index.html">index</a></li>  -->
-                                     </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <div class="header-mid">
-            <div class="container">
-                <div class="heade-mid-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                            <div class="header__info">
-                                <div class="logo">
-                                    <a href="/index/" class="logo-image"><img src="{% static 'image/tunlogo.png' %}" alt="logo"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
-                            <div class="header__search">
-                                <form action="#">
-                                    <div class="header__search-box">
-                                        <input class="search-input" type="text" placeholder="I'm shopping for...">
-                                        <button class="button" type="submit"><i class="far fa-search"></i></button>
-                                    </div>
-                                    <div class="header__search-cat">
-                                        <select>
-                                            <option>All Categories</option>
-                                            <option>Best Seller Products</option>
-                                            <option>Top 10 Offers</option>
-                                            <option>New Arrivals</option>
-                                            <option>Phones &amp; Tablets</option>
-                                            <option>Electronics &amp; Digital</option>
-                                            <option>Fashion &amp; Clothings</option>
-                                            <option>Jewelry &amp; Watches</option>
-                                            <option>Health &amp; Beauty</option>
-                                            <option>Sound &amp; Speakers</option>
-                                            <option>TV &amp; Audio</option>
-                                            <option>Computers</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8">
-                            <div class="header-action">
-                                <div class="block-userlink">
-                                    <a class="icon-link" href="/my-account/">
-                                    <i class="fas fa-user-alt"></i>
-                                    <span class="text">
-                                    <span class="sub">Sunder </span>
-                                    My Account </span>
-                                    </a>
-                                </div>
-                                <div class="block-wishlist action">
-                                    <a class="icon-link" href="/wishlist/">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="count">0</span>
-                                    <span class="text">
-                                    <span class="sub">Favorite</span>
-                                    My Wishlist </span>
-                                    </a>
-                                </div>
-                                <div class="block-cart action">
-                                    <a class="icon-link" href="/cart/">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="count">1</span>
-                                    <span class="text">
-                                    <span class="sub">Your Cart:</span>
-                                    &#x20b9;00.00 </span>
-                                    </a>
-                                    <div class="cart">
-                                        <div class="cart__mini">
-                                            <ul>
-                                                <li>
-                                                  <div class="cart__title">
-                                                    <h4>Your Cart</h4>
-                                                    <span>(1 Item in Cart)</span>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="cart__item d-flex justify-content-between align-items-center">
-                                                    <div class="cart__inner d-flex">
-                                                      <div class="cart__thumb">
-                                                        <a href="/product-details/">
-                                                          <img src="{% static 'image/20.jpg' %}" alt="">
-                                                        </a>
-                                                      </div>
-                                                      <div class="cart__details">
-                                                        <h6><a href="/product-details/"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
-                                                        <div class="cart__price">
-                                                          <span>&#x20b9;255.00</span>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div class="cart__del">
-                                                        <a href="#"><i class="fal fa-times"></i></a>
-                                                    </div>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="cart__sub d-flex justify-content-between align-items-center">
-                                                    <h6>Subtotal</h6>
-                                                    <span class="cart__sub-total">&#x20b9;255.00</span>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                    <a href="/cart/" class="wc-cart mb-10">View cart</a>
-                                                    <a href="/checkout/" class="wc-checkout">Checkout</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header__bottom">
-            <div class="container">
-                <div class="row g-0 align-items-center" style="background-color: #681768;">
-                    <div class="col-lg-3">                        
-                        <div class="cat__menu-wrapper side-border d-none d-lg-block">
-                            <div class="cat-toggle">
-                                <button type="button" class=" cat-toggle-btn-1" style="background-color: #ffc107;color: black;"><i class="fal fa-bars"></i> Shop by Categories</button>
-                                <!-- cat-toggle-btn -->
-                                <div class="cat__menu">
-                                    <nav id="mobile-menu" style="display: block;">
-                                        <ul>
-                                            <li>
-                                                <a href="/shop/">All Categories <i class="far fa-angle-down"></i></a>
-                                                <ul class="mega-menu">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Phone and Electronics <i class="far fa-angle-down"></i></a>
-                                                <ul class="mega-menu mega-menu-2">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Best Seller Products
-                                                    <span class="cat-label">hot!</span>
-                                                    <i class="far fa-angle-down"></i>
-                                                </a>
-                                                <ul class="mega-menu">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Top 10 Offers
-                                                    <span class="cat-label green">new!</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">New Arrivals <i class="far fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="/shop/">Home Appliances</a></li>
-                                                    <li><a href="/shop/">Technology</a>
-                                                        <ul class="submenu">
-                                                            <li><a href="/shop/">Storage Devices</a></li>
-                                                            <li><a href="/shop/">Monitors</a></li>
-                                                            <li><a href="/shop/">Laptops</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Office Equipments</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="/shop/">TV &amp; Audio</a></li>
-                                            <li><a href="/shop/">Electronics &amp; Digital</a></li>
-                                            <li class="d-laptop-none"><a href="/shop/">Fashion &amp; Clothings</a></li>
-                                            <li class="d-laptop-none"><a href="/shop/">Jewelry &amp; Watches</a></li>
-                                            <li><a href="/shop/">Health &amp; Beauty</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-3">
-                      <div class="header__bottom-left d-flex d-xl-block align-items-center">
-                        <div class="side-menu d-lg-none mr-20">
-                          <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>
-                        </div>
-                        <div class="main-menu d-none d-lg-block">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="/index/" class="">Rooms </a>
-                                        <!-- <ul class="megamenu-1">
-                                            <li><a href="index.html">Home Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="index.html" class="active">Home One</a></li>
-                                                    <li><a href="index-2.html">Home Two</a></li>
-                                                    <li><a href="index-3.html">Home Three</a></li>
-                                                    <li><a href="product-details.html">Shop 3 Column</a></li>
-                                                    <li><a href="product-details.html">Shop 4 Column</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Product Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Product Details</a></li>
-                                                    <li><a href="product-details.html">Product V2</a></li>
-                                                    <li><a href="product-details.html">Product V3</a></li>
-                                                    <li><a href="product-details.html">Varriable Product</a></li>
-                                                    <li><a href="product-details.html">External Product</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Other Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">wishlist</a></li>
-                                                    <li><a href="product-details.html">Shopping Cart</a></li>
-                                                    <li><a href="product-details.html">Checkout</a></li>
-                                                    <li><a href="product-details.html">Login</a></li>
-                                                    <li><a href="product-details.html">Register</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Phone &amp; Tablets</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                                    <li><a href="product-details.html">Catagory 3</a></li>
-                                                    <li><a href="product-details.html">Catagory 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Phone &amp; Tablets</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                                    <li><a href="product-details.html">Catagory 3</a></li>
-                                                    <li><a href="product-details.html">Catagory 4</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul> -->
-                                    </li>
-                                    <li>
-                                        <form method="POST">
-                                            {% csrf_token %}
-                                        <button style="color:white" type="submit" name="menu" value="1">Sarees</button>
-                                    </form>
-                                    </li>
-                                    <li><a href="/about/">Tun Foods</a></li>
-
-                                    <li><a href="blog.html">Groceries <i class="far fa-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <form method="POST">
-                                                    {% csrf_token %}
-                                                    <a><button type="submit" name="menu" value="2">Ready To Cook</button></a>
-                                                </form>
-                                            </li>
-                                            <li><a href="">Beauty Care</a></li>
-                                            <li><a href="">Snacks  </a></li>
-                                            <li><a href="">Baby Care </a></li>
-                                            <li><a href="">Cooking Essentials</a></li>
-                                            <li><a href="">Household Needs</a></li>
-                                            <li><a href="">Beverage</a></li>
-                                            <li><a href="">Readymade Foods  </a></li>
-                                            <li><a href="">Dairy Products</a></li>
-                                            <li><a href="">Stationary</a></li>
-
-
-                                        </ul>
-                                    </li>
-                                    <li>
-                                         <form method="POST">
-                                            {% csrf_token %}
-                                            <button style="color:white" type="submit" name="menu" value="2">FASHION JEWELLERY</button>
-                                        </form>
-                                    </li>
-
-                                    <li><a href="/about/">Real Estate</a></li>
-
-                                    <li><a href="blog.html">Others <i class="far fa-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="" style="width: max-content;">Constructions-Architecs</a></li>
-                                            <li><a href="">Consumer products</a></li>
-                                            <li><a href="">Direct From Makers</a></li>
-                                            <li><a href="">Event Management</a></li>
-                                            <li><a href="">Electronics</a></li>
-                                            <li><a href="">Scraps</a></li>
-                                            <li><a href="">Stationary</a></li>
-                                            <li><a href="">Used Premium Cars</a></li>
-                                            <li><a href="">Unique Products</a></li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-9">
-                        <!-- <div class="shopeing-text text-sm-end">
-                            <p>Spend &#x20b9;120 more and get free shipping!</p>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
+{% include 'nav.html' %}
 
     <!-- offcanvas area start -->
     <div class="offcanvas__area">
@@ -608,7 +135,7 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
+                <a href="">
                 <img src="{% static 'image/logo-white.png' %}" alt="logo">
                 </a>
             </div>
@@ -676,7 +203,7 @@
                                          <h2 data-animation="fadeInLeft" data-delay="1.7s" class="pt-15 slider-title pb-5">SALE 30% OFF <br> For Resturant</h2>
                                         <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.9s">Discount 30% On Products & Free Shipping</p>
                                         <div class="slider-bottom-btn mt-75">
-                                            <a data-animation="fadeInUp" data-delay="1.10s" href="/shop/" class="st-btn-b b-radius">Resturant</a>
+                                            <a data-animation="fadeInUp" data-delay="1.10s" href="" class="st-btn-b b-radius">Resturant</a>
                                         </div>
                                     </div>
                                 </div>
@@ -751,7 +278,7 @@
                                 <h5 class="st-titile">Popular Categories</h5>
                             </div>
                             <div class="button-wrap button-wrap-2">
-                                <a href="/shop/">See All Product <i class="fal fa-chevron-right"></i></a>
+                                <a href="">See All Product <i class="fal fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -3328,7 +2855,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">New Customer</a></li>
+                                                    <li><a href="">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -3350,10 +2877,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">Help Center</a></li>
-                                                    <li><a href="/index/">Contact Us</a></li>
-                                                    <li><a href="/index/">Complaints</a></li>
-                                                    <li><a href="/index/">Payment Methods</a></li>
+                                                    <li><a href="">Help Center</a></li>
+                                                    <li><a href="">Contact Us</a></li>
+                                                    <li><a href="">Complaints</a></li>
+                                                    <li><a href="">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -3379,10 +2906,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/index/">Terms and conditions</a></li>
-                                                                <li><a href="/index/">Privacy Policy</a></li>
-                                                                <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/index/">Cancellation & Refund</a></li>
+                                                                <li><a href="">Terms and conditions</a></li>
+                                                                <li><a href="">Privacy Policy</a></li>
+                                                                <li><a href="">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -3425,14 +2952,14 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/index/">Rooms</a>
-                                        <a href="/index/">Sarees</a>
-                                        <a href="/index/">Tun Foods</a>
-                                        <a href="/index/">Groceries</a>
-                                        <a href="/index/">Fasion Jewellery</a>
-                                        <a href="/index/">Real Estate</a>
-                                        <a href="/index/">Most Populars</a>
-                                        <a href="/index/">Others</a>
+                                        <a href="">Rooms</a>
+                                        <a href="">Sarees</a>
+                                        <a href="">Tun Foods</a>
+                                        <a href="">Groceries</a>
+                                        <a href="">Fasion Jewellery</a>
+                                        <a href="">Real Estate</a>
+                                        <a href="">Most Populars</a>
+                                        <a href="">Others</a>
                                        
                                      
                                            </div>

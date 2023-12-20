@@ -152,7 +152,7 @@
                                         <span>Currency: </span>
                                     </div>
                                     <select>
-                                        <option>USD</option>
+                                        <option> USD</option>
                                         <option>EUR</option>
                                         <option>INR</option>
                                         <option>BDT</option>
@@ -168,12 +168,13 @@
                             <div class="header-inner-end text-md-end">
                                 <div class="ovic-menu-wrapper">
                                     <ul>
-                                        <li><a href="/about/">About Us</a></li>
+                                        <li><a href="">About Us</a></li>
                                          <!-- <li><a href="contact.html">Order Tracking</a></li>  -->
-                                         <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li> 
-                                             <!-- <li><a href="faq.html">FAQs</a></li>  -->
+                                         <li><a href="">Need Help? : +91 98947 09871 </a></li> 
+                                             <!-- <li><a href="index.html">index</a></li>  -->
                                      </ul>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -187,7 +188,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                             <div class="header__info">
                                 <div class="logo">
-                                    <a href="/index/" class="logo-image"><img src="{% static 'image/tunlogo.png' %}" alt="logo"></a>
+                                    <a href="/user_index/" class="logo-image"><img src="{% static 'image/tunlogo.png' %}" alt="logo"></a>
                                 </div>
                             </div>
                         </div>
@@ -201,13 +202,17 @@
                                     <div class="header__search-cat">
                                         <select>
                                             <option>All Categories</option>
-                                            <option>Rooms</option>
-                                            <option>Sarees</option>
-                                            <option>Tun Foods</option>
-                                            <option>Groceries</option>
-                                            <option>Fashion Jewellery</option>
-                                            <option>Real Estate</option>
-                                            <option>Others</option>
+                                            <option>Best Seller Products</option>
+                                            <option>Top 10 Offers</option>
+                                            <option>New Arrivals</option>
+                                            <option>Phones &amp; Tablets</option>
+                                            <option>Electronics &amp; Digital</option>
+                                            <option>Fashion &amp; Clothings</option>
+                                            <option>Jewelry &amp; Watches</option>
+                                            <option>Health &amp; Beauty</option>
+                                            <option>Sound &amp; Speakers</option>
+                                            <option>TV &amp; Audio</option>
+                                            <option>Computers</option>
                                         </select>
                                     </div>
                                 </form>
@@ -224,7 +229,7 @@
                                     </a>
                                 </div>
                                 <div class="block-wishlist action">
-                                    <a class="icon-link" href="/wishlist/">
+                                    <a class="icon-link" href="/my-account/
                                     <i class="fa fa-heart"></i>
                                     <span class="count">0</span>
                                     <span class="text">
@@ -233,15 +238,15 @@
                                     </a>
                                 </div>
                                 <div class="block-cart action">
-                                    <a class="icon-link" href="/cart/">
+                                    <a class="icon-link" href="/my-account/">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span class="count">1</span>
+                                    <span class="count">0</span>
                                     <span class="text">
                                     <span class="sub">Your Cart:</span>
                                     &#x20b9;00.00 </span>
                                     </a>
                                     <div class="cart">
-                                        <div class="cart__mini">
+                                        <!-- <div class="cart__mini">
                                             <ul>
                                                 <li>
                                                   <div class="cart__title">
@@ -280,7 +285,7 @@
                                                     <a href="/checkout/" class="wc-checkout">Checkout</a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -301,56 +306,170 @@
                                     <nav id="mobile-menu" style="display: block;">
                                         <ul>
                                             <li>
-                                                <a href="/shop/">Shop by Categories <i class="far fa-angle-down"></i></a>
-                                               
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">ROOMS <i class="far fa-angle-down"></i></a>
-                                                
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">SAREES
-                                                </a>
-                                               
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">TUN FOODS
-                                                    
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">GROCERIES <i class="far fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="/shop/">Ready To Cook</a></li>
-                                                    <li><a href="/shop/">Beauty Care</a>
-                                                    <li><a href="/shop/">Snacks</a></li>
-                                                    <li><a href="/shop/">Baby Care</a></li>
-                                                    <li><a href="/shop/">Cooking Essentials</a></li>
-                                                    <li><a href="/shop/">Household Needs</a></li>
-                                                    <li><a href="/shop/">Beverage</a></li>
-                                                    <li><a href="/shop/">Readymade Foods</a></li>
-                                                    <li><a href="/shop/">Dairy Products</a></li>
-                                                    <li><a href="/shop/">Stationary</a></li>
+                                                <a href="/shop/">All Categories <i class="far fa-angle-down"></i></a>
+                                                <ul class="mega-menu">
+                                                    <li><a href="/shop/">Shop Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
+                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
+                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Product Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Product Details</a></li>
+                                                            <li><a href="/product-details/">Product V2</a></li>
+                                                            <li><a href="/product-details/">Product V3</a></li>
+                                                            <li><a href="/product-details/">Varriable Product</a></li>
+                                                            <li><a href="/product-details/">External Product</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Other Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">wishlist</a></li>
+                                                            <li><a href="/product-details/">Shopping Cart</a></li>
+                                                            <li><a href="/product-details/">Checkout</a></li>
+                                                            <li><a href="/product-details/">Login</a></li>
+                                                            <li><a href="/product-details/">Register</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/shop/">FASION JEWELLERY</a></li>
-                                            <li><a href="/shop/">REAL ESTATE</a></li>
                                             <li>
-                                                <a href="/shop/">oTHERS <i class="far fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="/shop/">Constructions-Architecs</a></li>
-                                                    <li><a href="/shop/">Consumer Products</a>
-                                                    <li><a href="/shop/">Direct From Makers</a></li>
-                                                    <li><a href="/shop/">Event Management</a></li>
-                                                    <li><a href="/shop/">Electronics</a></li>
-                                                    <li><a href="/shop/">Scraps</a></li>
-                                                    <li><a href="/shop/">Stationary</a></li>
-                                                    <li><a href="/shop/">Used Premium Cars</a></li>
-                                                    <li><a href="/shop/">Unique Products</a></li>
-                                                    
+                                                <a href="/shop/">Phone and Electronics <i class="far fa-angle-down"></i></a>
+                                                <ul class="mega-menu mega-menu-2">
+                                                    <li><a href="/shop/">Shop Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
+                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
+                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Product Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Product Details</a></li>
+                                                            <li><a href="/product-details/">Product V2</a></li>
+                                                            <li><a href="/product-details/">Product V3</a></li>
+                                                            <li><a href="/product-details/">Varriable Product</a></li>
+                                                            <li><a href="/product-details/">External Product</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Other Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">wishlist</a></li>
+                                                            <li><a href="/product-details/">Shopping Cart</a></li>
+                                                            <li><a href="/product-details/">Checkout</a></li>
+                                                            <li><a href="/product-details/">Login</a></li>
+                                                            <li><a href="/product-details/">Register</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                         
+                                            <li>
+                                                <a href="/shop/">Best Seller Products
+                                                    <span class="cat-label">hot!</span>
+                                                    <i class="far fa-angle-down"></i>
+                                                </a>
+                                                <ul class="mega-menu">
+                                                    <li><a href="/shop/">Shop Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
+                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
+                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
+                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Product Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Product Details</a></li>
+                                                            <li><a href="/product-details/">Product V2</a></li>
+                                                            <li><a href="/product-details/">Product V3</a></li>
+                                                            <li><a href="/product-details/">Varriable Product</a></li>
+                                                            <li><a href="/product-details/">External Product</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Other Pages</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">wishlist</a></li>
+                                                            <li><a href="/product-details/">Shopping Cart</a></li>
+                                                            <li><a href="/product-details/">Checkout</a></li>
+                                                            <li><a href="/product-details/">Login</a></li>
+                                                            <li><a href="/product-details/">Register</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
+                                                        <ul class="mega-item">
+                                                            <li><a href="/product-details/">Catagory 1</a></li>
+                                                            <li><a href="/product-details/">Catagory 2</a></li>
+                                                            <li><a href="/product-details/">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="/shop/">Top 10 Offers
+                                                    <span class="cat-label green">new!</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/shop/">New Arrivals <i class="far fa-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/shop/">Home Appliances</a></li>
+                                                    <li><a href="/shop/">Technology</a>
+                                                        <ul class="submenu">
+                                                            <li><a href="/shop/">Storage Devices</a></li>
+                                                            <li><a href="/shop/">Monitors</a></li>
+                                                            <li><a href="/shop/">Laptops</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="/shop/">Office Equipments</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/shop/">TV &amp; Audio</a></li>
+                                            <li><a href="/shop/">Electronics &amp; Digital</a></li>
+                                            <li class="d-laptop-none"><a href="/shop/">Fashion &amp; Clothings</a></li>
+                                            <li class="d-laptop-none"><a href="/shop/">Jewelry &amp; Watches</a></li>
+                                            <li><a href="/shop/">Health &amp; Beauty</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -366,7 +485,7 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="/index/" class="">Rooms </a>
+                                        <a href="" class="">Rooms </a>
                                         <!-- <ul class="megamenu-1">
                                             <li><a href="index.html">Home Pages</a>
                                                 <ul class="mega-item">
@@ -413,12 +532,17 @@
                                             </li>
                                         </ul> -->
                                     </li>
-                                    <li><a href="/about/">Sarees</a></li>
-                                    <li><a href="/about/">Tun Foods</a></li>
+                                    <li>
+                                        <a href="/my-account/">sarees</a>
+                                    </li>
+                                    <li><a href="/my-account/">Tun Foods</a></li>
 
-                                    <li><a href="blog.html">Groceries <i class="far fa-angle-down"></i></a>
+                                    <li><a href="/my-account/">Groceries <i class="far fa-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="" style="width: max-content;">Ready To Cook</a></li>
+                                            <li>
+                                                <a href="/my-account/">Ready to cook</a>
+
+                                            </li>
                                             <li><a href="">Beauty Care</a></li>
                                             <li><a href="">Snacks  </a></li>
                                             <li><a href="">Baby Care </a></li>
@@ -432,11 +556,14 @@
 
                                         </ul>
                                     </li>
-                                    <li><a href="/about/">Fashion Jewellery</a></li>
+                                    <li>
+                                        <a href="/my-account/">Fashion JEWELLERY</a>
 
-                                    <li><a href="/about/">Real Estate</a></li>
+                                    </li>
 
-                                    <li><a href="blog.html">Others <i class="far fa-angle-down"></i></a>
+                                    <li><a href="/my-account/">Real Estate</a></li>
+
+                                    <li><a href="/my-account/">Others <i class="far fa-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="" style="width: max-content;">Constructions-Architecs</a></li>
                                             <li><a href="">Consumer products</a></li>
@@ -464,6 +591,7 @@
             </div>
         </div>
     </header>
+
     <!-- header-end --> 
 
     <!-- offcanvas area start -->
@@ -476,7 +604,7 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
+                <a href="/user_index/">
                     <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
                 </a>
             </div>
@@ -655,11 +783,11 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">New Customer</a></li>
-                                                    <li><a href="/checkout/">Checkout</a></li>
-                                                    <li><a href="/checkout/">Orders</a></li>
-                                                    <li><a href="/cart/">Shopping Cart</a></li>
-                                                    <li><a href="/wishlist/">Wishlist</a></li>
+                                                    <li><a href="">New Customer</a></li>
+                                                    <li><a href="">Checkout</a></li>
+                                                    <li><a href="">Orders</a></li>
+                                                    <li><a href="">Shopping Cart</a></li>
+                                                    <li><a href="">Wishlist</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -677,10 +805,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">Help Center</a></li>
-                                                    <li><a href="/index/">Contact Us</a></li>
-                                                    <li><a href="/index/">Complaints</a></li>
-                                                    <li><a href="/index/">Payment Methods</a></li>
+                                                    <li><a href="">Help Center</a></li>
+                                                    <li><a href="">Contact Us</a></li>
+                                                    <li><a href="">Complaints</a></li>
+                                                    <li><a href="">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -706,10 +834,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/index/">Terms and conditions</a></li>
-                                                                <li><a href="/index/">Privacy Policy</a></li>
-                                                                <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/index/">Cancellation & Refund</a></li>
+                                                                <li><a href="">Terms and conditions</a></li>
+                                                                <li><a href="">Privacy Policy</a></li>
+                                                                <li><a href="">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -752,14 +880,14 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/index/">Rooms</a>
-                                        <a href="/index/">Sarees</a>
-                                        <a href="/index/">Tun Foods</a>
-                                        <a href="/index/">Groceries</a>
-                                        <a href="/index/">Fasion Jewellery</a>
-                                        <a href="/index/">Real Estate</a>
-                                        <a href="/index/">Most Populars</a>
-                                        <a href="/index/">Others</a>
+                                        <a href="">Rooms</a>
+                                        <a href="">Sarees</a>
+                                        <a href="">Tun Foods</a>
+                                        <a href="">Groceries</a>
+                                        <a href="">Fasion Jewellery</a>
+                                        <a href="">Real Estate</a>
+                                        <a href="">Most Populars</a>
+                                        <a href="">Others</a>
                                        
                                      
                                            </div>
