@@ -104,7 +104,7 @@
                                 <div class="block-wishlist action">
                                     <a class="icon-link" href="/wishlist/{{my_data.uid}}">
                                     <i class="fa fa-heart"></i>
-                                    <span class="count">0</span>
+                                    <span class="count">{{wishlist|length}}</span>
                                     <span class="text">
                                     <span class="sub">Favorite</span>
                                     My Wishlist </span>
@@ -113,10 +113,10 @@
                                 <div class="block-cart action">
                                     <a class="icon-link" href="/cart/{{my_data.uid}}">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span class="count">0</span>
+                                    <span class="count">{{cart|length}}</span>
                                     <span class="text">
                                     <span class="sub">Your Cart:</span>
-                                    &#x20b9;00.00 </span>
+                                    &#x20b9;{{text}}.00 </span>
                                     </a>
                                     <div class="cart">
                                         <!-- <div class="cart__mini">
@@ -418,7 +418,7 @@
                                             <li>
                                                 <form method="POST">
                                                     {% csrf_token %}
-                                                    <a><button type="submit" name="menu" value="2">Ready To Cook</button></a>
+                                                    <a><button type="submit" name="menu" value="4">Ready To Cook</button></a>
                                                 </form>
                                             </li>
                                             <li><a href="">Beauty Care</a></li>

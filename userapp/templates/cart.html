@@ -219,7 +219,7 @@
                                                 <div class="cart-plus-minus"><input type="text" value="{{i.quantity}}" name="quantity" id="quantity"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
                                           </td>
                                           <td class="product-subtotal"><span class="amount">&#x20b9;{{ i.quantity|mul:i.product.selling_price }}</span></td>
-                                          <td class="product-remove"><a href="/delete/{{i.id}}"><i class="fa fa-times"></i></a></td>
+                                          <td class="product-remove"><a href="/delete/{{i.id}}/{{my_data.uid}}"><i class="fa fa-times"></i></a></td>
                                        </tr>
                                     {% endfor %}
                                     </tbody>
@@ -248,10 +248,10 @@
                                     <div class="cart-page-total">
                                        <h2>Cart totals</h2>
                                        <ul class="mb-20">
-                                          <li>Subtotal <span>&#x20b9;{{total}}</span></li>
-                                          <li>Total <span>&#x20b9;{{total}}</span></li>
+                                          <li>Subtotal <span>&#x20b9;{{text}}</span></li>
+                                          <li>Total <span>&#x20b9;{{text}}</span></li>
                                        </ul>
-                                       <a class="tp-btn-h1" href="/checkout/">Proceed to checkout</a>
+                                       <a class="tp-btn-h1" href="/checkout/{{my_data.uid}}">Proceed to checkout</a>
                                     </div>
                               </div>
                            </div>

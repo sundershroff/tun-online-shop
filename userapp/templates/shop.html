@@ -407,7 +407,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-widget mb-30">
+                        {% comment %} <div class="product-widget mb-30">
                             <h5 class="pt-title">Special Offers</h5>
                             <div class="product__sm mt-20">
                                 <ul>
@@ -488,7 +488,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                     <div class="col-xl-9 col-lg-8">
                         <!-- <div class="shop-banner mb-30">
@@ -521,11 +521,11 @@
                                                   </ul>
                                             </div>
                                             <div class="product__result pl-60">
-                                                <p>Showing 1-20 of 29 relults</p>
+                                                <p> {{product|length}} relults</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                    {% comment %} <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                         <div class="product__filter-right d-flex align-items-center justify-content-md-end">
                                             <div class="product__sorting product__show-no">
                                                 <select>
@@ -543,7 +543,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                         </div>
                         </div>
@@ -562,14 +562,20 @@
                                                         </a>
                                                     </div>
                                                     <div class="product-action">
-                                                        <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                                        <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#">
                                                             <i class="fal fa-eye"></i>
                                                             <i class="fal fa-eye"></i>
                                                         </a>
+                                                        <form method="POST">
+                                                            {% csrf_token %}
+                                                            <button type="submit" name="wishlist" value="{{i.uid}}">
                                                         <a href="#" class="icon-box icon-box-1">
                                                             <i class="fal fa-heart"></i>
-                                                            <i class="fal fa-heart"></i>
+                                                           <i class="fal fa-heart"></i>
+                                                           
                                                         </a>
+                                                    </button>
+                                                </form>
                                                         <a href="#" class="icon-box icon-box-1">
                                                             <i class="fal fa-layer-group"></i>
                                                             <i class="fal fa-layer-group"></i>
@@ -593,10 +599,14 @@
                                                         <span><del>&#x20b9;{{i.original_price}}</del>&#x20b9;{{i.selling_price}}</span>
                                                     </div>
                                                 </div>
+                                                <form method="POST">
+                                                    {% csrf_token %}
+                    
                                                 <div class="product__add-cart-s text-center">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
+                                                    <button type="submit" name="cart" value="{{i.uid}}" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
                                                     Add to Cart
                                                     </button>
+                                                </form>
                                                     <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
                                                         Buy Now
                                                     </button>
@@ -610,6 +620,8 @@
                             </div>
                             <div class="tab-pane fade" id="FiveCol" role="tabpanel" aria-labelledby="FiveCol-tab">
                                 <div class="tp-wrapper-2">
+                                    {% for i in product %}
+                                    
                                     <div class="single-item-pd">
                                         <div class="row align-items-center">
                                             <div class="col-xl-9">
@@ -618,13 +630,13 @@
                                                         <div class="col-md-4">
                                                             <div class="features-thum">
                                                                 <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-1.jpg' %}" alt=""></a>
+                                                                    <a href="/product-details/{{my_data.uid}}/{{i.uid}}"><img src="{{i.image.url}}" alt=""></a>
                                                                 </div>
                                                                 <div class="product__offer">
-                                                                    <span class="discount">-15%</span>
+                                                                    <span class="discount">-{{i.discount}}%</span>
                                                                 </div>
                                                                 <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#">
                                                                         <i class="fal fa-eye"></i>
                                                                         <i class="fal fa-eye"></i>
                                                                     </a>
@@ -641,7 +653,7 @@
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Classic Leather Backpack Daypack 2022</a></h6>
+                                                                <h6><a href=/product-details/{{my_data.uid}}/{{i.uid}}">{{i.name}}</a></h6>
                                                                 <div class="rating mb-5">
                                                                     <ul class="rating-d">
                                                                         <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -654,10 +666,10 @@
                                                                 </div>
                                                                 <div class="features-des">
                                                                     <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
+                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> {{i.description}}.</a></li>
+                                                                        {% comment %} <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
                                                                         <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
+                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li> {% endcomment %}
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -667,8 +679,8 @@
                                             </div>
                                             <div class="col-xl-3">
                                                 <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;220.00 - <del> &#x20b9;240.00</del></h6>
+                                                    <h5>Availability: <span> {{i.quantity}} in stock</span></h5>
+                                                    <h6>&#x20b9;{{i.selling_price}} - <del> &#x20b9;{{i.original_price}}</del></h6>
                                                 </div>
                                                 <div class="stock-btn ">
                                                     <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
@@ -681,489 +693,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-2.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Samsang Galaxy A70 128GB Dual-SIM</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;216.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-3.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Coffee Maker AH240a Full Function</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;125.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-4.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Imported Wooden Felt Cushion Chair</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;160.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-5.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product__offer">
-                                                                    <span class="discount">-15%</span>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Sunhouse Decorative Lights – Imported</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;125.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-6.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">Korea Stainless Steel Pot Set 5 Piecs</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;99</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-7.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">HP Stainless Steel Hot Water Bottle</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;125.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item-pd">
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-                                                <div class="single-features-item single-features-item-df b-radius mb-20">
-                                                    <div class="row  g-0 align-items-center">
-                                                        <div class="col-md-4">
-                                                            <div class="features-thum">
-                                                                <div class="features-product-image w-img">
-                                                                    <a href="/product-details/"><img src="{% static 'image/sm-8.jpg' %}" alt=""></a>
-                                                                </div>
-                                                                <div class="product-action">
-                                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                                        <i class="fal fa-eye"></i>
-                                                                        <i class="fal fa-eye"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-heart"></i>
-                                                                        <i class="fal fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="#" class="icon-box icon-box-1">
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                        <i class="fal fa-layer-group"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product__content product__content-d">
-                                                                <h6><a href="/product-details/">The North Face Womens Resolve 2 Jack</a></h6>
-                                                                <div class="rating mb-5">
-                                                                    <ul class="rating-d">
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                                                    </ul>
-                                                                    <span>(01 review)</span>
-                                                                </div>
-                                                                <div class="features-des">
-                                                                    <ul>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                                                        <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="product-stock mb-15">
-                                                    <h5>Availability: <span> 940 in stock</span></h5>
-                                                    <h6>&#x20b9;140.00</h6>
-                                                </div>
-                                                <div class="stock-btn ">
-                                                    <button type="button" class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100">
-                                                    Add to Cart
-                                                    </button>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                                        Quick View
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
+
                                 </div>
                             </div>
                         </div>
-                        <div class="tp-pagination text-center">
+                        {% comment %} <div class="tp-pagination text-center">
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="basic-pagination pt-30 pb-30">
@@ -1194,7 +729,7 @@
                                      </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>

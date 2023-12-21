@@ -117,8 +117,9 @@ class CartItem(models.Model):
 
 
 class WishList(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,to_field='id',db_column="product", on_delete=models.CASCADE,null=True)
+    # user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
+    user=models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

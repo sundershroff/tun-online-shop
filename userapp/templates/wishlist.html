@@ -193,7 +193,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <form action="#">
                             <div class="table-content table-responsive">
                                 <table class="table">
                                     <thead>
@@ -204,33 +203,33 @@
                                             <th class="product-quantity">Quantity</th>
                                             <th class="product-subtotal">Total</th>
                                             <th class="product-remove">Remove</th>
+                                            <th class="product-remove">Add to Cart</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for i in data %}
+                                        <form method="post">
+{% csrf_token %}
                                         <tr>
-                                            <td class="product-thumbnail"><a href="shop-details.html"><img src="{% static 'image/shop-p-10.jpg' %}" alt=""></a></td>
-                                            <td class="product-name"><a href="shop-details.html">Light Jacket</a></td>
-                                            <td class="product-price"><span class="amount">&#x20b9;130.00</span></td>
+                                            <td class="product-thumbnail"><a href="/product-details/{{my_data.uid}}/{{i.product.uid}}"><img src="{{i.product.image.url}}" alt=""></a></td>
+                                            <td class="product-name"><a href="/product-details/{{my_data.uid}}/{{i.product.uid}}">{{i.product.name}}</a></td>
+                                            <td class="product-price"><span class="amount">&#x20b9;{{i.product.selling_price}}</span></td>
                                             <td class="product-quantity">
-                                                <button class="tp-btn-h1" type="submit">Add To Cart</button>
+                                                <div class="cart-plus-minus"><input type="text" value="1" name="quantity" id="quantity"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
                                             </td>
-                                            <td class="product-subtotal"><span class="amount">&#x20b9;130.00</span></td>
-                                            <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="shop-details.html"><img src="{% static 'image/shop-p-11.jpg' %}" alt=""></a></td>
-                                            <td class="product-name"><a href="shop-details.html">Pink Jacket</a></td>
-                                            <td class="product-price"><span class="amount">&#x20b9;120.50</span></td>
+                                            <td class="product-subtotal"><span class="amount">&#x20b9;{{i.product.selling_price}}</span></td>
+                                            <td class="product-remove"><a href="/remove_from_wishlist/{{i.id}}/{{my_data.uid}}"><i class="fa fa-times"></i></a></td>
                                             <td class="product-quantity">
-                                                <button class="tp-btn-h1" type="submit">Add To Cart</button>
+                                                <button type="submit" name="cart" value="{{i.product.uid}}" class="tp-btn-h1">Add To Cart</button>
                                             </td>
-                                            <td class="product-subtotal"><span class="amount">&#x20b9;120.50</span></td>
-                                            <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
                                         </tr>
+                                    </form>
+
+                                        {% endfor %}
+
                                     </tbody>
                                 </table>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

@@ -53,11 +53,15 @@ urlpatterns = [
     path('about/<id>', user_views.about),
     path('wishlist/<id>', user_views.wishlist),
     path('cart/<id>', user_views.cart),
-    path('delete/<id>',user_views.remove_from_cart),
+    path('delete/<id>/<uid>',user_views.remove_from_cart),
+    path('remove_from_wishlist/<id>/<uid>',user_views.remove_from_wishlist),
     path('product-details/<id>/<uid>', user_views.product_details),
     path('checkout/<id>', user_views.checkout),
     path('shop/<id>', user_views.shop),
     path('contact/<id>', user_views.contact),
+    path('select_payment/<id>', user_views.select_payment),
+
+    
     
     path('user_logged_index/<id>', user_views.user_logged_index),
     path('user_logged_my_account/<id>', user_views.user_logged_my_account),

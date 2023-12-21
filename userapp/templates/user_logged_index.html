@@ -278,7 +278,7 @@
                                 <h5 class="st-titile">Popular Categories</h5>
                             </div>
                             <div class="button-wrap button-wrap-2">
-                                <a href="">See All Product <i class="fal fa-chevron-right"></i></a>
+                                <a href="/shop/{{my_data.uid}}">See All Product <i class="fal fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -287,66 +287,91 @@
                     <div class="col-xl-2 col-lg-3 col-md-4">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-1.jpg' %}" alt=""></a>
+                                <a href=""><img src="{% static 'image/cat-1.jpg' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Tun Foods</a></h6>
-                                <p>(70 Products)</p>
+                                <h6><a href="">Tun Foods</a></h6>
+                                <p>(0 Products)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form method = "POST" style="display: contents;">
+                        {% csrf_token %}
+                    <button style="color:white;display: contents;" type="submit" name="menu" value="1" >
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <div class="categories__item p-relative w-img mb-30" style="
+                        width: 90%;
+                        display: inline-block;
+                        justify-content: center;
+                    ">
+                            <div class="categories__img b-radius-2">
+                                <a ><img src="{% static 'image/cat-2.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="categories__content">
+                                <h6><a>Kanchipurum Silk Sarees</a></h6>
+                                <p>({{saree|length}} Products)</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </form>
+
+                    <form method = "POST" style="display: contents;">
+                        <button type="submit" name="fashion_and_clothing" value="1" style="display: contents;">
+                            {% csrf_token %}
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <div class="categories__item p-relative w-img mb-30">
+                            <div class="categories__img b-radius-2" style="
+                            width: 90%;
+                            display: inline-block;
+                            justify-content: center;
+                        ">
+                                <a href=""><img src="{% static 'image/cat-3.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="categories__content">
+                                <h6><a>Fashion & Clothing</a></h6>
+                                <p>({{fashion_and_clouths|length}} Products)</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                </form>
+                <form method = "POST" style="display: contents;">
+                    <button type="submit" name="fashion_and_clothing" value="1" style="display: contents;">
+                        {% csrf_token %}
+
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <div class="categories__item p-relative w-img mb-30">
+                            <div class="categories__img b-radius-2">
+                                <a href=""><img src="{% static 'image/cat-4.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="categories__content">
+                                <h6><a href="">Groceries</a></h6>
+                                <p>({{groceries|length}} Products)</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </form>
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <div class="categories__item p-relative w-img mb-30">
+                            <div class="categories__img b-radius-2">
+                                <a href=""><img src="{% static 'image/cat-5.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="categories__content">
+                                <h6><a href="">Real Estate</a></h6>
+                                <p>(0 Products)</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-2.jpg' %}" alt=""></a>
+                                <a href=""><img src="{% static 'image/cat-6.jpg' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Kanchipurum Silk Sarees</a></h6>
-                                <p>(120 Products)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4">
-                        <div class="categories__item p-relative w-img mb-30">
-                            <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-3.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="categories__content">
-                                <h6><a href="/product-details/">Fashion & Clothing</a></h6>
-                                <p>(500 Products)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4">
-                        <div class="categories__item p-relative w-img mb-30">
-                            <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-4.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="categories__content">
-                                <h6><a href="/product-details/">Groceries</a></h6>
-                                <p>(900 Products)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4">
-                        <div class="categories__item p-relative w-img mb-30">
-                            <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-5.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="categories__content">
-                                <h6><a href="/product-details/">Real Estate</a></h6>
-                                <p>(70 Products)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4">
-                        <div class="categories__item p-relative w-img mb-30">
-                            <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'image/cat-6.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="categories__content">
-                                <h6><a href="/product-details/">Import & Export</a></h6>
-                                <p>(150 Products)</p>
+                                <h6><a href="">Import & Export</a></h6>
+                                <p>(0 Products)</p>
                             </div>
                         </div>
                     </div>
@@ -788,7 +813,7 @@
                             <div class="product__nav-tab"> 
                                 <ul class="nav nav-tabs" id="flast-sell-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a href="/product-details/"><button class="nav-link active" id="computer-tab" data-bs-toggle="tab" data-bs-target="#computer" type="button" role="tab" aria-controls="computer" aria-selected="false">Sarees</button></a>
+                                        <a href=""><button class="nav-link active" id="computer-tab" data-bs-toggle="tab" data-bs-target="#computer" type="button" role="tab" aria-controls="computer" aria-selected="false">Sarees</button></a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                       <button class="nav-link" id="samsung-tab" data-bs-toggle="tab" data-bs-target="#samsung" type="button" role="tab" aria-selected="false">Grocery</button>
@@ -817,7 +842,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-1.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -840,7 +865,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                                    <h6><a href="">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -864,7 +889,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-2.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -884,7 +909,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Men Size Yellow Basketball Jerseys</a></h6>
+                                                    <h6><a href="">Men Size Yellow Basketball Jerseys</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -908,7 +933,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-3.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -931,7 +956,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Xbox Wireless Game Controller Pink</a></h6>
+                                                    <h6><a href="">Xbox Wireless Game Controller Pink</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -955,7 +980,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-4.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -975,7 +1000,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Wireless Bluetooth Over-Ear Headphones</a></h6>
+                                                    <h6><a href="">Wireless Bluetooth Over-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -999,7 +1024,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-5.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1022,7 +1047,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                    <h6><a href="">Solo3 Wireless On-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1046,7 +1071,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-6.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1066,7 +1091,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Vifa Bluetooth Portable Wireless Speaker</a></h6>
+                                                    <h6><a href="">Vifa Bluetooth Portable Wireless Speaker</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1101,7 +1126,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-1.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1124,7 +1149,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                                    <h6><a href="">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1148,7 +1173,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-4.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1168,7 +1193,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Wireless Bluetooth Over-Ear Headphones</a></h6>
+                                                    <h6><a href="">Wireless Bluetooth Over-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1192,7 +1217,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-5.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1215,7 +1240,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                    <h6><a href="">Solo3 Wireless On-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1239,7 +1264,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-6.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1259,7 +1284,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Vifa Bluetooth Portable Wireless Speaker</a></h6>
+                                                    <h6><a href="">Vifa Bluetooth Portable Wireless Speaker</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1283,7 +1308,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-2.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1303,7 +1328,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Men Size Yellow Basketball Jerseys</a></h6>
+                                                    <h6><a href="">Men Size Yellow Basketball Jerseys</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1327,7 +1352,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-3.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1350,7 +1375,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Xbox Wireless Game Controller Pink</a></h6>
+                                                    <h6><a href="">Xbox Wireless Game Controller Pink</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1385,7 +1410,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-4.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1405,7 +1430,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Wireless Bluetooth Over-Ear Headphones</a></h6>
+                                                    <h6><a href="">Wireless Bluetooth Over-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1429,7 +1454,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-5.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1452,7 +1477,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                    <h6><a href="">Solo3 Wireless On-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1476,7 +1501,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-6.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1496,7 +1521,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Vifa Bluetooth Portable Wireless Speaker</a></h6>
+                                                    <h6><a href="">Vifa Bluetooth Portable Wireless Speaker</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1520,7 +1545,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-1.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1543,7 +1568,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                                    <h6><a href="">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1567,7 +1592,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-2.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1587,7 +1612,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Men Size Yellow Basketball Jerseys</a></h6>
+                                                    <h6><a href="">Men Size Yellow Basketball Jerseys</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1611,7 +1636,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-3.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1634,7 +1659,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Xbox Wireless Game Controller Pink</a></h6>
+                                                    <h6><a href="">Xbox Wireless Game Controller Pink</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1669,7 +1694,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-1.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1692,7 +1717,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                                    <h6><a href="">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1716,7 +1741,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-2.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1736,7 +1761,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Men Size Yellow Basketball Jerseys</a></h6>
+                                                    <h6><a href="">Men Size Yellow Basketball Jerseys</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1760,7 +1785,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-3.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1783,7 +1808,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Xbox Wireless Game Controller Pink</a></h6>
+                                                    <h6><a href="">Xbox Wireless Game Controller Pink</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1807,7 +1832,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-4.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1827,7 +1852,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Wireless Bluetooth Over-Ear Headphones</a></h6>
+                                                    <h6><a href="">Wireless Bluetooth Over-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1851,7 +1876,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-5.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1874,7 +1899,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                    <h6><a href="">Solo3 Wireless On-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1898,7 +1923,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-6.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1918,7 +1943,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Vifa Bluetooth Portable Wireless Speaker</a></h6>
+                                                    <h6><a href="">Vifa Bluetooth Portable Wireless Speaker</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1953,7 +1978,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-1.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -1976,7 +2001,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                                    <h6><a href="">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2000,7 +2025,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-2.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -2020,7 +2045,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Men Size Yellow Basketball Jerseys</a></h6>
+                                                    <h6><a href="">Men Size Yellow Basketball Jerseys</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2044,7 +2069,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-3.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -2067,7 +2092,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Xbox Wireless Game Controller Pink</a></h6>
+                                                    <h6><a href="">Xbox Wireless Game Controller Pink</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2091,7 +2116,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-4.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -2111,7 +2136,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Wireless Bluetooth Over-Ear Headphones</a></h6>
+                                                    <h6><a href="">Wireless Bluetooth Over-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2135,7 +2160,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-5.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -2158,7 +2183,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                    <h6><a href="">Solo3 Wireless On-Ear Headphones</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2182,7 +2207,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="">
                                                             <img src="{% static 'image/tp-6.jpg' %}" alt="product">
                                                         </a>
                                                     </div>
@@ -2202,7 +2227,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">Vifa Bluetooth Portable Wireless Speaker</a></h6>
+                                                    <h6><a href="">Vifa Bluetooth Portable Wireless Speaker</a></h6>
                                                     <div class="rating mb-5">
                                                         <ul>
                                                             <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -2768,7 +2793,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="product__modal-content">
-                                    <h4><a href="/product-details/">Samsung C49J89: £875, Debenhams Plus</a></h4>
+                                    <h4><a href="">Samsung C49J89: £875, Debenhams Plus</a></h4>
                                     <div class="product__review d-sm-flex">
                                         <div class="rating rating__shop mb-10 mr-30">
                                         <ul>
