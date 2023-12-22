@@ -266,7 +266,7 @@
                             </form>
 
 <!--                                    <a href="/cart/{{products.uid}}" ><button type="submit" class="cart-btn" value="{{products.uid}}">Add to Cart </button></a>-->
-                                    <a href="/cart/" class="cart-btn" style="margin-left:10px">Buy now</a>
+                                    <a href="" class="cart-btn" style="margin-left:10px">Buy now</a>
 
                                 </div>
 
@@ -274,7 +274,10 @@
                             <div class="details-meta">
                                 <div class="d-meta-left">
                                     <div class="dm-item mr-20">
-                                        <a href="#"><i class="fal fa-heart"></i>Add to wishlist</a>
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                        <button type="submit" name="wishlist" value="{{products.uid}}"><i class="fal fa-heart"></i>Add to wishlist</a></button>
+                                    </form>
                                     </div>
                                     <div class="dm-item">
                                         <a href="#"><i class="fal fa-layer-group"></i>Compare</a>
@@ -324,9 +327,9 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="aditional-tab" data-bs-toggle="tab" data-bs-target="#aditional" type="button" role="tab" aria-controls="aditional" aria-selected="false">Additional information</button>
                                   </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                   <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Reviews (1) </button>
-                                </li>
+                                </li> -->
                               </ul>
                         </div>
                     </div>

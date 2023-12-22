@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from TunShopApp.models import Product, Category, adminRegistrationModel, OrderList, CartItem, HomeSliderScreen
+from TunShopApp.models import Product, Category, adminRegistrationModel, OrderList, CartItem, HomeSliderScreen,userRegistrationModel
 from TunShopApp.forms import ProductForm, AdminRegistrationForm, SliderImageForm
 import random
 import yagmail
@@ -10,6 +10,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
+import datetime
 
 
 
@@ -51,16 +52,30 @@ def logoutbutton(request):
 
 @login_required(login_url="/login_admin/")
 def index(request):
+    x = datetime.datetime.now()
     all_Product = Product.objects.all()
+    all_order = OrderList.objects.all()
+    order_list = OrderList.objects.filter(order_date =str(datetime.datetime.now()).split()[0] )
+    today_revenue = 0
+    for i in order_list:
+       print(i.total_amount)
+       today_revenue += i.total_amount
     context = {
-        'products':all_Product
+        'products':all_Product,
+        'today_revenue':today_revenue,
+        'today_sale':order_list,
+        'all_order':all_order[::-1],
     }
 
     return render(request, "index.html",context)
 
 @login_required(login_url="/login_admin/")
 def order_status(request):
-    return render(request, "order_status.html")
+    order_list = OrderList.objects.all()
+    context = {
+        'order_list':order_list[::-1],
+    }
+    return render(request, "order_status.html",context)
 
 @login_required(login_url="/login_admin/")
 def email(request):
@@ -113,7 +128,18 @@ def return_product(request):
 
 @login_required(login_url="/login_admin/")
 def customer(request):
-    return render(request, "customer.html")
+    all_customer = userRegistrationModel.objects.all()
+    context = {
+        'all_customer':all_customer
+    }
+    return render(request, "customer.html",context)
+
+@login_required(login_url="/login_admin/")
+def customer_delete(request,uid):
+    customer = userRegistrationModel.objects.get(uid = uid)
+    customer.delete()
+    return redirect("/customer/")
+
 
 @login_required(login_url="/login_admin/")
 def reviews(request):

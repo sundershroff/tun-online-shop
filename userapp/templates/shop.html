@@ -569,7 +569,7 @@
                                                         <form method="POST">
                                                             {% csrf_token %}
                                                             <button type="submit" name="wishlist" value="{{i.uid}}">
-                                                        <a href="#" class="icon-box icon-box-1">
+                                                        <a class="icon-box icon-box-1">
                                                             <i class="fal fa-heart"></i>
                                                            <i class="fal fa-heart"></i>
                                                            
@@ -607,9 +607,12 @@
                                                     Add to Cart
                                                     </button>
                                                 </form>
-                                                    <button type="button" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                                <form method="POST">
+                                                    {% csrf_token %}
+                                                    <button type="submit" name="buy" value="{{i.uid}}" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#">
                                                         Buy Now
                                                     </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

@@ -17,7 +17,7 @@
     <h1>Checkout</h1>
   </header>
 
-  <form  class="form" method="POST">
+  <form class="form" method="POST">
     {% csrf_token %}
     <div>
       <h2>Address</h2>
@@ -52,7 +52,7 @@
           <label for="mastercard"><svg class="icon">
               <use xlink:href="#icon-mastercard" />
             </svg>COD</label>
-          <input id="mastercard" name="payment-method" value="cod" type="radio" required/>
+          <input id="mastercard" name="payment-method" value="cod" type="radio" required />
         </div>
       </div>
     </fieldset>
@@ -72,13 +72,13 @@
           </tr>
           <tr>
             <td>Price Total</td>
-            <td align="right">&#x20b9;{{text}}.00</td>
+            <td align="right">&#x20b9;{{product1.selling_price}}.00</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td>Total</td>
-            <td align="right">&#x20b9;{{text}}.00</td>
+            <td align="right">&#x20b9;{{product1.selling_price}}.00</td>
           </tr>
         </tfoot>
       </table>

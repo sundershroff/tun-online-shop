@@ -40,6 +40,9 @@ class userRegistrationModel(models.Model):
     near_land_mark = models.TextField(null=True)
     mobile = models.IntegerField(null=True)
     password = models.CharField(max_length=50, null=True)
+    registered_date = models.DateTimeField(auto_now_add=True)
+
+
 
     def uidd(self):
         return self.uid
@@ -138,3 +141,4 @@ class OrderList(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
     order_date = models.DateField("Date", auto_now_add=True)
+    total_amount = models.IntegerField( null=True)
