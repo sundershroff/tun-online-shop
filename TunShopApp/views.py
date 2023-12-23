@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from TunShopApp.models import Product, Category, adminRegistrationModel, OrderList, CartItem, HomeSliderScreen,userRegistrationModel
 from TunShopApp.forms import ProductForm, AdminRegistrationForm, SliderImageForm
 import random
@@ -11,7 +12,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 import datetime
-
+from TunShopApp.process_to_pdf import html_to_pdf
+import locale
+locale.setlocale(locale.LC_ALL, "")
 
 
 # Create your views here.
@@ -146,12 +149,21 @@ def reviews(request):
     return render(request, "reviews.html")
 
 @login_required(login_url="/login_admin/")
-def invoice(request):
-    return render(request, "invoice.html")
+def invoice(request,id):
+    invoice_page = OrderList.objects.get(order_uid = id)
+    context = {
+        'invoice_page':invoice_page,
+
+    }
+    return render(request, "invoice.html",context)
 
 @login_required(login_url="/login_admin/")
 def invoice_list(request):
-    return render(request, "invoice_list.html")
+    order_list = OrderList.objects.all()
+    context = {
+        'order_list':order_list[::-1],
+    }
+    return render(request, "invoice_list.html",context)
 
 @login_required(login_url="/login_admin/")
 def add_product(request):
@@ -252,3 +264,18 @@ def edit_product(request, uid):
 
         return redirect('/product_list/')
     return render(request,"edit_product.html",context)
+
+@login_required(login_url="/login_admin/")
+def slider(request):
+    return render(request,"slider.html")
+
+
+
+def get(request,id, *args, **kwargs):
+        invoice_page = OrderList.objects.get(order_uid = id)
+
+        # getting the template
+        pdf = html_to_pdf('invoice.html',context_dict={'invoice_page':invoice_page})
+         
+         # rendering the template
+        return HttpResponse(pdf, content_type='application/pdf')

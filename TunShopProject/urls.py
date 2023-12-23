@@ -41,11 +41,14 @@ urlpatterns = [
     path('customer/', views.customer),
     path('customer_delete/<uid>', views.customer_delete),
     path('reviews/', views.reviews),
-    path('invoice/', views.invoice),
+    path('invoice/<id>', views.invoice),
     path('invoice_list/', views.invoice_list),
     path('add_product/', views.add_product),
     path('Product_Delete/<uid>', views.Product_Delete),
     path('edit_product/<uid>', views.edit_product),
+    path('slider/', views.slider),
+    path('pdf/<id>', views.get), 
+
 
 #user app
     path('user_index/', user_views.user_index),

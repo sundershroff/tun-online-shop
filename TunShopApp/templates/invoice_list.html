@@ -367,7 +367,41 @@
             </div>
             <div class="ms-panel-body">
               <div class="table-responsive">
-                <table id="data-table-7" class="table table-striped thead-primary w-100"></table>
+                <table id="" class="table table-striped thead-primary w-100 dataTable no-footer" role="grid" aria-describedby="data-table-7_info" style="width: 1161px;">
+                  <thead>
+                    <tr role="row">
+                      <th class="sorting_asc" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Invoice Id: activate to sort column descending" style="width: 104px;"> Id</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Product Name: activate to sort column ascending" style="width: 154px;">Product Name</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Order Id: activate to sort column ascending" style="width: 90px;">Order Id</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Invoice Generate Date: activate to sort column ascending" style="width: 221px;">Invoice Generate Date</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending" style="width: 47px;">Qty</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 62px;">Price</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 73px;">Status</th>
+                      <th class="sorting" tabindex="0" aria-controls="data-table-7" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 74px;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in order_list %}
+                    
+            
+                    <tr role="row" class="odd">
+                      <td class="sorting_1">{{forloop.counter}}</td>
+                      <td> <img src="{{i.product.image.url}}" style="width:50px; height:30px;">{{i.product.name}}</td>
+                      <td>{{i.order_uid}}</td>
+                      <td>{{i.order_date}}</td>
+                      <td>{{i.user_quantity}}</td>
+                      <td>&#x20b9;{{i.total_amount}}</td>
+                      <td><span class="badge badge-primary">COD</span></td>
+                      <td>
+                        <a href="/invoice/{{i.order_uid}}" class="btn btn-primary mr-2" style="background-color: mediumseagreen;">View Invoice</a>
+                        <a href="/pdf/{{i.order_uid}}" class="btn btn-primary mr-2">Download Invoice</a>
+
+                      </a></td>
+                    </tr>
+                    {% endfor %}
+
+                  </tbody>
+                  </table>
               </div>
             </div>
           </div>

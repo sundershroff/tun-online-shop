@@ -54,6 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TunShopProject.urls'
 
+# Specify the default encoding for all data in the system
+DEFAULT_CHARSET = 'utf-8'
+
+# Use UTF-8 for file system operations
+FILE_CHARSET = 'utf-8'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
