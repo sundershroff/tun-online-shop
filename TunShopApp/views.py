@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from TunShopApp.models import Product, Category, adminRegistrationModel, OrderList, CartItem, HomeSliderScreen,userRegistrationModel
+from TunShopApp.models import Product, Category, adminRegistrationModel, OrderList, CartItem, HomeSliderScreen,userRegistrationModel,slider
 from TunShopApp.forms import ProductForm, AdminRegistrationForm, SliderImageForm
 import random
 import yagmail
@@ -266,8 +266,33 @@ def edit_product(request, uid):
     return render(request,"edit_product.html",context)
 
 @login_required(login_url="/login_admin/")
-def slider(request):
-    return render(request,"slider.html")
+def sliderr(request):
+    data1 = slider.objects.get(id = 1)
+    context = {
+        'key':data1,
+    }
+    
+    if request.method == "POST":
+        print(request.FILES)
+        if 'image1' in request.FILES:
+            image1 = request.FILES['image1']
+        else:
+            image1 = data1.image1
+            
+        if 'image2' in request.FILES:
+            image2 = request.FILES['image2']
+        else:
+            image2 = data1.image2
+            
+        if 'image3' in request.FILES:
+            image3 = request.FILES['image3']
+        else:
+            image3 = data1.image3
+        data1.image1 = image1
+        data1.image2 = image2
+        data1.image3 = image3
+        data1.save()
+    return render(request,"slider.html",context)
 
 
 

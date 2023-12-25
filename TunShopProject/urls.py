@@ -46,7 +46,7 @@ urlpatterns = [
     path('add_product/', views.add_product),
     path('Product_Delete/<uid>', views.Product_Delete),
     path('edit_product/<uid>', views.edit_product),
-    path('slider/', views.slider),
+    path('slider/', views.sliderr),
     path('pdf/<id>', views.get), 
 
 

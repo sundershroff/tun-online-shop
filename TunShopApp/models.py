@@ -142,3 +142,8 @@ class OrderList(models.Model):
     user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
     order_date = models.DateField("Date", auto_now_add=True)
     total_amount = models.IntegerField( null=True)
+
+class slider(models.Model):
+    image1 = models.ImageField(upload_to='caroselslider', null=True, blank=True)
+    image2 = models.ImageField(upload_to='caroselslider', null=True, blank=True)
+    image3 = models.ImageField(upload_to='caroselslider', null=True, blank=True)

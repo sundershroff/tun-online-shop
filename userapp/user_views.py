@@ -1,4 +1,4 @@
-from TunShopApp.models import Product, Category, userRegistrationModel, CartItem,WishList,OrderList
+from TunShopApp.models import Product, Category, userRegistrationModel, CartItem,WishList,OrderList,slider
 from TunShopApp.forms import UserRegisterForm
 # from django.contrib import messages
 # from django.contrib.auth import authenticate, login, logout
@@ -15,6 +15,9 @@ from django.views.decorators.cache import never_cache
 
 @login_required(login_url="/my-account/")
 def user_logged_index(request,id):
+    #slider
+    sliderr = slider.objects.get(id = 1)
+    
     sarees = Product.objects.filter(category_id = 1)
     groceries = Product.objects.filter(category_id = 4)
     jewllery = Product.objects.filter(category_id = 2)
@@ -43,6 +46,7 @@ def user_logged_index(request,id):
          'sarees':sarees,
         'jewllery':jewllery,
         'groceries':groceries,
+        'sliderr':sliderr,
     }
     if request.method == "POST":
         if 'cart' in request.POST:

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="{% static 'csss/select_payment.css' %}" /><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -49,9 +50,7 @@
         </div>
 
         <div class="form__radio">
-          <label for="mastercard"><svg class="icon">
-              <use xlink:href="#icon-mastercard" />
-            </svg>COD</label>
+          <label for="mastercard"><i class="fa fa-money"  style=" color: green;"></i>COD</label>
           <input id="mastercard" name="payment-method" value="cod" type="radio" required/>
         </div>
       </div>

@@ -475,7 +475,7 @@
                                                 <th>Cart Subtotal</th>
                                                 <td><span class="amount">&#x20b9;{{total}}</span></td>
                                             </tr>
-                                            <tr class="shipping">
+                                            {% comment %} <tr class="shipping">
                                                 <th>Shipping</th>
                                                 <td>
                                                     <ul>
@@ -491,7 +491,7 @@
                                                         </li>
                                                     </ul>
                                                 </td>
-                                            </tr>
+                                            </tr> {% endcomment %}
                                             <tr class="order-total">
                                                 <th>Order Total</th>
                                                 <td><strong><span class="amount">&#x20b9;{{total}}.00</span></strong>

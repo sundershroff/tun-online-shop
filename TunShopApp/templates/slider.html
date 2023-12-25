@@ -470,128 +470,41 @@
               <form method="POST" enctype="multipart/form-data" class="needs-validation clearfix" novalidate="">
                 {% csrf_token %}
                 <div class="form-row">
-                  <div class="col-xl-12 col-md-12 ">
-                    <label for="validationCustom10">Product Name</label>
-                    <div class="input-group">
-                      <input type="text" name="name" class="form-control" id="validationCustom10" placeholder="Full Name" required="">
-                      <div class="invalid-feedback">
-                        Name
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-12 col-md-12">
-                    <label for="validationCustom17" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">Select Category </label>
-                    <div class="input-group">
-                      <select name="category" class="form-control" id="validationCustom15" required="Choose any one">
-                        {% for i in categories %}
-                        <option value="{{i.id}}">{{i.name}}</option>
-                        {% endfor %}
-                        <option value="3">Category 3</option>
-                        <option value="4">Category 4</option>
-                        <option value="5">Category 5</option>
-
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom17" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">original Price</label>
-                    <div class="input-group">
-                      <input type="text" name="original_price" class="form-control" id="validationCustom17" placeholder="Original Price" required="">
-                      <div class="invalid-feedback">
-                        Please provide unit
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom17" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">Selling Price</label>
-                    <div class="input-group">
-                      <input type="text" name="selling_price" class="form-control" id="validationCustom17" placeholder="Selling Price" required="">
-                      <div class="invalid-feedback">
-                        Please provide unit
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom16">Currency</label>
-                    <div class="input-group">
-                      <select class="form-control" id="validationCustom16" required="">
-                        <option value="">Dollar</option>
-                        <option value="">Pound</option>
-                        <option value="">Euro</option>
-
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a Month.
-                      </div>
-                    </div>
-                  </div> -->
-                  <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom18" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">Quantity</label>
-                    <div class="input-group">
-                      <input type="text" name="quantity" class="form-control" id="validationCustom18" placeholder="Quantity" required="">
-                      <div class="invalid-feedback">
-                        Please provide unit
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 align-self-center">
-                    <ul class="ms-list ms-list-display">
-
-
-                      <li class="mb-0">
-                        <label class="ms-switch">
-                          <input name="" type="checkbox">
-                          <span class="ms-switch-slider ms-switch-primary round"></span>
-                        </label>
-                        <span> Discount </span>
-                      </li>
-
-                    </ul>
-                  </div>
-                  <div class=" col-md-6 align-self-center">
-
-                    <div class="input-group">
-                      <input type="text" name="discount" class="form-control" id="validationCustom11" placeholder="Discount %">
-                      <div class="invalid-feedback" >
-                        Name
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom18" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">Net Weight</label>
-                    <div class="input-group">
-                      <input type="text" name="weight" class="form-control" id="validationCustom18" placeholder="Net Weight">
-                      <div class="invalid-feedback">
-                        Please provide unit
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-12">
-                    <label for="validationCustom18" data-toggle="tooltip" data-placement="left" title="3 digit number at the back of your card">Color</label>
-                    <div class="input-group">
-                      <input type="text" name="color" class="form-control" id="validationCustom18" placeholder=" Product Color">
-                      <div class="invalid-feedback">
-                        Please provide unit
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
-                    <label for="validationCustom12">Description</label>
-                    <div class="input-group">
-                      <textarea name="description" rows="5" id="validationCustom12" class="form-control" required=""></textarea>
-
-                    </div>
-                  </div>
                   <div class="col-md-12 ">
-                    <label for="validationCustom12">Upload Product Image</label>
+                    <label for="validationCustom12"> Image 1</label>
                     <div class="custom-file">
 
-                      <input type="file" name="image" class="custom-file-input" id="validatedCustomFile" required>
+                      <input type="file" name="image1" class="custom-file-input" id="validatedCustomFile" >
                       <label class="custom-file-label" for="validatedCustomFile">Upload Product Image..</label>
                       <div class="invalid-feedback">Example invalid custom file feedback</div>
                     </div>
+                  </div><br>
+                  <img src="{{key.image1.url}}" alt="">
+                
+
+                  <div class="col-md-12 ">
+                    <label for="validationCustom12"> Image 2</label>
+                    <div class="custom-file">
+
+                      <input type="file" name="image2" class="custom-file-input" id="validatedCustomFile" >
+                      <label class="custom-file-label" for="validatedCustomFile">Upload Product Image..</label>
+                      <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    </div>
+                    
+                  </div><br>
+                  <img src="{{key.image2.url}}" alt="">
+                  <div class="col-md-12 ">
+                    <label for="validationCustom12"> Image 3</label>
+                    <div class="custom-file">
+
+                      <input type="file" name="image3" class="custom-file-input" id="validatedCustomFile" >
+                      <label class="custom-file-label" for="validatedCustomFile">Upload Product Image..</label>
+                      <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    </div>
+                    
                   </div>
+                  <br>
+                  <img src="{{key.image3.url}}" alt="" >
                   <div class="col-md-12">
 
                     {% comment %} <button class="btn btn-dark mr-2  ms-graph-metrics">Delete</button> {% endcomment %}
