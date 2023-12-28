@@ -94,12 +94,16 @@ class Product(models.Model):
 
 
 class CartItem(models.Model):
-    product = models.ForeignKey(Product,to_field='id',db_column="product", on_delete=models.CASCADE,null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)
-    # user = models.ForeignKey(userRegistrationModel, on_delete=models.CASCADE)
-    user=models.TextField()
+    user = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
     total=models.IntegerField()
 
     def __str__(self):
         return f'{self.quantity} x {self.product.name}'
+
+class Wishlist(models.Model):
+    product=models.ForeignKey(Product, on_delete=models.CASCADE)
+    user=models.TextField()
+    date_added=models.DateTimeField(auto_now_add=True)

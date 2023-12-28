@@ -4,15 +4,15 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Tun Online Shop </title>
+      <title>Tun Foods  </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--       jquery validation-->
+       <!--       jquery validation-->
        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tunlogo.png' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
       <!-- CSS here -->
       <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
       <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
@@ -26,7 +26,7 @@
       <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
       <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
       <link rel="stylesheet" href="{% static 'csss/default.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/user_style.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/style.css' %}">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -129,7 +129,7 @@
       <!-- back to top end -->
       
        <!-- header-start -->
-       {% include 'nav.html' %}
+       {% include "header.html" %}
        <!-- header-end --> 
 
     <!-- offcanvas area start -->
@@ -142,8 +142,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
-                    <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
+                <a href="/Restaurant/">
+                    <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:40%" class="rounded mx-auto d-block">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -165,7 +165,7 @@
 
     <main>
         <!-- page-banner-area-start -->
-        <div class="page-banner-area page-banner-height-2" data-background="assets/img/banner/page-banner-4.jpg">
+        <div class="page-banner-area page-banner-height-2" data-background="{% static 'image/page-banner-4.jpg' %]">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -176,7 +176,7 @@
                                    <nav class="breadcrumb-trail breadcrumbs">
                                       <ul class="breadcrumb-menu">
                                          <li class="breadcrumb-trail">
-                                            <a href="/index/"><span>Home</span></a>
+                                            <a href="/Restaurant/"><span>Home</span></a>
                                          </li>
                                          <li class="trail-item">
                                             <span>My account</span>
@@ -202,26 +202,31 @@
                             <form id="myform" method="POST">
                                 {% csrf_token %}
                                 <label for="name">Username or email address  <span>*</span></label>
-                                <input id="name" type="text" name="email" placeholder="Enter Username"><br>
+                                <input id="name" type="text" name="name" placeholder="Enter Username">
                                 <label for="pass">Password <span>*</span></label>
                                 <input id="pass" type="password" name="password" placeholder="Enter password...">
                                 <div class="login-action mb-10 fix">
                                     <span class="log-rem f-left">
                                        <input id="remember" type="checkbox">
                                        <label for="remember">Remember me</label>
+
                                     </span>
                                     <span class="forgot-login f-right">
                                        <a href="#">Lost your password?</a>
                                     </span>
                                 </div>
-                                <p style="color:red"><b>{{error}}</b></p>
-                                <button type="submit" class="tp-in-btn w-100">Log In</button>
+                                <p style="color:red"><b>your email or password was wrong</b></p>
+                                <a href="/Restaurant/"><input type="button" value="login" name="submit" class="tp-in-btn w-100"></a>
                             </form>
                         </div>
                     </div> -->
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-6">
                         <div class="basic-login">
-                            <h5>Edit Profile</h5>
+                            <h5>Edit Profile
+
+
+                                
+                            </h5>
                             <form id="register" method="POST">
                                 {% csrf_token %}
                                 <label for="username">Username or email address  <span>*</span></label>
@@ -321,7 +326,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">New Customer</a></li>
+                                                    <li><a href="/Restaurant/">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -343,10 +348,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">Help Center</a></li>
-                                                    <li><a href="/index/">Contact Us</a></li>
-                                                    <li><a href="/index/">Complaints</a></li>
-                                                    <li><a href="/index/">Payment Methods</a></li>
+                                                    <li><a href="/Restaurant/">Help Center</a></li>
+                                                    <li><a href="/Restaurant/">Contact Us</a></li>
+                                                    <li><a href="/Restaurant/">Complaints</a></li>
+                                                    <li><a href="/Restaurant/">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -372,10 +377,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/index/">Terms and conditions</a></li>
-                                                                <li><a href="/index/">Privacy Policy</a></li>
-                                                                <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/index/">Cancellation & Refund</a></li>
+                                                                <li><a href="/Restaurant/">Terms and conditions</a></li>
+                                                                <li><a href="/Restaurant/">Privacy Policy</a></li>
+                                                                <li><a href="/Restaurant/">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="/Restaurant/">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -418,14 +423,11 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/index/">Rooms</a>
-                                        <a href="/index/">Sarees</a>
-                                        <a href="/index/">Tun Foods</a>
-                                        <a href="/index/">Groceries</a>
-                                        <a href="/index/">Fasion Jewellery</a>
-                                        <a href="/index/">Real Estate</a>
-                                        <a href="/index/">Most Populars</a>
-                                        <a href="/index/">Others</a>
+                                        <a href="/Restaurant/">Restaurants</a>
+                                        <a href="/Grocery/">Grocery</a>
+                                        <a href="/fruits_vegetables/">Fruits & Vegetables</a>
+                                        <a href="/Restaurant/">Food Products</a>
+                                    
                                        
                                      
                                            </div>
@@ -443,35 +445,24 @@
         </div>
     </footer>
     <!-- footer-end -->
-
-<!--      validation-->
+      <!--      validation-->
       <script>
-    jQuery.validator.setDefaults({
-      debug: true,
-      success: "valid"
-    });
-    $("#myform").validate({
-      rules: {
-        email: {
-          required: true
-        },
-        password: {
-          required: true
-        }
-
-      },
-      submitHandler: function (form) {
-        form.submit();
-      }
-    });
-      </script>
-<script>
-        jQuery.validator.setDefaults({
-      debug: true,
-      success: "valid"
-    });
-
-      $("#register").validate({
+          jQuery.validator.setDefaults({
+              debug: true,
+              success: "valid"
+            });
+            $( "#myform" ).validate({
+              rules: {
+                email: {
+                  required: true
+                },
+                password: {
+                   required: true,
+                   minlength: 6
+                }
+              }
+            });
+            $("#register").validater({
               rules: {
                 name: {
                    required: true,
@@ -519,17 +510,14 @@
                    required: true,
                    minlength: 6
                 }
-              },
-              submitHandler: function (form) {
-        form.submit();
-      }
-
+              }
             });
+      </script>
 
-</script>
+
       <!-- JS here -->
       <script src="{% static 'jss/jquery.js' %}"></script>
-      <script src="% static 'jss/waypoints.js' %}"></script>
+      <script src="{% static 'jss/waypoints.js' %}"></script>
       <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
       <script src="{% static 'jss/meanmenu.js' %}"></script>
       <script src="{% static 'jss/swiper-bundle.js' %}"></script>
@@ -546,5 +534,6 @@
       <script src="{% static 'jss/imagesloaded-pkgd.js' %}"></script>
       <script src="{% static 'jss/ajax-form.js' %}"></script>
       <script src="{% static 'jss/main.js' %}"></script>
+
    </body>
 </html>

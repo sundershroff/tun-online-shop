@@ -176,39 +176,39 @@ def add_product(request):
             category = request.POST['category']
             name = request.POST['name']
             image = request.FILES['image']
-            color = request.POST['color']
+            # color = request.POST['color']
             weight = request.POST['weight']
             quantity = request.POST['quantity']
             original_price = request.POST['original_price']
             selling_price = request.POST['selling_price']
-            discount = request.POST['discount']
-            description = request.POST['description']
+            # discount = request.POST['discount']
+            # description = request.POST['description']
             #weight
             if weight == "":
                 weight1 = "empty"
             else:
                 weight1 = request.POST['weight']
-            #color
-            if color == "":
-                color1 = "empty"
+            # original_price
+            if original_price == "":
+                original_price1 = "0"
             else:
-                color1 = color
+                original_price1 = request.POST['original_price']
             #discount
-            if discount == "":
-                discount1 = 0
-            else:
-                discount1 = request.POST['discount']
+            # if discount == "":
+            #     discount1 = 0
+            # else:
+            #     discount1 = request.POST['discount']
 
             data = {
                 "category": category,
                 "name": name,
                 # "image": image,
-                "color": color1,
+                # "color": color1,
                 "quantity": quantity,
-                "original_price": original_price,
+                "original_price": original_price1,
                 "selling_price": selling_price,
-                "discount": discount1,
-                "description": description,
+                # "discount": discount1,
+                # "description": description,
                 "weight": weight1,
                 'status':"on"
             }

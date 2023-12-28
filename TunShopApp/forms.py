@@ -20,8 +20,8 @@ class ProductForm(ModelForm):
     class Meta:
         model = models.Product
         # fields = "__all__"
-        fields = ['name', 'image', 'color', 'weight', 'quantity', 'original_price', 'selling_price',
-                  'discount', 'description', 'category','status']
+        fields = ['name', 'image', 'weight', 'quantity', 'original_price', 'selling_price',
+                   'category','status']
 
 
 class SliderImageForm(ModelForm):

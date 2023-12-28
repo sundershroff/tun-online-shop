@@ -4,25 +4,26 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Tun Online Shop</title>
+      <title>Tun_foods</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{% static '' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tun_foods.png' %}">
       <!-- CSS here -->
-      <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/meanmenu.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/animate.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/owl-carousel.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/swiper-bundle.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/backtotop.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/magnific-popup.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/nice-select.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/default.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/user_style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/preloader.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+      <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+      <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+      <link rel="stylesheet" href="{% static 'css/swiper-bundle.css' %}">
+      <link rel="stylesheet" href="{% static 'css/backtotop.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui-range-slider.css' %}">
+      <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+      <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+      <link rel="stylesheet" href="{% static 'flaticon/flaticon.css' %}">
+      <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}">
+      <link rel="stylesheet" href="{% static 'css/default.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -123,9 +124,549 @@
          </svg>
       </div>
       <!-- back to top end -->
+      <header class="header d-blue-bg" style="background-color: #681768">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="header-inner-start">
+                                 <div class="header__currency border-right">
+                                    <div class="s-name">
+                                        <span>Language: </span>
+                                    </div>
+                                    <select>
+                                        <option>English</option>
+                                        <option>Deutsch</option>
+                                        <option>Français</option>
+                                        <option>Espanol</option>
+                                    </select>
+                                </div>
+                                <div class="header__lang border-right">
+                                    <div class="s-name">
+                                        <span>Currency: </span>
+                                    </div>
+                                    <select>
+                                        <option> USD</option>
+                                        <option>EUR</option>
+                                        <option>INR</option>
+                                        <option>BDT</option>
+                                        <option>BGD</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="support d-none d-sm-block">
+                                    <p>Need Help? <a href="tel:+001123456789">+91 98947 09871 </a></p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                            <div class="header-inner-end text-md-end">
+                                <div class="ovic-menu-wrapper">
+                                    <ul>
+                                        <li><a href="/about/">About Us</a></li>
+                                         <!-- <li><a href="contact.html">Order Tracking</a></li>  -->
+                                         <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li>
+                                             <!-- <li><a href="index_Restaurant.html">indexs</a></li>  -->
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mid">
+            <div class="container">
+                <div class="heade-mid-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                            <div class="header__info">
+                                <div class="logo">
+                                    <a href="/Restaurant/" class="logo-image"><img src="{% static 'image/tun_foods.png' %}" class="rounded mx-auto d-block" alt="logo"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="header__search">
+                                <form action="#">
+                                    <div class="header__search-box">
+                                        <input class="search-input" type="text" placeholder="I'm shopping for...">
+                                        <button class="button" type="submit"><i class="far fa-search"></i></button>
+                                    </div>
+                                    <div class="header__search-cat">
+                                        <select>
+                                            <option>All Categories</option>
+                                            <option>Restaurants</option>
+                                            <option>Grocery</option>
+                                            <option>Furits & Vegetables </option>
+                                            <option>Food Products</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8">
+                            <div class="header-action">
+                                <div class="block-userlink">
+                                    <a class="icon-link" href="/my_account/">
+                                    <i class="fas fa-user-alt"></i>
+                                    <span class="text">
+                                    <span class="sub">Login </span>
+                                    My Account </span>
+                                    </a>
+                                </div>
+                                <div class="block-wishlist action">
+                                    <a class="icon-link" href="/wishlist/">
+                                    <i class="fa fa-heart"></i>
+                                    <span class="count">0</span>
+                                    <span class="text">
+                                    <span class="sub">Favorite</span>
+                                    My Wishlist </span>
+                                    </a>
+                                </div>
+                                <div class="block-cart action">
+                                    <a class="icon-link" href="/cart/">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span class="count">1</span>
+                                    <span class="text">
+                                    <span class="sub">Your Cart:</span>
+                                    &#x20b9;00.00 </span>
+                                    </a>
+                                    <div class="cart">
+                                        <div class="cart__mini">
+                                            <ul>
+                                                <li>
+                                                  <div class="cart__title">
+                                                    <h4>Your Cart</h4>
+                                                    <span>(1 Item in Cart)</span>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="cart__item d-flex justify-content-between align-items-center">
+                                                    <div class="cart__inner d-flex">
+                                                      <div class="cart__thumb">
+                                                        <a href="/product-details/">
+                                                          <img src="{% static 'image/20.jpg' %}" alt="">
+                                                        </a>
+                                                      </div>
+                                                      <div class="cart__details">
+                                                        <h6><a href="/product-details/"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
+                                                        <div class="cart__price">
+                                                          <span>&#x20b9;255.00</span>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="cart__del">
+                                                        <a href="#"><i class="fal fa-times"></i></a>
+                                                    </div>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="cart__sub d-flex justify-content-between align-items-center">
+                                                    <h6>Subtotal</h6>
+                                                    <span class="cart__sub-total">&#x20b9;255.00</span>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                    <a href="/cart/" class="wc-cart mb-10">View cart</a>
+                                                    <a href="/checkout/" class="wc-checkout">Checkout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <div class="row g-0 align-items-center" style="background-color: #681768;">
+                    <div class="col-lg-3">
+                        <div class="cat__menu-wrapper side-border d-none d-lg-block">
+                            <div class="cat-toggle">
+                                <button type="button" class=" cat-toggle-btn-1" style="background-color: #ffc107;color: black;"><i class="fal fa-bars"></i> Shop by Categories</button>
+                                <!-- cat-toggle-btn -->
+                                <div class="cat__menu">
+                                    <nav id="mobile-menu" style="display: block;">
+                                        <ul>
+                                             <li><a href="/shop/">Shop by Categories</a></li>
+                                            <li><a href="/Restaurant/">RESTAURANTS</a></li>
+                                            <li><a href="/Grocery/">GROCERY </a></li>
+                                            <li><a href="/fruits_vegetables/">FRUITS AND VEGETABLES</a></li>
+                                            <li><a href="/Grocery/">FOOD PRODUCTS</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-6 col-3">
+                      <div class="header__bottom-left d-flex d-xl-block align-items-center">
+                        <div class="side-menu d-lg-none mr-20">
+                          <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>
+                        </div>
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul>
+
+                                    <li><a href="/Restaurant/">RESTAURANTS</a></li>
+                                    <li><a href="/Grocery/">GROCERY </a></li>
+                                    <li><a href="/fruits_vegetables/">FRUITS AND VEGITABLE</a></li>
+                                    <li><a href="/Grocery/">FOOD PRODUCTS</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-9">
+                        <!-- <div class="shopeing-text text-sm-end">
+                            <p>Spend &#x20b9;120 more and get free shipping!</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
       
         <!-- header-start -->
-        {% include 'nav.html' %}
+<!--        <header class="header d-blue-bg" style="background-color: #681768;">-->
+<!--            <div class="header-top">-->
+<!--                <div class="container">-->
+<!--                    <div class="header-inner">-->
+<!--                        <div class="row align-items-center">-->
+<!--                            <div class="col-xl-6 col-lg-7">-->
+<!--                                <div class="header-inner-start">-->
+<!--                                     <div class="header__currency border-right">-->
+<!--                                        <div class="s-name">-->
+<!--                                            <span>Language: </span>-->
+<!--                                        </div>-->
+<!--                                        <select>-->
+<!--                                            <option>English</option>-->
+<!--                                            <option>Deutsch</option>-->
+<!--                                            <option>Français</option>-->
+<!--                                            <option>Espanol</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="header__lang border-right">-->
+<!--                                        <div class="s-name">-->
+<!--                                            <span>Currency: </span>-->
+<!--                                        </div>-->
+<!--                                        <select>-->
+<!--                                            <option>USD</option>-->
+<!--                                            <option>EUR</option>-->
+<!--                                            <option>INR</option>-->
+<!--                                            <option>BDT</option>-->
+<!--                                            <option>BGD</option>-->
+<!--                                        </select>-->
+<!--                                    </div> -->
+<!--                                    &lt;!&ndash; <div class="support d-none d-sm-block">-->
+<!--                                        <p>Need Help? <a href="tel:+001123456789">+91 98947 09871 </a></p>-->
+<!--                                    </div> &ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-xl-6 col-lg-5 d-none d-lg-block">-->
+<!--                                <div class="header-inner-end text-md-end">-->
+<!--                                    <div class="ovic-menu-wrapper">-->
+<!--                                        <ul>-->
+<!--                                            <li><a href="about.html">About Us</a></li>-->
+<!--                                             &lt;!&ndash; <li><a href="contact.html">Order Tracking</a></li>  &ndash;&gt;-->
+<!--                                             <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li> -->
+<!--                                                 &lt;!&ndash; <li><a href="faq.html">FAQs</a></li>  &ndash;&gt;-->
+<!--                                         </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div> -->
+<!--            <div class="header-mid">-->
+<!--                <div class="container">-->
+<!--                    <div class="heade-mid-inner">-->
+<!--                        <div class="row align-items-center">-->
+<!--                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">-->
+<!--                                <div class="header__info">-->
+<!--                                    <div class="logo">-->
+<!--                                        <a href="index.html" class="logo-image"><img src="{% static 'image/tunlogo.png' %}" alt="logo"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-xl-5 col-lg-4 d-none d-lg-block">-->
+<!--                                <div class="header__search">-->
+<!--                                    <form action="#">-->
+<!--                                        <div class="header__search-box">-->
+<!--                                            <input class="search-input" type="text" placeholder="I'm shopping for...">-->
+<!--                                            <button class="button" type="submit"><i class="far fa-search"></i></button>-->
+<!--                                        </div>-->
+<!--                                        <div class="header__search-cat">-->
+<!--                                            <select>-->
+<!--                                            <option>All Categories</option>-->
+<!--                                            <option>Rooms</option>-->
+<!--                                            <option>Sarees</option>-->
+<!--                                            <option>Tun Foods</option>-->
+<!--                                            <option>Groceries</option>-->
+<!--                                            <option>Fashion Jewellery</option>-->
+<!--                                            <option>Real Estate</option>-->
+<!--                                            <option>Others</option>-->
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8">-->
+<!--                                <div class="header-action">-->
+<!--                                    <div class="block-userlink">-->
+<!--                                        <a class="icon-link" href="my-account.html">-->
+<!--                                        <i class="fas fa-user-alt"></i>-->
+<!--                                        <span class="text">-->
+<!--                                        <span class="sub">Login </span>-->
+<!--                                        My Account </span>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <div class="block-wishlist action">-->
+<!--                                        <a class="icon-link" href="wishlist.html">-->
+<!--                                        <i class="fa fa-heart"></i>-->
+<!--                                        <span class="count">0</span>-->
+<!--                                        <span class="text">-->
+<!--                                        <span class="sub">Favorite</span>-->
+<!--                                        My Wishlist </span>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <div class="block-cart action">-->
+<!--                                        <a class="icon-link" href="cart.html">-->
+<!--                                        <i class="fa fa-shopping-cart"></i>-->
+<!--                                        <span class="count">1</span>-->
+<!--                                        <span class="text">-->
+<!--                                        <span class="sub">Your Cart:</span>-->
+<!--                                        &#x20b9;00.00 </span>-->
+<!--                                        </a>-->
+<!--                                        <div class="cart">-->
+<!--                                            <div class="cart__mini">-->
+<!--                                                <ul>-->
+<!--                                                    <li>-->
+<!--                                                      <div class="cart__title">-->
+<!--                                                        <h4>Your Cart</h4>-->
+<!--                                                        <span>(1 Item in Cart)</span>-->
+<!--                                                      </div>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                      <div class="cart__item d-flex justify-content-between align-items-center">-->
+<!--                                                        <div class="cart__inner d-flex">-->
+<!--                                                          <div class="cart__thumb">-->
+<!--                                                            <a href="product-details.html">-->
+<!--                                                              <img src="{% static 'image/cart/20.jpg' %}" alt="">-->
+<!--                                                            </a>-->
+<!--                                                          </div>-->
+<!--                                                          <div class="cart__details">-->
+<!--                                                            <h6><a href="product-details.html"> Samsung C49J89: £875, Debenhams Plus  </a></h6>-->
+<!--                                                            <div class="cart__price">-->
+<!--                                                              <span>&#x20b9;255.00</span>-->
+<!--                                                            </div>-->
+<!--                                                          </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="cart__del">-->
+<!--                                                            <a href="#"><i class="fal fa-times"></i></a>-->
+<!--                                                        </div>-->
+<!--                                                      </div>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                      <div class="cart__sub d-flex justify-content-between align-items-center">-->
+<!--                                                        <h6>Subtotal</h6>-->
+<!--                                                        <span class="cart__sub-total">&#x20b9;255.00</span>-->
+<!--                                                      </div>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="cart.html" class="wc-cart mb-10">View cart</a>-->
+<!--                                                        <a href="checkout.html" class="wc-checkout">Checkout</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="header__bottom">-->
+<!--                <div class="container">-->
+<!--                    <div class="row g-0 align-items-center" style="background-color: #681768;">-->
+<!--                        <div class="col-lg-3">                        -->
+<!--                            <div class="cat__menu-wrapper side-border d-none d-lg-block">-->
+<!--                                <div class="cat-toggle">-->
+<!--                                    <button type="button" class=" cat-toggle-btn-1" style="background-color: #ffc107;color: black;"><i class="fal fa-bars"></i> Shop by Categories</button>-->
+<!--                                    &lt;!&ndash; cat-toggle-btn &ndash;&gt;-->
+<!--                                    <div class="cat__menu">-->
+<!--                                        <nav id="mobile-menu" style="display: block;">-->
+<!--                                            <ul>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">Shop by Categories <i class="far fa-angle-down"></i></a>-->
+<!--                                                   -->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">ROOMS <i class="far fa-angle-down"></i></a>-->
+<!--                                                    -->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">SAREES -->
+<!--                                                    </a>-->
+<!--                                                   -->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">TUN FOODS-->
+<!--                                                        -->
+<!--                                                    </a>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">GROCERIES <i class="far fa-angle-down"></i></a>-->
+<!--                                                    <ul class="submenu">-->
+<!--                                                        <li><a href="shop.html">Ready To Cook</a></li>-->
+<!--                                                        <li><a href="shop.html">Beauty Care</a>-->
+<!--                                                        <li><a href="shop.html">Snacks</a></li>-->
+<!--                                                        <li><a href="shop.html">Baby Care</a></li>-->
+<!--                                                        <li><a href="shop.html">Cooking Essentials</a></li>-->
+<!--                                                        <li><a href="shop.html">Household Needs</a></li>-->
+<!--                                                        <li><a href="shop.html">Beverage</a></li>-->
+<!--                                                        <li><a href="shop.html">Readymade Foods</a></li>-->
+<!--                                                        <li><a href="shop.html">Dairy Products</a></li>-->
+<!--                                                        <li><a href="shop.html">Stationary</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="shop.html">FASION JEWELLERY</a></li>-->
+<!--                                                <li><a href="shop.html">REAL ESTATE</a></li>-->
+<!--                                                <li>-->
+<!--                                                    <a href="shop.html">oTHERS <i class="far fa-angle-down"></i></a>-->
+<!--                                                    <ul class="submenu">-->
+<!--                                                        <li><a href="shop.html">Constructions-Architecs</a></li>-->
+<!--                                                        <li><a href="shop.html">Consumer Products</a>-->
+<!--                                                        <li><a href="shop.html">Direct From Makers</a></li>-->
+<!--                                                        <li><a href="shop.html">Event Management</a></li>-->
+<!--                                                        <li><a href="shop.html">Electronics</a></li>-->
+<!--                                                        <li><a href="shop.html">Scraps</a></li>-->
+<!--                                                        <li><a href="shop.html">Stationary</a></li>-->
+<!--                                                        <li><a href="shop.html">Used Premium Cars</a></li>-->
+<!--                                                        <li><a href="shop.html">Unique Products</a></li>-->
+<!--                                                        -->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                             -->
+<!--                                            </ul>-->
+<!--                                        </nav>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-8 col-md-6 col-3">-->
+<!--                          <div class="header__bottom-left d-flex d-xl-block align-items-center">-->
+<!--                            <div class="side-menu d-lg-none mr-20">-->
+<!--                              <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>-->
+<!--                            </div>-->
+<!--                            <div class="main-menu d-none d-lg-block">-->
+<!--                                <nav>-->
+<!--                                    <ul>-->
+<!--                                        <li>-->
+<!--                                            <a href="index.html" class="">Rooms </a>-->
+<!--                                            &lt;!&ndash; <ul class="megamenu-1">-->
+<!--                                                <li><a href="index.html">Home Pages</a>-->
+<!--                                                    <ul class="mega-item">-->
+<!--                                                        <li><a href="index.html" class="active">Home One</a></li>-->
+<!--                                                        <li><a href="index-2.html">Home Two</a></li>-->
+<!--                                                        <li><a href="index-3.html">Home Three</a></li>-->
+<!--                                                        <li><a href="product-details.html">Shop 3 Column</a></li>-->
+<!--                                                        <li><a href="product-details.html">Shop 4 Column</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="shop.html">Product Pages</a>-->
+<!--                                                    <ul class="mega-item">-->
+<!--                                                        <li><a href="product-details.html">Product Details</a></li>-->
+<!--                                                        <li><a href="product-details.html">Product V2</a></li>-->
+<!--                                                        <li><a href="product-details.html">Product V3</a></li>-->
+<!--                                                        <li><a href="product-details.html">Varriable Product</a></li>-->
+<!--                                                        <li><a href="product-details.html">External Product</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="shop.html">Other Pages</a>-->
+<!--                                                    <ul class="mega-item">-->
+<!--                                                        <li><a href="product-details.html">wishlist</a></li>-->
+<!--                                                        <li><a href="product-details.html">Shopping Cart</a></li>-->
+<!--                                                        <li><a href="product-details.html">Checkout</a></li>-->
+<!--                                                        <li><a href="product-details.html">Login</a></li>-->
+<!--                                                        <li><a href="product-details.html">Register</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="shop.html">Phone &amp; Tablets</a>-->
+<!--                                                    <ul class="mega-item">-->
+<!--                                                        <li><a href="product-details.html">Catagory 1</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 2</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 3</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 4</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="shop.html">Phone &amp; Tablets</a>-->
+<!--                                                    <ul class="mega-item">-->
+<!--                                                        <li><a href="product-details.html">Catagory 1</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 2</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 3</a></li>-->
+<!--                                                        <li><a href="product-details.html">Catagory 4</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                            </ul> &ndash;&gt;-->
+<!--                                        </li>-->
+<!--                                        <li><a href="about.html">Sarees</a></li>-->
+<!--                                        <li><a href="about.html">Tun Foods</a></li>-->
+<!--    -->
+<!--                                        <li><a href="blog.html">Groceries <i class="far fa-angle-down"></i></a>-->
+<!--                                            <ul class="submenu">-->
+<!--                                                <li><a href="" style="width: max-content;">Ready To Cook</a></li>-->
+<!--                                                <li><a href="">Beauty Care</a></li>-->
+<!--                                                <li><a href="">Snacks  </a></li>-->
+<!--                                                <li><a href="">Baby Care </a></li>-->
+<!--                                                <li><a href="">Cooking Essentials</a></li>-->
+<!--                                                <li><a href="">Household Needs</a></li>-->
+<!--                                                <li><a href="">Beverage</a></li>-->
+<!--                                                <li><a href="">Readymade Foods  </a></li>-->
+<!--                                                <li><a href="">Dairy Products</a></li>-->
+<!--                                                <li><a href="">Stationary</a></li>-->
+<!--    -->
+<!--    -->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="about.html">Fashion Jewellery</a></li>-->
+<!--    -->
+<!--                                        <li><a href="about.html">Real Estate</a></li>-->
+<!--    -->
+<!--                                        <li><a href="blog.html">Others <i class="far fa-angle-down"></i></a>-->
+<!--                                            <ul class="submenu">-->
+<!--                                                <li><a href="" style="width: max-content;">Constructions-Architecs</a></li>-->
+<!--                                                <li><a href="">Consumer products</a></li>-->
+<!--                                                <li><a href="">Direct From Makers</a></li>-->
+<!--                                                <li><a href="">Event Management</a></li>-->
+<!--                                                <li><a href="">Electronics</a></li>-->
+<!--                                                <li><a href="">Scraps</a></li>-->
+<!--                                                <li><a href="">Stationary</a></li>-->
+<!--                                                <li><a href="">Used Premium Cars</a></li>-->
+<!--                                                <li><a href="">Unique Products</a></li>-->
+<!--    -->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </nav>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-3 col-md-6 col-9">-->
+<!--                            &lt;!&ndash; <div class="shopeing-text text-sm-end">-->
+<!--                                <p>Spend &#x20b9;120 more and get free shipping!</p>-->
+<!--                            </div> &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </header>-->
         <!-- header-end --> 
 
     <!-- offcanvas area start -->
@@ -138,8 +679,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
-                    <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
+                <a href="index.html">
+                    <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:50%">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -161,7 +702,7 @@
 
     <main>
         <!-- page-banner-area-start -->
-        <div class="page-banner-area page-banner-height" data-background="assets/img/banner/page-banner-1.jpg">
+        <div class="page-banner-area page-banner-height" data-background="{% static 'imagepage-banner-1.jpg' %}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -169,7 +710,7 @@
                             <h3>About Us</h3>
                             <p>A wonderful serenity has taken possession of my entire soul, like these <br> sweet mornings of spring which I enjoy with my whole heart.</p>
                             <div class="page-bottom-btn mt-55">
-                                <a href="/shop/" class="st-btn-4">Discover now</a>
+                                <a href="shop.html" class="st-btn-4">Discover now</a>
                             </div>
                         </div>
                     </div>
@@ -659,11 +1200,11 @@
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
-                                                <li><a href="/index/">New Customer</a></li>
-                                                <li><a href="/checkout/">Checkout</a></li>
-                                                <li><a href="/checkout/">Orders</a></li>
-                                                <li><a href="/cart/">Shopping Cart</a></li>
-                                                <li><a href="/wishlist/">Wishlist</a></li>
+                                                <li><a href="index.html">New Customer</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="checkout.html">Orders</a></li>
+                                                <li><a href="cart.html">Shopping Cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -681,10 +1222,10 @@
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
-                                                <li><a href="/index/">Help Center</a></li>
-                                                <li><a href="/index/">Contact Us</a></li>
-                                                <li><a href="/index/">Complaints</a></li>
-                                                <li><a href="/index/">Payment Methods</a></li>
+                                                <li><a href="index.html">Help Center</a></li>
+                                                <li><a href="index.html">Contact Us</a></li>
+                                                <li><a href="index.html">Complaints</a></li>
+                                                <li><a href="index.html">Payment Methods</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -710,10 +1251,10 @@
                                                 <div class="footer__widget-content">
                                                     <div class="footer__link">
                                                         <ul>
-                                                            <li><a href="/index/">Terms and conditions</a></li>
-                                                            <li><a href="/index/">Privacy Policy</a></li>
-                                                            <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                            <li><a href="/index/">Cancellation & Refund</a></li>
+                                                            <li><a href="index.html">Terms and conditions</a></li>
+                                                            <li><a href="index.html">Privacy Policy</a></li>
+                                                            <li><a href="index.html">Shipping & Delivery Policies</a></li>
+                                                            <li><a href="index.html">Cancellation & Refund</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -756,19 +1297,19 @@
                         <div class="col-xl-12">
                             <div class="footer__links text-center mb-25">
                                 <p>
-                                    <a href="/index/">Rooms</a>
-                                    <a href="/index/">Sarees</a>
-                                    <a href="/index/">Tun Foods</a>
-                                    <a href="/index/">Groceries</a>
-                                    <a href="/index/">Fasion Jewellery</a>
-                                    <a href="/index/">Real Estate</a>
-                                    <a href="/index/">Most Populars</a>
-                                    <a href="/index/">Others</a>
+                                    <a href="index.html">Rooms</a>
+                                    <a href="index.html">Sarees</a>
+                                    <a href="index.html">Tun Foods</a>
+                                    <a href="index.html">Groceries</a>
+                                    <a href="index.html">Fasion Jewellery</a>
+                                    <a href="index.html">Real Estate</a>
+                                    <a href="index.html">Most Populars</a>
+                                    <a href="index.html">Others</a>
                                    
                                  
                                        </div>
                             <div class="payment-image text-center mb-25">
-                                <a href="/contact/"><img src="{% static 'image/payment.png' %}" alt=""></a>
+                                <a href="contact.html"><img src="{% static 'image/payment.png' %}" alt=""></a>
                             </div>
                             <div class="copy-right-area text-center">
                                 <p>Copyright © <span>tunonlineshop.com.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Clovion Tech Solutions Pvt. Ltd.</span></a></p>
@@ -782,23 +1323,25 @@
 </footer>
 <!-- footer-end -->
       <!-- JS here -->
-      <script src="{% static 'jss/jquery.js' %}"></script>
-      <script src="% static 'jss/waypoints.js' %}"></script>
-      <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
-      <script src="{% static 'jss/meanmenu.js' %}"></script>
-      <script src="{% static 'jss/swiper-bundle.js' %}"></script>
-      <script src="{% static 'jss/tweenmax.js' %}"></script>
-      <script src="{% static 'jss/owl-carousel.js' %}"></script>
-      <script src="{% static 'jss/magnific-popup.js' %}"></script>
-      <script src="{% static 'jss/parallax.js' %}"></script>
-      <script src="{% static 'jss/backtotop.js' %}"></script>
-      <script src="{% static 'jss/nice-select.js' %}"></script>
-      <script src="{% static 'jss/countdown.min.js' %}"></script>
-      <script src="{% static 'jss/counterup.js' %}"></script>
-      <script src="{% static 'jss/wow.js' %}"></script>
-      <script src="{% static 'jss/isotope-pkgd.js' %}"></script>
-      <script src="{% static 'jss/imagesloaded-pkgd.js' %}"></script>
-      <script src="{% static 'jss/ajax-form.js' %}"></script>
-      <script src="{% static 'jss/main.js' %}"></script>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script src="{% static 'js/jquery.js' %}"></script>
+      <script src="{% static 'js/waypoints.js' %}"></script>
+      <script src="{% static 'js/bootstrap-bundle.js' %}"></script>
+      <script src="{% static 'js/meanmenu.js' %}"></script>
+      <script src="{% static 'js/swiper-bundle.js' %}"></script>
+      <script src="{% static 'js/tweenmax.js' %}"></script>
+      <script src="{% static 'js/owl-carousel.js' %}"></script>
+      <script src="{% static 'js/magnific-popup.js' %}"></script>
+      <script src="{% static 'js/parallax.js' %}"></script>
+      <script src="{% static 'js/backtotop.js' %}"></script>
+      <script src="{% static 'js/nice-select.js' %}"></script>
+      <script src="{% static 'js/countdown.min.js' %}"></script>
+      <script src="{% static 'js/counterup.js' %}"></script>
+      <script src="{% static 'js/ui-slider-range.js' %}"></script>
+      <script src="{% static 'js/wow.js' %}"></script>
+      <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+      <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+      <script src="{% static 'js/ajax-form.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
    </body>
 </html>

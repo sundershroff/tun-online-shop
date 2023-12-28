@@ -4,11 +4,11 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Tun Online Shop </title>
+      <title>Tun Foods  </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tunlogo.png' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
       <!-- CSS here -->
       <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
       <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
@@ -22,7 +22,7 @@
       <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
       <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
       <link rel="stylesheet" href="{% static 'csss/default.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/user_style.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/style.css' %}">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -125,7 +125,7 @@
       <!-- back to top end -->
       
         <!-- header-start -->
-        {% include 'nav.html' %}
+        {% include "header.html" %}
         <!-- header-end --> 
 
     <!-- offcanvas area start -->
@@ -138,8 +138,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
-                    <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
+                <a href="/Restaurant/">
+                    <img src="{% static 'images/tun_foods.png' %}" alt="logo" style="width:40%" class="rounded mx-auto d-block">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -161,7 +161,7 @@
 
     <main>
         <!-- page-banner-area-start -->
-        <div class="page-banner-area page-banner-height-2" data-background="assets/img/banner/page-banner-4.jpg">
+        <div class="page-banner-area page-banner-height-2" data-background="{% static 'images/page-banner-4.jpg' %}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -172,7 +172,7 @@
                                    <nav class="breadcrumb-trail breadcrumbs">
                                       <ul class="breadcrumb-menu">
                                          <li class="breadcrumb-trail">
-                                            <a href="/user_index/"><span>Home</span></a>
+                                            <a href="/Restaurant/"><span>Home</span></a>
                                          </li>
                                          <li class="trail-item">
                                             <span>Wishlist</span>
@@ -193,6 +193,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <form action="#">
                             <div class="table-content table-responsive">
                                 <table class="table">
                                     <thead>
@@ -203,33 +204,33 @@
                                             <th class="product-quantity">Quantity</th>
                                             <th class="product-subtotal">Total</th>
                                             <th class="product-remove">Remove</th>
-                                            <th class="product-remove">Add to Cart</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for i in data %}
-                                        <form method="post">
-{% csrf_token %}
                                         <tr>
-                                            <td class="product-thumbnail"><a href="/product-details/{{my_data.uid}}/{{i.product.uid}}"><img src="{{i.product.image.url}}" alt=""></a></td>
-                                            <td class="product-name"><a href="/product-details/{{my_data.uid}}/{{i.product.uid}}">{{i.product.name}}</a></td>
-                                            <td class="product-price"><span class="amount">&#x20b9;{{i.product.selling_price}}</span></td>
+                                            <td class="product-thumbnail"><a href="/shop-details/"><img src="{% static 'img/cart/shop-p-10.jpg' %}" alt=""></a></td>
+                                            <td class="product-name"><a href="/shop-details/">Light Jacket</a></td>
+                                            <td class="product-price"><span class="amount">&#x20b9;130.00</span></td>
                                             <td class="product-quantity">
-                                                <div class="cart-plus-minus"><input type="text" value="1" name="quantity" id="quantity"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
+                                                <button class="tp-btn-h1" type="submit">Add To Cart</button>
                                             </td>
-                                            <td class="product-subtotal"><span class="amount">&#x20b9;{{i.product.selling_price}}</span></td>
-                                            <td class="product-remove"><a href="/remove_from_wishlist/{{i.id}}/{{my_data.uid}}"><i class="fa fa-times"></i></a></td>
-                                            <td class="product-quantity">
-                                                <button type="submit" name="cart" value="{{i.product.uid}}" class="tp-btn-h1">Add To Cart</button>
-                                            </td>
+                                            <td class="product-subtotal"><span class="amount">&#x20b9;130.00</span></td>
+                                            <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
                                         </tr>
-                                    </form>
-
-                                        {% endfor %}
-
+                                        <tr>
+                                            <td class="product-thumbnail"><a href="/shop-details/"><img src="{% static 'images/shop-p-11.jpg' %}" alt=""></a></td>
+                                            <td class="product-name"><a href="/shop-details/">Pink Jacket</a></td>
+                                            <td class="product-price"><span class="amount">&#x20b9;120.50</span></td>
+                                            <td class="product-quantity">
+                                                <button class="tp-btn-h1" type="submit">Add To Cart</button>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount">&#x20b9;120.50</span></td>
+                                            <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -261,8 +262,8 @@
                                 <p>TOS App is now available on App Store & Google Play. Get it now.</p>
                                 <div class="cta-apps">
                                     <div class="apps-store">
-                                        <a href="#"><img src="{% static 'image/app_ios.png' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'image/app_android.png' %}" alt=""></a>
+                                        <a href="#"><img src="{% static 'images/app_ios.png' %}" alt=""></a>
+                                        <a href="#"><img src="{% static 'images/app_android.png' %}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +292,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">New Customer</a></li>
+                                                    <li><a href="/Restaurant/">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -313,10 +314,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">Help Center</a></li>
-                                                    <li><a href="/index/">Contact Us</a></li>
-                                                    <li><a href="/index/">Complaints</a></li>
-                                                    <li><a href="/index/">Payment Methods</a></li>
+                                                    <li><a href="/Restaurant/">Help Center</a></li>
+                                                    <li><a href="/Restaurant/">Contact Us</a></li>
+                                                    <li><a href="/Restaurant/">Complaints</a></li>
+                                                    <li><a href="/Restaurant/">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -342,10 +343,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/index/">Terms and conditions</a></li>
-                                                                <li><a href="/index/">Privacy Policy</a></li>
-                                                                <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/index/">Cancellation & Refund</a></li>
+                                                                <li><a href="/Restaurant/">Terms and conditions</a></li>
+                                                                <li><a href="/Restaurant/">Privacy Policy</a></li>
+                                                                <li><a href="/Restaurant/">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="/Restaurant/">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -388,19 +389,15 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/index/">Rooms</a>
-                                        <a href="/index/">Sarees</a>
-                                        <a href="/index/">Tun Foods</a>
-                                        <a href="/index/">Groceries</a>
-                                        <a href="/index/">Fasion Jewellery</a>
-                                        <a href="/index/">Real Estate</a>
-                                        <a href="/index/">Most Populars</a>
-                                        <a href="/index/">Others</a>
+                                        <a href="/Restaurant/">Restaurants</a>
+                                        <a href="/Grocery/">Grocery</a>
+                                        <a href="/fruits_vegetables/">Fruits & Vegetables</a>
+                                        <a href="/Restaurant/">Food Products</a>
                                        
                                      
                                            </div>
                                 <div class="payment-image text-center mb-25">
-                                    <a href="/contact/"><img src="{% static 'image/payment.png' %}" alt=""></a>
+                                    <a href="/contact/"><img src="{% static 'images/payment.png' %}" alt=""></a>
                                 </div>
                                 <div class="copy-right-area text-center">
                                     <p>Copyright © <span>tunonlineshop.com.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Clovion Tech Solutions Pvt. Ltd.</span></a></p>
@@ -416,7 +413,7 @@
 
       <!-- JS here -->
       <script src="{% static 'jss/jquery.js' %}"></script>
-      <script src="% static 'jss/waypoints.js' %}"></script>
+      <script src="{% static 'jss/waypoints.js' %}"></script>
       <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
       <script src="{% static 'jss/meanmenu.js' %}"></script>
       <script src="{% static 'jss/swiper-bundle.js' %}"></script>
@@ -432,5 +429,6 @@
       <script src="{% static 'jss/isotope-pkgd.js' %}"></script>
       <script src="{% static 'jss/imagesloaded-pkgd.js' %}"></script>
       <script src="{% static 'jss/ajax-form.js' %}"></script>
-      <script src="{% static 'jss/main.js' %}"></script>   </body>
+      <script src="{% static 'jss/main.js' %}"></script>
+   </body>
 </html>

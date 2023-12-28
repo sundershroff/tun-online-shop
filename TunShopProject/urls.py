@@ -20,13 +20,12 @@ from userapp import user_views
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
     #admin
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('login_admin/', views.login),
-    path('logout/', views.logoutbutton),
+    path('logoutbutton/', views.logoutbutton),
     path('index/', views.index),
     path('order_status/', views.order_status),
     path('email/', views.email),
@@ -51,27 +50,25 @@ urlpatterns = [
 
 
 #user app
-    path('user_index/', user_views.user_index),
+    path('foods/<uid>', user_views.index),
+    path('user_index/', user_views.Restaurant),
+    path('logout/', user_views.logoutbutton),
+    path('about/<uid>', user_views.about),
+    path('fruits_vegetables/<uid>', user_views.index_fruits_vegetables),
+    path('product-details/<uid>/<id>', user_views.product_details),
+    path('cart/<uid>', user_views.cart),
+    path('remove-cart/<id>',user_views.remove_cart),
+    path('checkout/<uid>', user_views.checkout),
+    path('Grocery/<uid>', user_views.Grocery),
+    path('wishlist/<uid>', user_views.wishlist),
+    path('contact/<uid>', user_views.contact),
     path('my-account/', user_views.my_account),
-    path('logoutbutton/', user_views.logoutbutton),
-    path('about/<id>', user_views.about),
-    path('wishlist/<id>', user_views.wishlist),
-    path('cart/<id>', user_views.cart),
-    path('delete/<id>/<uid>',user_views.remove_from_cart),
-    path('remove_from_wishlist/<id>/<uid>',user_views.remove_from_wishlist),
-    path('product-details/<id>/<uid>', user_views.product_details),
-    path('checkout/<id>', user_views.checkout),
-    path('checkout_buy/<id>/<uid>', user_views.checkout_buy),
-    path('shop/<id>', user_views.shop),
-    path('contact/<id>', user_views.contact),
-    path('select_payment/<id>', user_views.select_payment),
-    path('select_payment_buy/<id>/<uid>', user_views.select_payment_buy),
-    path('user_order_status/<id>', user_views.user_order_status),
+    path('shop/<uid>/<num>', user_views.shop),
+    path('product_details_grocery/<uid>', user_views.product_details_grocery),
+    path('product_details_fruits/<uid>', user_views.product_details_fruits),
 
-    
-    
-    path('user_logged_index/<id>', user_views.user_logged_index),
-    path('user_logged_my_account/<id>', user_views.user_logged_my_account),
+    path('user_logged_index/<uid>', user_views.user_logged_index),
+    path('user_logged_my_account/<uid>', user_views.user_logged_my_account),
 
 
 

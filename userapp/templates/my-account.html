@@ -4,15 +4,15 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Tun Online Shop </title>
+      <title>Tun Foods  </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--       jquery validation-->
-       <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tunlogo.png' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+        <!--       jquery validation-->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
       <!-- CSS here -->
       <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
       <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
@@ -26,7 +26,7 @@
       <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
       <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
       <link rel="stylesheet" href="{% static 'csss/default.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/user_style.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/style.css' %}">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -129,7 +129,7 @@
       <!-- back to top end -->
       
        <!-- header-start -->
-       <header class="header d-blue-bg" style="background-color: #681768;">
+       <header class="header d-blue-bg" style="background-color: #2b0b7e">
         <div class="header-top">
             <div class="container">
                 <div class="header-inner">
@@ -170,11 +170,10 @@
                                     <ul>
                                         <li><a href="">About Us</a></li>
                                          <!-- <li><a href="contact.html">Order Tracking</a></li>  -->
-                                         <li><a href="">Need Help? : +91 98947 09871 </a></li> 
-                                             <!-- <li><a href="index.html">index</a></li>  -->
+                                         <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li> 
+                                             <!-- <li><a href="index_my-account.html">indexs</a></li>  -->
                                      </ul>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -188,7 +187,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                             <div class="header__info">
                                 <div class="logo">
-                                    <a href="/user_index/" class="logo-image"><img src="{% static 'image/tunlogo.png' %}" alt="logo"></a>
+                                    <a href="/my-account/" class="logo-image"><img src="{% static 'images/tun_foods.png' %}" class="rounded mx-auto d-block" alt="logo"></a>
                                 </div>
                             </div>
                         </div>
@@ -202,17 +201,10 @@
                                     <div class="header__search-cat">
                                         <select>
                                             <option>All Categories</option>
-                                            <option>Best Seller Products</option>
-                                            <option>Top 10 Offers</option>
-                                            <option>New Arrivals</option>
-                                            <option>Phones &amp; Tablets</option>
-                                            <option>Electronics &amp; Digital</option>
-                                            <option>Fashion &amp; Clothings</option>
-                                            <option>Jewelry &amp; Watches</option>
-                                            <option>Health &amp; Beauty</option>
-                                            <option>Sound &amp; Speakers</option>
-                                            <option>TV &amp; Audio</option>
-                                            <option>Computers</option>
+                                            <option>Restaurant</option>
+                                            <option>Grocery</option>
+                                            <option>Furits & Vegitables </option>
+                                            <option>Food Products</option>
                                         </select>
                                     </div>
                                 </form>
@@ -229,7 +221,7 @@
                                     </a>
                                 </div>
                                 <div class="block-wishlist action">
-                                    <a class="icon-link" href="/my-account/
+                                    <a class="icon-link" href="/my-account/">
                                     <i class="fa fa-heart"></i>
                                     <span class="count">0</span>
                                     <span class="text">
@@ -240,16 +232,16 @@
                                 <div class="block-cart action">
                                     <a class="icon-link" href="/my-account/">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span class="count">0</span>
+                                    <span class="count">1</span>
                                     <span class="text">
                                     <span class="sub">Your Cart:</span>
                                     &#x20b9;00.00 </span>
                                     </a>
                                     <div class="cart">
-                                        <!-- <div class="cart__mini">
+                                        <div class="cart__mini">
                                             <ul>
                                                 <li>
-                                                  <div class="cart__title">
+                                                  <!-- <div class="cart__title">
                                                     <h4>Your Cart</h4>
                                                     <span>(1 Item in Cart)</span>
                                                   </div>
@@ -258,19 +250,19 @@
                                                   <div class="cart__item d-flex justify-content-between align-items-center">
                                                     <div class="cart__inner d-flex">
                                                       <div class="cart__thumb">
-                                                        <a href="/product-details/">
-                                                          <img src="{% static 'image/20.jpg' %}" alt="">
+                                                        <a href="/my-account/">
+                                                          <img src="{% static 'images/20.jpg' %}" alt="">
                                                         </a>
                                                       </div>
                                                       <div class="cart__details">
-                                                        <h6><a href="/product-details/"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
+                                                        <h6><a href="/my-account/"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
                                                         <div class="cart__price">
                                                           <span>&#x20b9;255.00</span>
                                                         </div>
                                                       </div>
                                                     </div>
                                                     <div class="cart__del">
-                                                        <a href="#"><i class="fal fa-times"></i></a>
+                                                        <a><i class="fal fa-times"></i></a>
                                                     </div>
                                                   </div>
                                                 </li>
@@ -296,7 +288,7 @@
         </div>
         <div class="header__bottom">
             <div class="container">
-                <div class="row g-0 align-items-center" style="background-color: #681768;">
+                <div class="row g-0 align-items-center" style="background-color: #3a10a6;">
                     <div class="col-lg-3">                        
                         <div class="cat__menu-wrapper side-border d-none d-lg-block">
                             <div class="cat-toggle">
@@ -305,171 +297,11 @@
                                 <div class="cat__menu">
                                     <nav id="mobile-menu" style="display: block;">
                                         <ul>
-                                            <li>
-                                                <a href="/shop/">All Categories <i class="far fa-angle-down"></i></a>
-                                                <ul class="mega-menu">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Phone and Electronics <i class="far fa-angle-down"></i></a>
-                                                <ul class="mega-menu mega-menu-2">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Best Seller Products
-                                                    <span class="cat-label">hot!</span>
-                                                    <i class="far fa-angle-down"></i>
-                                                </a>
-                                                <ul class="mega-menu">
-                                                    <li><a href="/shop/">Shop Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Standard SHop Page</a></li>
-                                                            <li><a href="/product-details/">Shop Right Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop Left Sidebar</a></li>
-                                                            <li><a href="/product-details/">Shop 3 Column</a></li>
-                                                            <li><a href="/product-details/">Shop 4 Column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Product Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Product Details</a></li>
-                                                            <li><a href="/product-details/">Product V2</a></li>
-                                                            <li><a href="/product-details/">Product V3</a></li>
-                                                            <li><a href="/product-details/">Varriable Product</a></li>
-                                                            <li><a href="/product-details/">External Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Other Pages</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">wishlist</a></li>
-                                                            <li><a href="/product-details/">Shopping Cart</a></li>
-                                                            <li><a href="/product-details/">Checkout</a></li>
-                                                            <li><a href="/product-details/">Login</a></li>
-                                                            <li><a href="/product-details/">Register</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Phone &amp; Tablets</a>
-                                                        <ul class="mega-item">
-                                                            <li><a href="/product-details/">Catagory 1</a></li>
-                                                            <li><a href="/product-details/">Catagory 2</a></li>
-                                                            <li><a href="/product-details/">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">Top 10 Offers
-                                                    <span class="cat-label green">new!</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="/shop/">New Arrivals <i class="far fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="/shop/">Home Appliances</a></li>
-                                                    <li><a href="/shop/">Technology</a>
-                                                        <ul class="submenu">
-                                                            <li><a href="/shop/">Storage Devices</a></li>
-                                                            <li><a href="/shop/">Monitors</a></li>
-                                                            <li><a href="/shop/">Laptops</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="/shop/">Office Equipments</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="/shop/">TV &amp; Audio</a></li>
-                                            <li><a href="/shop/">Electronics &amp; Digital</a></li>
-                                            <li class="d-laptop-none"><a href="/shop/">Fashion &amp; Clothings</a></li>
-                                            <li class="d-laptop-none"><a href="/shop/">Jewelry &amp; Watches</a></li>
-                                            <li><a href="/shop/">Health &amp; Beauty</a></li>
+                                            <li><a href="/my-account/">Shop by Categories</a></li>
+                                            <li><a href="/my-account/">Restaurant</a></li>
+                                            <li><a href="/my-account/">GROCERY </a></li>
+                                            <li><a href="/my-account/">FRUITS AND VEGETABLES</a></li>
+                                            <li><a href="/my-account/">FOOD PRODUCTS</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -484,99 +316,11 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li>
-                                        <a href="" class="">Rooms </a>
-                                        <!-- <ul class="megamenu-1">
-                                            <li><a href="index.html">Home Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="index.html" class="active">Home One</a></li>
-                                                    <li><a href="index-2.html">Home Two</a></li>
-                                                    <li><a href="index-3.html">Home Three</a></li>
-                                                    <li><a href="product-details.html">Shop 3 Column</a></li>
-                                                    <li><a href="product-details.html">Shop 4 Column</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Product Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Product Details</a></li>
-                                                    <li><a href="product-details.html">Product V2</a></li>
-                                                    <li><a href="product-details.html">Product V3</a></li>
-                                                    <li><a href="product-details.html">Varriable Product</a></li>
-                                                    <li><a href="product-details.html">External Product</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Other Pages</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">wishlist</a></li>
-                                                    <li><a href="product-details.html">Shopping Cart</a></li>
-                                                    <li><a href="product-details.html">Checkout</a></li>
-                                                    <li><a href="product-details.html">Login</a></li>
-                                                    <li><a href="product-details.html">Register</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Phone &amp; Tablets</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                                    <li><a href="product-details.html">Catagory 3</a></li>
-                                                    <li><a href="product-details.html">Catagory 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Phone &amp; Tablets</a>
-                                                <ul class="mega-item">
-                                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                                    <li><a href="product-details.html">Catagory 3</a></li>
-                                                    <li><a href="product-details.html">Catagory 4</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul> -->
-                                    </li>
-                                    <li>
-                                        <a href="/my-account/">sarees</a>
-                                    </li>
-                                    <li><a href="/my-account/">Tun Foods</a></li>
-
-                                    <li><a href="/my-account/">Groceries <i class="far fa-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <a href="/my-account/">Ready to cook</a>
-
-                                            </li>
-                                            <li><a href="">Beauty Care</a></li>
-                                            <li><a href="">Snacks  </a></li>
-                                            <li><a href="">Baby Care </a></li>
-                                            <li><a href="">Cooking Essentials</a></li>
-                                            <li><a href="">Household Needs</a></li>
-                                            <li><a href="">Beverage</a></li>
-                                            <li><a href="">Readymade Foods  </a></li>
-                                            <li><a href="">Dairy Products</a></li>
-                                            <li><a href="">Stationary</a></li>
-
-
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="/my-account/">Fashion JEWELLERY</a>
-
-                                    </li>
-
-                                    <li><a href="/my-account/">Real Estate</a></li>
-
-                                    <li><a href="/my-account/">Others <i class="far fa-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="" style="width: max-content;">Constructions-Architecs</a></li>
-                                            <li><a href="">Consumer products</a></li>
-                                            <li><a href="">Direct From Makers</a></li>
-                                            <li><a href="">Event Management</a></li>
-                                            <li><a href="">Electronics</a></li>
-                                            <li><a href="">Scraps</a></li>
-                                            <li><a href="">Stationary</a></li>
-                                            <li><a href="">Used Premium Cars</a></li>
-                                            <li><a href="">Unique Products</a></li>
-
-                                        </ul>
-                                    </li>
+                                    
+                                    <li><a href="/my-account/">Restaurant</a></li>
+                                    <li><a href="/my-account/">GROCERY </a></li>
+                                    <li><a href="/my-account/">FRUITS AND VEGETABLES</a></li>
+                                    <li><a href="/my-account/">FOOD PRODUCTS</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -591,8 +335,7 @@
             </div>
         </div>
     </header>
-
-    <!-- header-end --> 
+              <!-- header-end --> 
 
     <!-- offcanvas area start -->
     <div class="offcanvas__area">
@@ -604,8 +347,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/user_index/">
-                    <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
+                <a href="/Restaurant/">
+                    <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:40%" class="rounded mx-auto d-block">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -627,7 +370,7 @@
 
     <main>
         <!-- page-banner-area-start -->
-        <div class="page-banner-area page-banner-height-2" data-background="assets/img/banner/page-banner-4.jpg">
+        <div class="page-banner-area page-banner-height-2" data-background="{% static 'image/page-banner-4.jpg' %]">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -638,7 +381,7 @@
                                    <nav class="breadcrumb-trail breadcrumbs">
                                       <ul class="breadcrumb-menu">
                                          <li class="breadcrumb-trail">
-                                            <a href="/index/"><span>Home</span></a>
+                                            <a href="/Restaurant/"><span>Home</span></a>
                                          </li>
                                          <li class="trail-item">
                                             <span>My account</span>
@@ -685,59 +428,59 @@ color: green;">{{success}}</p>
                             <h5>Login</h5>
                             <form id="myform" method="POST">
                                 {% csrf_token %}
-                                <label for="name">Username or email address  <span>*</span></label>
-                                <input id="name" type="text" name="email" placeholder="Enter Username"><br>
+                                <label for="name"> email address  <span>*</span></label>
+                                <input id="name" type="email" name="email" placeholder="Enter Username">
                                 <label for="pass">Password <span>*</span></label>
                                 <input id="pass" type="password" name="password" placeholder="Enter password...">
                                 <div class="login-action mb-10 fix">
                                     <span class="log-rem f-left">
                                        <input id="remember" type="checkbox">
                                        <label for="remember">Remember me</label>
+
                                     </span>
                                     <span class="forgot-login f-right">
                                        <a href="#">Lost your password?</a>
                                     </span>
                                 </div>
                                 <p style="color:red"><b>{{error}}</b></p>
-                                <button type="submit" class="tp-in-btn w-100">Log In</button>
+                               <input type="submit" value="login" class="tp-in-btn w-100">
+                               
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="basic-login">
                             <h5>Register</h5>
-                            <form id="register" method="POST">
+                            <form  method="POST" id="register">
                                 {% csrf_token %}
                                 <label for="username">Username or email address  <span>*</span></label>
                                 <input id="username" type="text" name="name" placeholder="Enter Username">
                                 <label for="email-id">Email Address <span>*</span></label>
                                 <input id="email-id" type="text" name="email" placeholder="Email address...">
-                                <label for="door_no">Door No : <span>*</span></label>
-                                <input id="door_no" type="text" name="door_no" placeholder="Enter Door No">
-                                <label for="street">Street Name  <span>*</span></label>
-                                <input id="street" type="text" name="street" placeholder="Enter Street Name">
-                                <label for="city">City Name  <span>*</span></label>
-                                <input id="city" type="text" name="city" placeholder="Enter City Name">
+                                <label for="doorno">Doorno  <span>*</span></label>
+                                <input id="doorno" type="text" name="door_no" placeholder="Enter doorno">
+                                <label for="street">Street  <span>*</span></label>
+                                <input id="street" type="text" name="street" placeholder="Enter street">
+                                <label for="city">City  <span>*</span></label>
+                                <input id="city" type="text" name="city" placeholder="Enter city">
                                 <label for="state">State  <span>*</span></label>
-                                <input id="state" type="text" name="state" placeholder="Enter State">
+                                <input id="state" type="text" name="state" placeholder="Enter state">
                                 <label for="country">Country  <span>*</span></label>
-                                <input id="country" type="text" name="country" placeholder="Enter Country Name">
-                                <label for="pin_code">Pincode  <span>*</span></label>
-                                <input id="pin_code" type="number" name="pin_code" placeholder="Enter Pincode">
-                                <label for="landmark">Near Landmark  <span>*</span></label>
-                                <input id="landmark" type="text" name="near_land_mark" placeholder="Enter Landmark">
+                                <input id="country" type="text" name="country" placeholder="Enter country">
+                                <label for="pincode">Pincode  <span>*</span></label>
+                                <input id="pincode" type="text" name="pin_code" placeholder="Enter pincode">
+                                <label for="landmark">Near landmark  <span>*</span></label>
+                                <input id="landmark" type="text" name="near_land_mark" placeholder="Enter landmark">
                                 <label for="mobile">Mobile  <span>*</span></label>
                                 <input id="mobile" type="text" name="mobile" placeholder="Enter mobile">
                                 <label for="userpass">Password <span>*</span></label>
                                 <input id="userpass" type="password" name="password" placeholder="Enter password...">
-                                <label for="password">Confirm Password <span>*</span></label>
-                                <input id="password" type="password" name="confirm_password" placeholder="Enter confirm password...">
-
+                                <label for="confirm password">Confirm password  <span>*</span></label>
+                                <input id="confirm password" type="password" name="confirm_password" placeholder="Enter confirm password">
                                 <div class="login-action mb-10 fix">
                                     <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy</a>.</p>
                                 </div>
-                                <input class="tp-in-btn w-100" type="submit" value="Register">
-
+                            <input type="submit" value="Register"  class="tp-in-btn w-100">
                             </form>
                         </div>
                     </div>
@@ -804,11 +547,11 @@ color: green;">{{success}}</p>
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="">New Customer</a></li>
-                                                    <li><a href="">Checkout</a></li>
-                                                    <li><a href="">Orders</a></li>
-                                                    <li><a href="">Shopping Cart</a></li>
-                                                    <li><a href="">Wishlist</a></li>
+                                                    <li><a href="/my-account/">New Customer</a></li>
+                                                    <li><a href="/checkout/">Checkout</a></li>
+                                                    <li><a href="/checkout/">Orders</a></li>
+                                                    <li><a href="/cart/">Shopping Cart</a></li>
+                                                    <li><a href="/wishlist/">Wishlist</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -826,10 +569,10 @@ color: green;">{{success}}</p>
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="">Help Center</a></li>
-                                                    <li><a href="">Contact Us</a></li>
-                                                    <li><a href="">Complaints</a></li>
-                                                    <li><a href="">Payment Methods</a></li>
+                                                    <li><a href="/my-account/">Help Center</a></li>
+                                                    <li><a href="/my-account/">Contact Us</a></li>
+                                                    <li><a href="/my-account/">Complaints</a></li>
+                                                    <li><a href="/my-account/">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -855,10 +598,10 @@ color: green;">{{success}}</p>
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="">Terms and conditions</a></li>
-                                                                <li><a href="">Privacy Policy</a></li>
-                                                                <li><a href="">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="">Cancellation & Refund</a></li>
+                                                                <li><a href="/my-account/">Terms and conditions</a></li>
+                                                                <li><a href="/my-account/">Privacy Policy</a></li>
+                                                                <li><a href="/my-account/">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="/my-account/">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -901,19 +644,14 @@ color: green;">{{success}}</p>
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="">Rooms</a>
-                                        <a href="">Sarees</a>
-                                        <a href="">Tun Foods</a>
-                                        <a href="">Groceries</a>
-                                        <a href="">Fasion Jewellery</a>
-                                        <a href="">Real Estate</a>
-                                        <a href="">Most Populars</a>
-                                        <a href="">Others</a>
-                                       
+                                        <a href="/my-account/">my-accounts</a>
+                                    <a href="/my-account/">Grocery</a>
+                                    <a href="/my-account/">Fruits & Vegetables</a>
+                                    <a href="/my-account/">Food Products</a>
                                      
                                            </div>
                                 <div class="payment-image text-center mb-25">
-                                    <a href="/contact/"><img src="{% static 'image/payment.png' %}" alt=""></a>
+                                    <a href="/my-account/"><img src="{% static 'images/payment.png' %}" alt=""></a>
                                 </div>
                                 <div class="copy-right-area text-center">
                                     <p>Copyright © <span>tunonlineshop.com.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Clovion Tech Solutions Pvt. Ltd.</span></a></p>
@@ -926,35 +664,35 @@ color: green;">{{success}}</p>
         </div>
     </footer>
     <!-- footer-end -->
+      <!--      validation-->
+           
+      
+             <script>
+                jQuery.validator.setDefaults({
+                  debug: true,
+                  success: "valid"
+                });
+                $("#myform").validate({
+                  rules: {
+                    email: {
+                      required: true
+                    },
+                    password: {
+                      required: true
+                    },
+                  },
+                  submitHandler: function(form) {
+                 form.submit();
+  }
+                });
+                  </script>
 
-<!--      validation-->
       <script>
-    jQuery.validator.setDefaults({
-      debug: true,
-      success: "valid"
-    });
-    $("#myform").validate({
-      rules: {
-        email: {
-          required: true
-        },
-        password: {
-          required: true
-        }
-
-      },
-      submitHandler: function (form) {
-        form.submit();
-      }
-    });
-      </script>
-<script>
-        jQuery.validator.setDefaults({
-      debug: true,
-      success: "valid"
-    });
-
-      $("#register").validate({
+          jQuery.validator.setDefaults({
+              debug: true,
+              success: "valid"
+            });
+            $("#register").validate({
               rules: {
                 name: {
                    required: true,
@@ -1003,16 +741,16 @@ color: green;">{{success}}</p>
                    minlength: 6
                 }
               },
-              submitHandler: function (form) {
-        form.submit();
-      }
-
+              submitHandler: function(form) {
+                 form.submit();
+  }
             });
+      </script>
 
-</script>
+
       <!-- JS here -->
       <script src="{% static 'jss/jquery.js' %}"></script>
-      <script src="% static 'jss/waypoints.js' %}"></script>
+      <script src="{% static 'jss/waypoints.js' %}"></script>
       <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
       <script src="{% static 'jss/meanmenu.js' %}"></script>
       <script src="{% static 'jss/swiper-bundle.js' %}"></script>
@@ -1029,5 +767,6 @@ color: green;">{{success}}</p>
       <script src="{% static 'jss/imagesloaded-pkgd.js' %}"></script>
       <script src="{% static 'jss/ajax-form.js' %}"></script>
       <script src="{% static 'jss/main.js' %}"></script>
+
    </body>
 </html>

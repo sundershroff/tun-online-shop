@@ -4,11 +4,11 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Tun Online Shop </title>
+      <title>Tun Foods  </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tunlogo.png' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/favicon.png' %}">
       <!-- CSS here -->
       <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
       <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
@@ -22,7 +22,7 @@
       <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
       <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
       <link rel="stylesheet" href="{% static 'csss/default.css' %}">
-      <link rel="stylesheet" href="{% static 'csss/user_style.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/style.css' %}">
 
    </head>
    <body>
@@ -126,8 +126,8 @@
       <!-- back to top end -->
       
        <!-- header-start -->
-       {% include 'nav.html' %}
-       <!-- header-end --> 
+       {% include 'header.html'%}
+    <!-- header-end --> 
 
     <!-- offcanvas area start -->
     <div class="offcanvas__area">
@@ -139,8 +139,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/index/">
-                    <img src="{% static 'image/tunlogo.png' %}" alt="logo" style="width:50%">
+                <a href="/Restaurant/">
+                    <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:40%" class="rounded mx-auto d-block">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -169,7 +169,7 @@
                         <div class="breadcrumb__wrapper">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="/user_index/">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="/Restaurant/">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Shop</li>
                                 </ol>
                               </nav>
@@ -189,19 +189,19 @@
                             <ul class="nav nav-tabs flex-sm-column justify-content-between" id="productThumbTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                   <button class="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-                                      <img src="{{products.image.url}}" alt="" style="width: 100px;height: 100px;object-fit: contain;">
+                                      <img src="{{products.image.url}}" alt="" style="width: 100px;">
                                   </button>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                   <button class="nav-link" id="thumbTwo-tab" data-bs-toggle="tab" data-bs-target="#thumbTwo" type="button" role="tab" aria-controls="thumbTwo" aria-selected="false">
-                                    <img src="{% static 'image/product-nav-2.jpg' %}" alt="">
+                                    <img src="{% static 'image/idly_2.avif' %}" alt="" style="width: 100px;">
                                   </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                   <button class="nav-link" id="thumbThree-tab" data-bs-toggle="tab" data-bs-target="#thumbThree" type="button" role="tab" aria-controls="thumbThree" aria-selected="false">
-                                    <img src="{% static 'image/product-nav-3.jpg' %}" alt="">
+                                    <img src="{% static 'image/idly_3.jpg' %}" alt="" style="width: 100px;">
                                   </button>
-                                </li>
+                                </li> -->
                             </ul>
                             <div class="product__details-thumb">
                                 <div class="tab-content" id="productThumbContent">
@@ -210,24 +210,23 @@
                                             <img src="{{products.image.url}}" alt="">
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
+                                    <!-- <div class="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
                                         <div class="product__details-nav-thumb w-img">
-                                            <img src="{% static 'image/product-nav-big-3.jpg' %}" alt="">
+                                            <img src="{% static 'image/idly_2.avif' %}" alt="">
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="thumbThree" role="tabpanel" aria-labelledby="thumbThree-tab">
                                         <div class="product__details-nav-thumb w-img">
-                                            <img src="{% static 'image/product-nav-big-2.jpg' %}" alt="">
+                                            <img src="{% static 'image/idly_3.jpg' %}" alt="">
                                         </div>
-                                    </div>
+                                    </div> -->
                                   </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-xl-6">
                         <div class="product__details-content">
-                            <h6>{{products.name}}</h6>
+                            <h6>{{products.name}} </h6>
                             <div class="pd-rating mb-10">
                                 <ul class="rating">
                                     <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -244,15 +243,16 @@
                             </div>
                             <div class="features-des mb-20 mt-10">
                                 <ul>
-                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
-                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
+                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Fresh Making</a></li>
+                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Healty & Organic</a></li>
+                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> Rich Tasty</a></li>
+
+                                    <li><a href="/product-details/"><i class="fas fa-circle"></i> On Time Delivery</a></li>
                                 </ul>
                             </div>
-                            <div class="product-stock mb-20">
-                                <h5>Availability: <span> {{products.quantity}} in stock</span></h5>
-                            </div>
+                            <!-- <div class="product-stock mb-20">
+                                <h5>Availability: <span> 940 in stock</span></h5>
+                            </div> -->
                             <form method="POST">
                                 {% csrf_token %}
                             <div class="cart-option mb-15">
@@ -260,28 +260,24 @@
                                     <div class="cart-plus-minus p-relative"><input type="text" name="quantity" value="1"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
                                 </div>
 
+                                <input type="text" style="display:none" value="{{products.uid}}" name="product">
+                                <button type="submit" class="cart-btn" name="cart">Add to Cart </button>
 
-                                        <input type="text" style="display:none" value="{{products.uid}}" name="product">
-                                        <button type="submit" class="cart-btn">Add to Cart </button>
                             </form>
-
-<!--                                    <a href="/cart/{{products.uid}}" ><button type="submit" class="cart-btn" value="{{products.uid}}">Add to Cart </button></a>-->
-                                    <a href="" class="cart-btn" style="margin-left:10px">Buy now</a>
-
-                                </div>
-
+                                <a href="/cart/" style="margin-left:10px" class="cart-btn">Buy Now</a>
                             </div>
                             <div class="details-meta">
                                 <div class="d-meta-left">
+                                    <form method="POST">
+                                        {% csrf_token %}
                                     <div class="dm-item mr-20">
-                                        <form method="POST">
-                                            {% csrf_token %}
-                                        <button type="submit" name="wishlist" value="{{products.uid}}"><i class="fal fa-heart"></i>Add to wishlist</a></button>
+                                        <input type="text" style="display:none" value="{{products.uid}}" name="product">
+                                        <button type="submit"><i class="fal fa-heart"></i>Add to wishlist</button>
+                                    </div>
                                     </form>
-                                    </div>
-                                    <div class="dm-item">
+                                    <!-- <div class="dm-item">
                                         <a href="#"><i class="fal fa-layer-group"></i>Compare</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="d-meta-left">
                                     <div class="dm-item">
@@ -289,24 +285,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-tag-area mt-15">
+                            <!-- <div class="product-tag-area mt-15">
                                 <div class="product_info">
                                     <span class="sku_wrapper">
-                                        <span class="title">SKU:</span>
-                                        <span class="sku">DK1002</span>
+                                        <span class="title">Brand:</span>
+                                        <span class="sku">Aashirvaad</span>
                                     </span>
                                     <span class="posted_in">
-                                        <span class="title">Categories:</span>
-                                        <a href="#">iPhone</a>
-                                        <a href="#">Tablets</a>
+                                        <span class="title">Type:</span>
+                                        <a href="#">Superior Sharbati</a>
+                                        <a href="#">Atta</a>
                                     </span>
                                     <span class="tagged_as">
-                                        <span class="title">Tags:</span>
-                                        <a href="#">Smartphone</a>, 
-                                        <a href="#">Tablets</a>
+                                        <span class="title">Quantity:</span>
+                                        <a href="#">1</a>
+                                        <a href="#">Kg</a>
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -321,12 +317,12 @@
                     <div class="col-xl-12">
                         <div class="product__details-des-tab">
                             <ul class="nav nav-tabs" id="productDesTab" role="tablist">
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                   <button class="nav-link active" id="des-tab" data-bs-toggle="tab" data-bs-target="#des" type="button" role="tab" aria-controls="des" aria-selected="true">Description </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="aditional-tab" data-bs-toggle="tab" data-bs-target="#aditional" type="button" role="tab" aria-controls="aditional" aria-selected="false">Additional information</button>
-                                  </li>
+                                  </li> -->
                                 <!-- <li class="nav-item" role="presentation">
                                   <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Reviews (1) </button>
                                 </li> -->
@@ -335,37 +331,37 @@
                     </div>
                 </div>
                 <div class="tab-content" id="prodductDesTaContent">
-                    <div class="tab-pane fade active show" id="des" role="tabpanel" aria-labelledby="des-tab">
-                        <div class="product__details-des-wrapper">
-                            <p class="des-text mb-35">{{product.description}}</p>
+                    <!-- <div class="tab-pane fade active show" id="des" role="tabpanel" aria-labelledby="des-tab"> -->
+                        <!-- <div class="product__details-des-wrapper">
+                            <p class="des-text mb-35">Designed by Hans J. Wegner in 1949 as one of the first models created especially for Carl Hansen & Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions,ideal for both long visits to the dining table and relaxed lounging.</p>
                             <h6 class="des-sm-title">The standard passage, used since the 1500s.</h6>
                             <p class="des-text mb-35">A light chair, easy to move around the dining table and about the room. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="features-des-image text-center">
-                                <img src="{% static 'image/product-content-1.jpg' %}" alt="">
+                                <img src="assets/img/features-product/product-content-1.jpg" alt="">
                             </div>
                            
                     
                             <div class="des-sm-features">
                                 <div class="des-sm-fet text-center mb-30">
-                                    <img src="{% static 'image/product-content-5.png' %}" alt="">
+                                    <img src="assets/img/features-product/product-content-5.png" alt="">
                                     <span>Ultra Wide Angle</span>
                                 </div>
                                 <div class="des-sm-fet text-center mb-30">
-                                    <img src="{% static 'image/product-content-6.png' %}" alt="">
+                                    <img src="assets/img/features-product/product-content-6.png" alt="">
                                     <span>Live Focus On</span>
                                 </div>
                             </div>
                             <p class="des-text mb-35">Designed by Puik in 1949 as one of the first models created especially for Carl Hansen & Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions,ideal for both long visits to the dining table and relaxed lounging. A light chair easy to move around the dining table and about the room. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
                             <h6 class="des-sm-title">Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC.</h6>
                             <p class="des-text mb-25">Sound of Marshall, unplugs the chords, and takes the show on the road. Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
                     <div class="tab-pane fade" id="aditional" role="tabpanel" aria-labelledby="aditional-tab">
                         <div class="product__desc-info">
                             <ul>
                                <li>
                                   <h6>Weight</h6>
-                                  <span>{{product.weight}}</span>
+                                  <span>2 lbs</span>
                                </li>
                                <li>
                                   <h6>Dimensions</h6>
@@ -377,11 +373,11 @@
                                </li>
                                <li>
                                   <h6>Color</h6>
-                                  <span>{{product.color}}</span>
+                                  <span>Gray, Black</span>
                                </li>
                                <li>
                                   <h6>Size</h6>
-                                  <span>{{product.size}}</span>
+                                  <span>S, M, L, XL</span>
                                </li>
                                <li>
                                   <h6>Model</h6>
@@ -402,7 +398,7 @@
                             </ul>
                          </div>
                     </div>
-                    <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                    <!-- <div class="tab-pane fade active show" id="review" role="tabpanel" aria-labelledby="review-tab">
                         <div class="product__details-review">
                             <div class="row">
                                 <div class="col-xl-4">
@@ -502,7 +498,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -640,44 +636,7 @@
 
 
     </main>
-   <!-- cta-area-start -->
-   <section class="cta-area d-ldark-bg pt-55 pb-10">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="cta-item cta-item-d mb-30">
-                    <h5 class="cta-title">Follow Us</h5>
-                    <p>We make consolidating, marketing and tracking your social media website easy.</p>
-                    <div class="cta-social">
-                        <div class="social-icon">
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="rss"><i class="fas fa-rss"></i></a>
-                            <a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          
-            <div class="col-lg-6 col-md-6">
-                <div class="cta-item mb-30">
-                    <h5 class="cta-title">Download App</h5>
-                    <p>TOS App is now available on App Store & Google Play. Get it now.</p>
-                    <div class="cta-apps">
-                        <div class="apps-store">
-                            <a href="#"><img src="{% static 'image/app_ios.png' %}" alt=""></a>
-                            <a href="#"><img src="{% static 'image/app_android.png' %}" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</section>
-<!-- cta-area-end -->
      <!-- footer-start -->
      <footer>
         <div class="fotter-area d-dark-bg">
@@ -695,7 +654,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">New Customer</a></li>
+                                                    <li><a href="/Restaurant/">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -717,10 +676,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/index/">Help Center</a></li>
-                                                    <li><a href="/index/">Contact Us</a></li>
-                                                    <li><a href="/index/">Complaints</a></li>
-                                                    <li><a href="/index/">Payment Methods</a></li>
+                                                    <li><a href="/Restaurant/">Help Center</a></li>
+                                                    <li><a href="/Restaurant/">Contact Us</a></li>
+                                                    <li><a href="/Restaurant/">Complaints</a></li>
+                                                    <li><a href="/Restaurant/">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -746,10 +705,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/index/">Terms and conditions</a></li>
-                                                                <li><a href="/index/">Privacy Policy</a></li>
-                                                                <li><a href="/index/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/index/">Cancellation & Refund</a></li>
+                                                                <li><a href="/Restaurant/">Terms and conditions</a></li>
+                                                                <li><a href="/Restaurant/">Privacy Policy</a></li>
+                                                                <li><a href="/Restaurant/">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="/Restaurant/">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -792,14 +751,10 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/index/">Rooms</a>
-                                        <a href="/index/">Sarees</a>
-                                        <a href="/index/">Tun Foods</a>
-                                        <a href="/index/">Groceries</a>
-                                        <a href="/index/">Fasion Jewellery</a>
-                                        <a href="/index/">Real Estate</a>
-                                        <a href="/index/">Most Populars</a>
-                                        <a href="/index/">Others</a>
+                                        <a href="/Restaurant/">Restaurants</a>
+                                        <a href="/Grocery/">Grocery</a>
+                                        <a href="/fruits_vegetables/">Fruits & Vegetables</a>
+                                        <a href="/Restaurant/">Food Products</a>
                                        
                                      
                                            </div>
@@ -820,7 +775,7 @@
 
       <!-- JS here -->
       <script src="{% static 'jss/jquery.js' %}"></script>
-      <script src="% static 'jss/waypoints.js' %}"></script>
+      <script src="{% static 'jss/waypoints.js' %}"></script>
       <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
       <script src="{% static 'jss/meanmenu.js' %}"></script>
       <script src="{% static 'jss/swiper-bundle.js' %}"></script>
