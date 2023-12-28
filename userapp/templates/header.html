@@ -94,7 +94,7 @@
                             <div class="block-wishlist action">
                                 <a class="icon-link" href="/wishlist/{{my_data.uid}}">
                                 <i class="fa fa-heart"></i>
-                                <span class="count">0</span>
+                                <span class="count">{{wishlist|length}}</span>
                                 <span class="text">
                                 <span class="sub">Favorite</span>
                                 My Wishlist </span>
@@ -103,10 +103,10 @@
                             <div class="block-cart action">
                                 <a class="icon-link" href="/cart/{{my_data.uid}}">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span class="count">0</span>
+                                <span class="count">{{cart|length}}</span>
                                 <span class="text">
                                 <span class="sub">Your Cart:</span>
-                                &#x20b9;00.00 </span>
+                                &#x20b9;{{text}}.00 </span>
                                 </a>
                                 <div class="cart">
                                     <!-- <div class="cart__mini">
@@ -192,6 +192,7 @@
                                 <li><a href="/Grocery/{{my_data.uid}}">GROCERY </a></li>
                                 <li><a href="/fruits_vegetables/{{my_data.uid}}">FRUITS AND VEGETABLES</a></li>
                                 <li><a href="/Grocery/{{my_data.uid}}">FOOD PRODUCTS</a></li>
+                                <li style="float: right;"><a href="/user_order_status/{{my_data.uid}}" style="color:#ffc107;border: 1px solid white;width: 90px;text-align: center;text-shadow: 5 6 black;box-shadow: 0px 0px 3px white;">Orders</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -217,7 +217,7 @@
                                                 <div class="cart-plus-minus"><input type="text" value="{{i.quantity}}" name="quantity" id="quantity"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
                                           </td>
                                           <td class="product-subtotal"><span class="amount">&#x20b9;{{ i.quantity|mul:i.product.selling_price }}</span></td>
-                                          <td class="product-remove"><a href="/remove-cart/{{i.id}}"><i class="fa fa-times"></i></a></td>
+                                          <td class="product-remove"><a href="/remove-cart/{{i.id}}/{{my_data.uid}}"><i class="fa fa-times"></i></a></td>
                                        </tr>
                                        {% endfor %}
                                     </tbody>
@@ -226,11 +226,11 @@
                            <div class="row">
                               <div class="col-12">
                                     <div class="coupon-all">
-                                       <div class="coupon">
+                                       <!-- <div class="coupon">
                                           <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
                                           <button class="tp-btn-h1" name="apply_coupon" type="submit">Apply
                                                 coupon</button>
-                                       </div>
+                                       </div> -->
 <!--                                       <div class="coupon2">-->
 <!--                                          <button class="tp-btn-h1" name="update_cart" type="submit">Update cart</button>-->
 <!--                                       </div>-->
@@ -246,7 +246,7 @@
                                           <li>Subtotal <span>&#x20b9;{{total}}</span></li>
                                           <li>Total <span>&#x20b9;{{total}}</span></li>
                                        </ul>
-                                       <a class="tp-btn-h1" href="/checkout/">Proceed to checkout</a>
+                                       <a class="tp-btn-h1" href="/checkout/{{my_data.uid}}">Proceed to checkout</a>
                                     </div>
                               </div>
                            </div>

@@ -57,15 +57,21 @@ urlpatterns = [
     path('fruits_vegetables/<uid>', user_views.index_fruits_vegetables),
     path('product-details/<uid>/<id>', user_views.product_details),
     path('cart/<uid>', user_views.cart),
-    path('remove-cart/<id>',user_views.remove_cart),
+    path('remove-cart/<id>/<uid>',user_views.remove_cart),
     path('checkout/<uid>', user_views.checkout),
     path('Grocery/<uid>', user_views.Grocery),
-    path('wishlist/<uid>', user_views.wishlist),
+    path('wishlist/<uid>', user_views.wishlistt),
+    path('remove_wish/<id>/<uid>',user_views.remove_wish),
+    
     path('contact/<uid>', user_views.contact),
     path('my-account/', user_views.my_account),
     path('shop/<uid>/<num>', user_views.shop),
     path('product_details_grocery/<uid>', user_views.product_details_grocery),
     path('product_details_fruits/<uid>', user_views.product_details_fruits),
+    path('select_payment/<uid>', user_views.select_payment),
+    path('user_order_status/<uid>', user_views.user_order_status),
+
+    
 
     path('user_logged_index/<uid>', user_views.user_logged_index),
     path('user_logged_my_account/<uid>', user_views.user_logged_my_account),

@@ -566,14 +566,20 @@
                                                         </a>
                                                     </div>
                                                     <div class="product-action">
-                                                        <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                                        <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#">
                                                             <i class="fal fa-eye"></i>
                                                             <i class="fal fa-eye"></i>
                                                         </a>
-                                                        <a href="#" class="icon-box icon-box-1">
+                                                        <form method="POST">
+                                                            {% csrf_token %}
+                                                            <button type="submit" name="wishlist" value="{{i.uid}}">
+                                                        <a class="icon-box icon-box-1">
                                                             <i class="fal fa-heart"></i>
-                                                            <i class="fal fa-heart"></i>
+                                                           <i class="fal fa-heart"></i>
+                                                           
                                                         </a>
+                                                    </button>
+                                                </form>
                                                         <a href="#" class="icon-box icon-box-1">
                                                             <i class="fal fa-layer-group"></i>
                                                             <i class="fal fa-layer-group"></i>
