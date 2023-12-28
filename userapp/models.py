@@ -83,9 +83,9 @@ class Product(models.Model):
     weight = models.CharField(max_length=50, null=True,)
     size = models.CharField(max_length=50, null=True)
     quantity = models.IntegerField(null=True, blank=True)
-    original_price = models.FloatField(null=False, blank=False, )
-    selling_price = models.FloatField(null=False, blank=False)
-    discount = models.IntegerField(null=False, blank=False)
+    original_price = models.IntegerField(null=False, blank=False, )
+    selling_price = models.IntegerField(null=False, blank=False)
+    discount = models.IntegerField(null=True, blank=False)
     description = models.TextField(max_length=500, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

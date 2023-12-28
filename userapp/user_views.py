@@ -121,7 +121,7 @@ def user_logged_index(request,id):
                 print(f"this my{product}")
                 return render(request, 'shop.html',
                 {"product": product,'my_data':my_data,'cart':cart,
-                 'wishlist':wishlist,'text':text})
+                 'wishlist':wishlist,'text':text,})
             else:
                 return redirect('/user_index/')
     else:

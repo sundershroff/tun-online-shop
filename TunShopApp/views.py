@@ -14,6 +14,7 @@ from django.views.decorators.cache import never_cache
 import datetime
 from TunShopApp.process_to_pdf import html_to_pdf
 import locale
+from collections.abc import MutableMapping
 locale.setlocale(locale.LC_ALL, "")
 
 
@@ -181,7 +182,7 @@ def add_product(request):
             quantity = request.POST['quantity']
             original_price = request.POST['original_price']
             selling_price = request.POST['selling_price']
-            discount = request.POST['discount']
+            # discount = request.POST['discount']
             description = request.POST['description']
             #weight
             if weight == "":
@@ -194,10 +195,10 @@ def add_product(request):
             else:
                 color1 = color
             #discount
-            if discount == "":
-                discount1 = 0
-            else:
-                discount1 = request.POST['discount']
+            # if discount == "":
+            #     discount1 = 0
+            # else:
+            #     discount1 = request.POST['discount']
 
             data = {
                 "category": category,
@@ -207,7 +208,7 @@ def add_product(request):
                 "quantity": quantity,
                 "original_price": original_price,
                 "selling_price": selling_price,
-                "discount": discount1,
+                # "discount": discount1,
                 "description": description,
                 "weight": weight1,
                 'status':"on"
@@ -240,7 +241,7 @@ def edit_product(request, uid):
         'edit':updateData,
     }
     if request.method == "POST":
-        print(request.POST)
+        print(request.POST['category'])
         print(request.FILES)
         if "status" in request.POST:
             status1 = request.POST['status']
@@ -257,11 +258,11 @@ def edit_product(request, uid):
         updateData.quantity = request.POST.get('quantity', updateData.quantity)
         updateData.original_price = request.POST.get('original_price', updateData.original_price)
         updateData.selling_price = request.POST.get('selling_price', updateData.selling_price)
-        updateData.discount = request.POST.get('discount', updateData.discount)
+        updateData.category_id = request.POST['category']
         updateData.description = request.POST.get('description', updateData.description)
         updateData.status = status1
         updateData.save()
-
+        
         return redirect('/product_list/')
     return render(request,"edit_product.html",context)
 
