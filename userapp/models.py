@@ -3,7 +3,6 @@ import random
 import datetime
 from django.db import models
 
-
 class adminRegistrationModel(models.Model):
     name = models.TextField(max_length=50)
     email = models.EmailField(max_length=100)

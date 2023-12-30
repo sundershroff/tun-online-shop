@@ -3,10 +3,12 @@ from TunShopApp.forms import UserRegisterForm
 # from django.contrib import messages
 # from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User,auth
+from django.contrib.auth.models import auth,User
+from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
+from django.contrib.auth.forms import UserCreationForm
 
 
 
@@ -131,55 +133,57 @@ def user_logged_index(request,id):
 
 @never_cache
 def user_index(request):
-    sarees = Product.objects.filter(category_id = 1)
-    groceries = Product.objects.filter(category_id = 4)
-    jewllery = Product.objects.filter(category_id = 2)
+    if request.user.is_authenticated:
+    # user_logged_index(request,id)
+        try:
+            print(uiddd)
+            return redirect(f'/user_logged_index/{uiddd}')
+        except:
+            return redirect(f'/user_index/')
 
-    # if request.user.is_authenticated:
-    # # user_logged_index(request,id)
-    #     try:
-    #         print(uiddd)
-    #         return redirect(f'/user_logged_index/{uiddd}')
-    #     except:
-    #         return redirect(f'/user_index/')
+    else:
+        sarees = Product.objects.filter(category_id = 1)
+        groceries = Product.objects.filter(category_id = 4)
+        jewllery = Product.objects.filter(category_id = 2)
 
-    # else:
-    context = {
-        'sarees':sarees,
-        'jewllery':jewllery,
-        'groceries':groceries,
-    }
-    if request.method == "POST":
-            print(request.POST)
-            if Category.objects.filter(id=request.POST['menu']):
-                product = Product.objects.filter(category_id=request.POST['menu'])
-                print(f"this my{product}")
-                return render(request, 'shop.html',
-                        {"product": product})
-            else:
-                return redirect('/user_index/')
         
+        context = {
+            'sarees':sarees,
+            'jewllery':jewllery,
+            'groceries':groceries,
+        }
+        if request.method == "POST":
+                print(request.POST)
+                if Category.objects.filter(id=request.POST['menu']):
+                    product = Product.objects.filter(category_id=request.POST['menu'])
+                    print(f"this my{product}")
+                    return render(request, 'shop.html',
+                            {"product": product})
+                else:
+                    return redirect('/user_index/')
+            
 
-    return render(request,"user_index.html",context)
+        return render(request,"user_index.html",context)
 
 
-# @never_cache
+@never_cache
 def my_account(request):
-    # if request.user.is_authenticated:
-    #     # user_logged_index(request,id)
-    #     try:
-    #         print(uiddd)
-    #         return redirect(f'/user_logged_index/{uiddd}')
-    #     except:
-    #         return redirect(f'/my-account/')
+    if request.user.is_authenticated:
+        # user_logged_index(request,id)
+        print( request.user.is_authenticated)
+        try:
+            print(uiddd)
+            return redirect(f'/user_logged_index/{uiddd}')
+        except:
+            return redirect(f'/my-account/')
 
-    # else:
+    else:
         error=""
         error1 = ""
         form=""
         success = ""
         category = Category.objects.filter()
-        print(f'{category} this is all')
+        # print(f'{category} this is all')
         if request.method == 'POST':
             if "door_no" in request.POST:
                 print(request.POST)
@@ -202,12 +206,24 @@ def my_account(request):
                     print(request.POST)
                     email = request.POST['email']
                     password = request.POST['password']
-                    username = "admin@123"
-                    password1 = "!@#$%^&*"
+                    # # username = "admin@123"
+                    # # password1 = "!@#$%^&*"
+                    # # username = user.objects.get(email=email.lower()).username
+                    # user = authenticate(request,email = email,password = password)
+                    # if user is not None:
+                    #     print("user")
+                    #     Group.login(request,user)
+                    #     # if userRegistrationModel.objects.filter(email=email, password=password).exists():
+                    #     #     uidd = userRegistrationModel.objects.filter(email=email).values()[0]
+                    #     return redirect(f'/user_logged_index/{uidd['uid']}')
+                    #     # else:
+                    #     #     error = "Your email or password is Incorrect"
+                    user = userRegistrationModel.objects.filter(email=email, password=password)
                     # username = userRegistrationModel.objects.get(email=email.lower()).username
-                    user = authenticate(request,username = username,password = password1)
+                    aa =  authenticate(request,username = "sunder",password = "12345")
                     if user is not None:
-                        auth.login(request,user)
+                        print("user")
+                        auth.login(request,aa)
                         if userRegistrationModel.objects.filter(email=email, password=password).exists():
                             uidd = userRegistrationModel.objects.filter(email=email).values()[0]
                             return redirect(f'/user_logged_index/{uidd['uid']}')

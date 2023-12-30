@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save,pre_save
 from django.dispatch import receiver
+from django.contrib.auth.models import User
 
 
 class adminRegistrationModel(models.Model):
@@ -16,8 +17,8 @@ class adminRegistrationModel(models.Model):
     otp = models.IntegerField(null=True)
 
 
-# class
-
+# class CustomUser(AbstractUser):
+#     date_of_birth = models.DateField(null=True, blank=True)
 
 class userRegistrationModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)

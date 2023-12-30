@@ -1003,7 +1003,7 @@ pre {
 /* Navbar */
 .navbar {
   border-radius: 0;
-  background: #3a10a6;;
+  background: #681768;;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   padding: 0 30px;
 }
@@ -1208,14 +1208,14 @@ body:not(.ms-aside-left-open) .ms-aside-toggler .ms-toggler-bar {
   list-style-type: none;
   list-style: none;
   padding-left: 0;
-  background-color: #3a10a6;
+  background-color: #681768;
   height: 100%;
   margin-bottom: 0;
 }
 
 .side-nav .logo-sn,
 .side-nav .menu-item ul {
-  background-color: #3a10a6;
+  background-color: #681768;
 }
 
 .side-nav .logo-sn a {

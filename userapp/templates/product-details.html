@@ -266,8 +266,12 @@
                             </form>
 
 <!--                                    <a href="/cart/{{products.uid}}" ><button type="submit" class="cart-btn" value="{{products.uid}}">Add to Cart </button></a>-->
-                                    <a href="" class="cart-btn" style="margin-left:10px">Buy now</a>
-
+                            &nbsp;&nbsp;<form method="POST">
+                                {% csrf_token %}
+                                <button type="submit" name="buy" value="{{products.uid}}" class="cart-btn" data-bs-toggle="modal" data-bs-target="#">
+                                    Buy Now
+                                </button>
+                                </form>
                                 </div>
 
                             </div>

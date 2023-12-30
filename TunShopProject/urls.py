@@ -51,6 +51,7 @@ urlpatterns = [
 
 
 #user app
+    path('', user_views.user_index),
     path('user_index/', user_views.user_index),
     path('my-account/', user_views.my_account),
     path('logoutbutton/', user_views.logoutbutton),
