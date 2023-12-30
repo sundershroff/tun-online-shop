@@ -7,10 +7,15 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 
 # Create your views here.
+@login_required(login_url="/my-account/")
 def user_logged_index(request,uid):
+    
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     breakfast = Product.objects.filter(category = 1)
-    briyani = Product.objects.filter(category = 1)
+    briyani = Product.objects.filter(category = 3)
+    gravy = Product.objects.filter(category = 6)
+    global uiddd
+    uiddd = my_data['uid']
     cart = CartItem.objects.filter(user=uid)
     text=0
     for i in cart:
@@ -24,11 +29,13 @@ def user_logged_index(request,uid):
         'cart':cart,
         'wishlist':wishlist,
         'text':text,
+        'gravy':gravy,
     }
     if request.method == "POST":
         print(request.POST)
     return render(request, "user_logged_index.html",context)
 
+@login_required(login_url="/my-account/")
 def user_logged_my_account(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -111,43 +118,63 @@ def user_logged_my_account(request,uid):
 
     return render(request, "user_logged_my_account.html",context)
 
+@login_required(login_url="/my-account/")
 def logoutbutton(request):
     auth.logout(request)
     return redirect("/user_index/")
 
+@never_cache
 def Restaurant(request):
-    data=Product.objects.filter(category_id=1)
-    grocery=Product.objects.filter(category_id=2)
-    fruits_vegetables=Product.objects.filter(category_id=3)
-    foodproducts=Product.objects.filter(category_id=4)
-    cart = CartItem.objects.filter(user=uid)
-    text=0
-    for i in cart:
-        text += i.quantity * i.product.selling_price
+    if request.user.is_authenticated:
+    # user_logged_index(request,id)
+        try:
+            print(uiddd)
+            return redirect(f'/user_logged_index/{uiddd}')
+        except:
+            return redirect(f'/user_index/')
+    
+    else:
+        data=Product.objects.filter(category_id=1)
+        grocery=Product.objects.filter(category_id=2)
+        fruits_vegetables=Product.objects.filter(category_id=3)
+        foodproducts=Product.objects.filter(category_id=4)
+        # cart = CartItem.objects.filter(user=uid)
+        # text=0
+        # for i in cart:
+        #     text += i.quantity * i.product.selling_price
 
-    wishlist = WishList.objects.filter(user=uid)
-    context = {
-        'key':data,
-        'grocery':grocery,
-        'fruits':fruits_vegetables,
-        'food':foodproducts,
-        'text':text,
-        'cart':cart,
-        'wishlist':wishlist,
-    }
-    if request.method == 'POST':
-        print(request.POST)
-        if Category.objects.filter(id=request.POST['menu']):
-            product = Product.objects.filter(category_id=request.POST['menu'])
-            print(f"this my{product}")
-            return render(request, 'shop.html',
-                          {"product": product})
-        else:
-            return redirect('/Restaurant/')
+        # wishlist = WishList.objects.filter(user=uid)
+        context = {
+            'key':data,
+            'grocery':grocery,
+            'fruits':fruits_vegetables,
+            'food':foodproducts,
+            # 'text':text,
+            # 'cart':cart,
+            # 'wishlist':wishlist,
+        }
+        if request.method == 'POST':
+            print(request.POST)
+            if Category.objects.filter(id=request.POST['menu']):
+                product = Product.objects.filter(category_id=request.POST['menu'])
+                print(f"this my{product}")
+                return render(request, 'shop.html',
+                            {"product": product})
+            else:
+                return redirect('/Restaurant/')
 
-    return render(request, "index_Restaurant.html",context)
+        return render(request, "index_Restaurant.html",context)
 
+@never_cache
 def my_account(request):
+    if request.user.is_authenticated:
+    # user_logged_index(request,id)
+        try:
+            print(uiddd)
+            return redirect(f'/user_logged_index/{uiddd}')
+        except:
+            return redirect(f'/user_index/')
+    else:
         error=""
         error1 = ""
         form=""
@@ -195,6 +222,7 @@ def my_account(request):
         }
         return render(request, 'my-account.html',context)
 
+@login_required(login_url="/my-account/")
 def index(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     context = {
@@ -202,6 +230,7 @@ def index(request,uid):
     }
     return render(request, "index_foodproducts.html",context)
 
+@login_required(login_url="/my-account/")
 def about(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -218,6 +247,7 @@ def about(request,uid):
     }
     return render(request, "about.html",context)
 
+@login_required(login_url="/my-account/")
 def index_fruits_vegetables(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -234,6 +264,7 @@ def index_fruits_vegetables(request,uid):
     }
     return render(request, "index_fruits_vegetables.html",context)
 
+@login_required(login_url="/my-account/")
 def product_details(request,uid,id):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -296,6 +327,7 @@ def product_details(request,uid,id):
 
     return render(request,"product-details.html",context)
 
+@login_required(login_url="/my-account/")
 def cart(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     data = CartItem.objects.filter(user=uid)
@@ -323,21 +355,25 @@ def cart(request,uid):
     }
     return render(request,"cart.html",context)
 
-
+@login_required(login_url="/my-account/")
 def remove_cart(request,id,uid):
     cart_item=CartItem.objects.get(id=id)
     cart_item.delete()
     return redirect(f'/cart/{uid}')
 
-def checkout(request,uid):
+@login_required(login_url="/my-account/")
+def checkout(request,uid,name):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     data = CartItem.objects.filter(user=uid)
-    cart = CartItem.objects.filter(user=uid)
-    text=0
-    for i in cart:
-        text += i.quantity * i.product.selling_price
     wishlist = WishList.objects.filter(user=uid)
-
+    if name == "cart":
+        cart = CartItem.objects.filter(user=uid)
+        text=0
+        for i in cart:
+            text += i.quantity * i.product.selling_price
+    else:
+        cart = Product.objects.get(uid=name)
+        text = cart.selling_price
     context={
         'my_data':my_data,
         'total':text,
@@ -349,6 +385,7 @@ def checkout(request,uid):
 
     return render(request, "checkout.html",context)
 
+@login_required(login_url="/my-account/")
 def Grocery(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -365,6 +402,7 @@ def Grocery(request,uid):
     }
     return render(request, "index_Grocery.html",context)
 
+@login_required(login_url="/my-account/")
 def wishlistt(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     wishlist_list = WishList.objects.filter(user=uid)
@@ -404,11 +442,13 @@ def wishlistt(request,uid):
             return redirect(f"/cart/{uid}")
     return render(request, "wishlist.html",context)
 
+@login_required(login_url="/my-account/")
 def remove_wish(request,id,uid):
     cart_item=WishList.objects.get(id=id)
     cart_item.delete()
     return redirect(f'/wishlist/{uid}')
 
+@login_required(login_url="/my-account/")
 def contact(request,uid):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     cart = CartItem.objects.filter(user=uid)
@@ -425,6 +465,7 @@ def contact(request,uid):
     }
     return render(request, "contact.html",context)
 
+@login_required(login_url="/my-account/")
 def shop(request,uid,num):
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
     products = Product.objects.filter(category = num)
@@ -470,7 +511,7 @@ def shop(request,uid,num):
 
             dict['Product']=a
             # user=userRegistrationModel.objects.get(uid='871786')
-            b=request.POST["quantity"]
+            b=1
             # d=int(products.selling_price) * int(b)
             # print(d)
             data=CartItem.objects.create(
@@ -489,27 +530,47 @@ def product_details_fruits(request):
     return render(request, "product_details_fruits.html")
 
 @login_required(login_url="/my-account/")
-def select_payment(request,uid):
+def select_payment(request,uid,name):
     my_data1 = userRegistrationModel.objects.get(uid = uid)
     my_data = userRegistrationModel.objects.filter(uid = uid).values()[0]
-    cart = CartItem.objects.filter(user=uid)
-    text=0
-    for i in cart:
-        text += i.quantity * i.product.selling_price
-
+    if name == "cart":
+        cart = CartItem.objects.filter(user=uid)
+        text=0
+        for i in cart:
+            text += i.quantity * i.product.selling_price
+    else:
+        product1 = Product.objects.get(uid=name)
+        text = product1.selling_price
+        cart = product1
+        
     context={
         'my_data':my_data,
         'text':text,
+        'cart':cart,
     }
     if request.method == "POST":
         
         print(request.POST)
-        if  request.POST['payment-method'] == "cod":
-            for i in cart:
-                user_quantity = i.quantity
-                product_id = i.product.id
+        if name == "cart":
+            if  request.POST['payment-method'] == "cod":
+                for i in cart:
+                    user_quantity = i.quantity
+                    product_id = i.product.id
+                    user_id = my_data1.id
+                    total_amount = i.quantity * i.product.selling_price
+                    ordered = OrderList.objects.create(
+                        user_quantity = user_quantity,
+                        product_id = product_id,
+                        user_id =user_id,
+                        total_amount = total_amount
+                    )
+                    ordered.save()
+                    print("valid data")
+        else:
+                user_quantity = 1
+                product_id = product1.id
                 user_id = my_data1.id
-                total_amount = i.quantity * i.product.selling_price
+                total_amount = product1.selling_price
                 ordered = OrderList.objects.create(
                     user_quantity = user_quantity,
                     product_id = product_id,
@@ -517,8 +578,7 @@ def select_payment(request,uid):
                     total_amount = total_amount
                 )
                 ordered.save()
-                print("valid data")
-            return redirect(f"/user_order_status/{uid}")
+        return redirect(f"/user_order_status/{uid}")
     return render(request,"select_payment.html",context)
 
 @login_required(login_url="/my-account/")

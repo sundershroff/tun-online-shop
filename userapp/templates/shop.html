@@ -139,7 +139,7 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/Restaurant/">
+                <a href="">
                 <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:40%" class="rounded mx-auto d-block">
                 </a>
             </div>
@@ -610,12 +610,11 @@
                                                     Add to Cart
                                                     </button>
                                                 </form>
-                                                <form method="POST">
-                                                    {% csrf_token %}
-                                                    <button type="submit" name="buy" value="{{i.uid}}" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                             
+                                                    <a href="/checkout/{{my_data.uid}}/{{i.uid}}" class="wc-checkout d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#">
                                                         Buy Now
-                                                    </button>
-                                                </form>
+                                                    </a>
+                
                                                 </div>
                                             </div>
                                         </div>
@@ -1365,7 +1364,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/Restaurant/">New Customer</a></li>
+                                                    <li><a href="">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -1387,10 +1386,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/Restaurant/">Help Center</a></li>
-                                                    <li><a href="/Restaurant/">Contact Us</a></li>
-                                                    <li><a href="/Restaurant/">Complaints</a></li>
-                                                    <li><a href="/Restaurant/">Payment Methods</a></li>
+                                                    <li><a href="">Help Center</a></li>
+                                                    <li><a href="">Contact Us</a></li>
+                                                    <li><a href="">Complaints</a></li>
+                                                    <li><a href="">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1416,10 +1415,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/Restaurant/">Terms and conditions</a></li>
-                                                                <li><a href="/Restaurant/">Privacy Policy</a></li>
-                                                                <li><a href="/Restaurant/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/Restaurant/">Cancellation & Refund</a></li>
+                                                                <li><a href="">Terms and conditions</a></li>
+                                                                <li><a href="">Privacy Policy</a></li>
+                                                                <li><a href="">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1462,10 +1461,10 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/Restaurant/">Restaurants</a>
+                                        <a href="">Restaurants</a>
                                         <a href="/Grocery/">Grocery</a>
                                         <a href="/fruits_vegetables/">Fruits & Vegetables</a>
-                                        <a href="/Restaurant/">Food Products</a>
+                                        <a href="">Food Products</a>
                                        
 
                                            </div>

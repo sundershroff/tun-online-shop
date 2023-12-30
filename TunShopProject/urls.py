@@ -51,6 +51,7 @@ urlpatterns = [
 
 #user app
     path('foods/<uid>', user_views.index),
+    path('', user_views.Restaurant),
     path('user_index/', user_views.Restaurant),
     path('logout/', user_views.logoutbutton),
     path('about/<uid>', user_views.about),
@@ -58,7 +59,7 @@ urlpatterns = [
     path('product-details/<uid>/<id>', user_views.product_details),
     path('cart/<uid>', user_views.cart),
     path('remove-cart/<id>/<uid>',user_views.remove_cart),
-    path('checkout/<uid>', user_views.checkout),
+    path('checkout/<uid>/<name>', user_views.checkout),
     path('Grocery/<uid>', user_views.Grocery),
     path('wishlist/<uid>', user_views.wishlistt),
     path('remove_wish/<id>/<uid>',user_views.remove_wish),
@@ -68,7 +69,7 @@ urlpatterns = [
     path('shop/<uid>/<num>', user_views.shop),
     path('product_details_grocery/<uid>', user_views.product_details_grocery),
     path('product_details_fruits/<uid>', user_views.product_details_fruits),
-    path('select_payment/<uid>', user_views.select_payment),
+    path('select_payment/<uid>/<name>', user_views.select_payment),
     path('user_order_status/<uid>', user_views.user_order_status),
 
     

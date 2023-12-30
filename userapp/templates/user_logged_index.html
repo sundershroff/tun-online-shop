@@ -140,7 +140,7 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="/Restaurant/">
+                <a href="">
                 <img src="{% static 'images/tun_foods.png' %}" style="width: 40%;" class="rounded mx-auto d-block" alt="logo">
                 </a>
             </div>
@@ -248,10 +248,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/saladsandwich.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/2"><img src="{% static 'images/saladsandwich.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Salad & Sandwich</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/2">Salad & Sandwich</a></h6>
                                 <p>(70 Products)</p>
                             </div>
                         </div>
@@ -259,10 +259,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Briyani1.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/3"><img src="{% static 'images/Briyani1.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Briyani</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/3">Briyani</a></h6>
                                 <p>(120 Products)</p>
                             </div>
                         </div>
@@ -270,10 +270,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Friedrice.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/4"><img src="{% static 'images/Friedrice.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Fried Rice</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/4">Fried Rice</a></h6>
                                 <p>(500 Products)</p>
                             </div>
                         </div>
@@ -284,10 +284,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Soup.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/5"><img src="{% static 'images/Soup.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Soups</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/5">Soups</a></h6>
                                 <p>(900 Products)</p>
                             </div>
                         </div>
@@ -295,10 +295,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Indiangravy.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/6"><img src="{% static 'images/Indiangravy.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Indian Gravy</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/6">Indian Gravy</a></h6>
                                 <p>(70 Products)</p>
                             </div>
                         </div>
@@ -306,10 +306,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Starter.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/7"><img src="{% static 'images/Starter.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Starters</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/7">Starters</a></h6>
                                 <p>(150 Products)</p>
                             </div>
                         </div>
@@ -317,10 +317,10 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="categories__item p-relative w-img mb-30">
                             <div class="categories__img b-radius-2">
-                                <a href="/product-details/"><img src="{% static 'images/Noodles.png' %}" alt=""></a>
+                                <a href="/shop/{{my_data.uid}}/8"><img src="{% static 'images/Noodles.png' %}" alt=""></a>
                             </div>
                             <div class="categories__content">
-                                <h6><a href="/product-details/">Noodles</a></h6>
+                                <h6><a href="/shop/{{my_data.uid}}/8">Noodles</a></h6>
                                 <p>(150 Products)</p>
                             </div>
                         </div>
@@ -819,7 +819,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">{{i.name}}</a></h6>
+                                                    <h6><a href="/product-details/{{my_data.uid}}/{{i.uid}}">{{i.name}}</a></h6>
                                                     
                                                     <div class="rating mb-5">
                                                         <ul>
@@ -832,7 +832,7 @@
                                                         <span>(01 review)</span>
                                                     </div>
                                                     <div class="price">
-                                                        <span><del>&#x20b9;{{i.original_price}}</del> &#x20b9;{{i.selling_price}}</span>
+                                                        <span><del></del> &#x20b9;{{i.selling_price}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="product__add-cart text-center">
@@ -857,7 +857,7 @@
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
+                                                        <a href="/product-details/{{my_data.uid}}/{{i.uid}}">
                                                             <img src="{{i.image.url}}" alt="product" class="slideimgg">
                                                         </a>
                                                     </div>
@@ -880,7 +880,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">{{i.name}}</a></h6>
+                                                    <h6><a href="/product-details/{{my_data.uid}}/{{i.uid}}">{{i.name}}</a></h6>
 
                                                     <div class="rating mb-5">
                                                         <ul>
@@ -914,17 +914,17 @@
                                 <div class="product-bs-slider-2">
                                     <div class="product-slider-2 swiper-container">
                                         <div class="swiper-wrapper">
-                                            {% for i in fruits %}
+                                            {% for i in gravy %}
                                             <div class="product__item swiper-slide">
                                                 <div class="product__thumb fix">
                                                     <div class="product-image w-img">
-                                                        <a href="/product-details/">
-                                                            <img src="{{i.image}}" alt="product" class="slideimgg">
+                                                        <a href="/product-details/{{my_data.uid}}/{{i.uid}}">
+                                                            <img src="{{i.image.url}}" alt="product" class="slideimgg">
                                                         </a>
                                                     </div>
-                                                    <div class="product__offer">
+                                                    <!-- <div class="product__offer">
                                                     <span class="discount">-15%</span>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="product-action">
                                                         <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
                                                             <i class="fal fa-eye"></i>
@@ -941,7 +941,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product__content">
-                                                    <h6><a href="/product-details/">{{i.name}}</a></h6>
+                                                    <h6><a href="/product-details/{{my_data.uid}}/{{i.uid}}">{{i.name}}</a></h6>
                                                     
                                                     <div class="rating mb-5">
                                                         <ul>
@@ -954,7 +954,7 @@
                                                         <span>(01 review)</span>
                                                     </div>
                                                     <div class="price">
-                                                        <span><del>&#x20b9;{{i.original_price}}</del> &#x20b9;{{i.selling_price}}</span>
+                                                        <span><del></del> &#x20b9;{{i.selling_price}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="product__add-cart text-center">
@@ -1795,7 +1795,7 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/Restaurant/">New Customer</a></li>
+                                                    <li><a href="">New Customer</a></li>
                                                     <li><a href="/checkout/">Checkout</a></li>
                                                     <li><a href="/checkout/">Orders</a></li>
                                                     <li><a href="/cart/">Shopping Cart</a></li>
@@ -1817,10 +1817,10 @@
                                         <div class="footer__widget-content">
                                             <div class="footer__link">
                                                 <ul>
-                                                    <li><a href="/Restaurant/">Help Center</a></li>
-                                                    <li><a href="/Restaurant/">Contact Us</a></li>
-                                                    <li><a href="/Restaurant/">Complaints</a></li>
-                                                    <li><a href="/Restaurant/">Payment Methods</a></li>
+                                                    <li><a href="">Help Center</a></li>
+                                                    <li><a href="">Contact Us</a></li>
+                                                    <li><a href="">Complaints</a></li>
+                                                    <li><a href="">Payment Methods</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1846,10 +1846,10 @@
                                                     <div class="footer__widget-content">
                                                         <div class="footer__link">
                                                             <ul>
-                                                                <li><a href="/Restaurant/">Terms and conditions</a></li>
-                                                                <li><a href="/Restaurant/">Privacy Policy</a></li>
-                                                                <li><a href="/Restaurant/">Shipping & Delivery Policies</a></li>
-                                                                <li><a href="/Restaurant/">Cancellation & Refund</a></li>
+                                                                <li><a href="">Terms and conditions</a></li>
+                                                                <li><a href="">Privacy Policy</a></li>
+                                                                <li><a href="">Shipping & Delivery Policies</a></li>
+                                                                <li><a href="">Cancellation & Refund</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1892,10 +1892,10 @@
                             <div class="col-xl-12">
                                 <div class="footer__links text-center mb-25">
                                     <p>
-                                        <a href="/Restaurant/">Restaurants</a>
+                                        <a href="">Restaurants</a>
                                     <a href="/Grocery/">Grocery</a>
                                     <a href="/fruits_vegetables/">Fruits & Vegetables</a>
-                                    <a href="/Restaurant/">Food Products</a>
+                                    <a href="">Food Products</a>
                                      
                                            </div>
                                 <div class="payment-image text-center mb-25">

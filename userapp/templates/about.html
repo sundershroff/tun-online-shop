@@ -10,20 +10,19 @@
       <!-- Place favicon.ico in the root directory -->
       <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/tun_foods.png' %}">
       <!-- CSS here -->
-      <link rel="stylesheet" href="{% static 'css/preloader.css' %}">
-      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-      <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
-      <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-      <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
-      <link rel="stylesheet" href="{% static 'css/swiper-bundle.css' %}">
-      <link rel="stylesheet" href="{% static 'css/backtotop.css' %}">
-      <link rel="stylesheet" href="{% static 'css/ui-range-slider.css' %}">
-      <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-      <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-      <link rel="stylesheet" href="{% static 'flaticon/flaticon.css' %}">
-      <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}">
-      <link rel="stylesheet" href="{% static 'css/default.css' %}">
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/preloader.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/bootstrap.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/meanmenu.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/animate.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/owl-carousel.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/swiper-bundle.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/backtotop.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/magnific-popup.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/nice-select.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/flaticon.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/font-awesome-pro.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/default.css' %}">
+      <link rel="stylesheet" href="{% static 'csss/style.css' %}">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -124,213 +123,7 @@
          </svg>
       </div>
       <!-- back to top end -->
-      <header class="header d-blue-bg" style="background-color: #681768">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-7">
-                            <div class="header-inner-start">
-                                 <div class="header__currency border-right">
-                                    <div class="s-name">
-                                        <span>Language: </span>
-                                    </div>
-                                    <select>
-                                        <option>English</option>
-                                        <option>Deutsch</option>
-                                        <option>Français</option>
-                                        <option>Espanol</option>
-                                    </select>
-                                </div>
-                                <div class="header__lang border-right">
-                                    <div class="s-name">
-                                        <span>Currency: </span>
-                                    </div>
-                                    <select>
-                                        <option> USD</option>
-                                        <option>EUR</option>
-                                        <option>INR</option>
-                                        <option>BDT</option>
-                                        <option>BGD</option>
-                                    </select>
-                                </div>
-                                <!-- <div class="support d-none d-sm-block">
-                                    <p>Need Help? <a href="tel:+001123456789">+91 98947 09871 </a></p>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-5 d-none d-lg-block">
-                            <div class="header-inner-end text-md-end">
-                                <div class="ovic-menu-wrapper">
-                                    <ul>
-                                        <li><a href="/about/">About Us</a></li>
-                                         <!-- <li><a href="contact.html">Order Tracking</a></li>  -->
-                                         <li><a href="tel:+001123456789">Need Help? : +91 98947 09871 </a></li>
-                                             <!-- <li><a href="index_Restaurant.html">indexs</a></li>  -->
-                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-mid">
-            <div class="container">
-                <div class="heade-mid-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-                            <div class="header__info">
-                                <div class="logo">
-                                    <a href="/Restaurant/" class="logo-image"><img src="{% static 'image/tun_foods.png' %}" class="rounded mx-auto d-block" alt="logo"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
-                            <div class="header__search">
-                                <form action="#">
-                                    <div class="header__search-box">
-                                        <input class="search-input" type="text" placeholder="I'm shopping for...">
-                                        <button class="button" type="submit"><i class="far fa-search"></i></button>
-                                    </div>
-                                    <div class="header__search-cat">
-                                        <select>
-                                            <option>All Categories</option>
-                                            <option>Restaurants</option>
-                                            <option>Grocery</option>
-                                            <option>Furits & Vegetables </option>
-                                            <option>Food Products</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8">
-                            <div class="header-action">
-                                <div class="block-userlink">
-                                    <a class="icon-link" href="/my_account/">
-                                    <i class="fas fa-user-alt"></i>
-                                    <span class="text">
-                                    <span class="sub">Login </span>
-                                    My Account </span>
-                                    </a>
-                                </div>
-                                <div class="block-wishlist action">
-                                    <a class="icon-link" href="/wishlist/">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="count">0</span>
-                                    <span class="text">
-                                    <span class="sub">Favorite</span>
-                                    My Wishlist </span>
-                                    </a>
-                                </div>
-                                <div class="block-cart action">
-                                    <a class="icon-link" href="/cart/">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="count">1</span>
-                                    <span class="text">
-                                    <span class="sub">Your Cart:</span>
-                                    &#x20b9;00.00 </span>
-                                    </a>
-                                    <div class="cart">
-                                        <div class="cart__mini">
-                                            <ul>
-                                                <li>
-                                                  <div class="cart__title">
-                                                    <h4>Your Cart</h4>
-                                                    <span>(1 Item in Cart)</span>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="cart__item d-flex justify-content-between align-items-center">
-                                                    <div class="cart__inner d-flex">
-                                                      <div class="cart__thumb">
-                                                        <a href="/product-details/">
-                                                          <img src="{% static 'image/20.jpg' %}" alt="">
-                                                        </a>
-                                                      </div>
-                                                      <div class="cart__details">
-                                                        <h6><a href="/product-details/"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
-                                                        <div class="cart__price">
-                                                          <span>&#x20b9;255.00</span>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div class="cart__del">
-                                                        <a href="#"><i class="fal fa-times"></i></a>
-                                                    </div>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="cart__sub d-flex justify-content-between align-items-center">
-                                                    <h6>Subtotal</h6>
-                                                    <span class="cart__sub-total">&#x20b9;255.00</span>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                    <a href="/cart/" class="wc-cart mb-10">View cart</a>
-                                                    <a href="/checkout/" class="wc-checkout">Checkout</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header__bottom">
-            <div class="container">
-                <div class="row g-0 align-items-center" style="background-color: #681768;">
-                    <div class="col-lg-3">
-                        <div class="cat__menu-wrapper side-border d-none d-lg-block">
-                            <div class="cat-toggle">
-                                <button type="button" class=" cat-toggle-btn-1" style="background-color: #ffc107;color: black;"><i class="fal fa-bars"></i> Shop by Categories</button>
-                                <!-- cat-toggle-btn -->
-                                <div class="cat__menu">
-                                    <nav id="mobile-menu" style="display: block;">
-                                        <ul>
-                                             <li><a href="/shop/">Shop by Categories</a></li>
-                                            <li><a href="/Restaurant/">RESTAURANTS</a></li>
-                                            <li><a href="/Grocery/">GROCERY </a></li>
-                                            <li><a href="/fruits_vegetables/">FRUITS AND VEGETABLES</a></li>
-                                            <li><a href="/Grocery/">FOOD PRODUCTS</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-3">
-                      <div class="header__bottom-left d-flex d-xl-block align-items-center">
-                        <div class="side-menu d-lg-none mr-20">
-                          <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>
-                        </div>
-                        <div class="main-menu d-none d-lg-block">
-                            <nav>
-                                <ul>
-
-                                    <li><a href="/Restaurant/">RESTAURANTS</a></li>
-                                    <li><a href="/Grocery/">GROCERY </a></li>
-                                    <li><a href="/fruits_vegetables/">FRUITS AND VEGITABLE</a></li>
-                                    <li><a href="/Grocery/">FOOD PRODUCTS</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-9">
-                        <!-- <div class="shopeing-text text-sm-end">
-                            <p>Spend &#x20b9;120 more and get free shipping!</p>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-      
+{% include 'header.html' %}      
         <!-- header-start -->
 <!--        <header class="header d-blue-bg" style="background-color: #681768;">-->
 <!--            <div class="header-top">-->
@@ -679,8 +472,8 @@
         </div>
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
-                <a href="index.html">
-                    <img src="{% static 'image/tun_foods.png' %}" alt="logo" style="width:50%">
+                <a href="">
+                    <img src="{% static 'images/tun_foods.png' %}" alt="logo" style="width:50%">
                 </a>
             </div>
             <div class="offcanvas__search mb-25">
@@ -1323,25 +1116,23 @@
 </footer>
 <!-- footer-end -->
       <!-- JS here -->
-      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-      <script src="{% static 'js/jquery.js' %}"></script>
-      <script src="{% static 'js/waypoints.js' %}"></script>
-      <script src="{% static 'js/bootstrap-bundle.js' %}"></script>
-      <script src="{% static 'js/meanmenu.js' %}"></script>
-      <script src="{% static 'js/swiper-bundle.js' %}"></script>
-      <script src="{% static 'js/tweenmax.js' %}"></script>
-      <script src="{% static 'js/owl-carousel.js' %}"></script>
-      <script src="{% static 'js/magnific-popup.js' %}"></script>
-      <script src="{% static 'js/parallax.js' %}"></script>
-      <script src="{% static 'js/backtotop.js' %}"></script>
-      <script src="{% static 'js/nice-select.js' %}"></script>
-      <script src="{% static 'js/countdown.min.js' %}"></script>
-      <script src="{% static 'js/counterup.js' %}"></script>
-      <script src="{% static 'js/ui-slider-range.js' %}"></script>
-      <script src="{% static 'js/wow.js' %}"></script>
-      <script src="{% static 'js/isotope-pkgd.js' %}"></script>
-      <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
-      <script src="{% static 'js/ajax-form.js' %}"></script>
-      <script src="{% static 'js/main.js' %}"></script>
+      <script src="{% static 'jss/jquery.js' %}"></script>
+      <script src="{% static 'jss/waypoints.js' %}"></script>
+      <script src="{% static 'jss/bootstrap-bundle.js' %}"></script>
+      <script src="{% static 'jss/meanmenu.js' %}"></script>
+      <script src="{% static 'jss/swiper-bundle.js' %}"></script>
+      <script src="{% static 'jss/tweenmax.js' %}"></script>
+      <script src="{% static 'jss/owl-carousel.js' %}"></script>
+      <script src="{% static 'jss/magnific-popup.js' %}"></script>
+      <script src="{% static 'jss/parallax.js' %}"></script>
+      <script src="{% static 'jss/backtotop.js' %}"></script>
+      <script src="{% static 'jss/nice-select.js' %}"></script>
+      <script src="{% static 'jss/countdown.min.js' %}"></script>
+      <script src="{% static 'jss/counterup.js' %}"></script>
+      <script src="{% static 'jss/wow.js' %}"></script>
+      <script src="{% static 'jss/isotope-pkgd.js' %}"></script>
+      <script src="{% static 'jss/imagesloaded-pkgd.js' %}"></script>
+      <script src="{% static 'jss/ajax-form.js' %}"></script>
+      <script src="{% static 'jss/main.js' %}"></script>
    </body>
 </html>
