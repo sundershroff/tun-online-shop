@@ -114,7 +114,8 @@ def user_logged_index(request,id):
 
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         
         else:
             print(request.POST)
@@ -225,8 +226,8 @@ def my_account(request):
                         print("user")
                         auth.login(request,aa)
                         if userRegistrationModel.objects.filter(email=email, password=password).exists():
-                            uidd = userRegistrationModel.objects.filter(email=email).values()[0]
-                            return redirect(f'/user_logged_index/{uidd['uid']}')
+                            uidd = userRegistrationModel.objects.filter(email=email).values()[0]['uid']
+                            return redirect(f'/user_logged_index/{uidd}')
                         else:
                             error = "Your email or password is Incorrect"
 
@@ -311,7 +312,8 @@ def user_logged_my_account(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         
         else:
             if Category.objects.filter(id=request.POST['menu']):
@@ -388,7 +390,8 @@ def about(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -438,7 +441,8 @@ def wishlist(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             print(request.POST)
             if Category.objects.filter(id=request.POST['menu']):
@@ -503,7 +507,8 @@ def cart(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -582,7 +587,8 @@ def product_details(request,id,uid):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         
         #Whislist
         elif "wishlist" in request.POST:
@@ -678,7 +684,8 @@ def checkout(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -757,7 +764,8 @@ def checkout_buy(request,id,uid):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -805,7 +813,8 @@ def shop(request,id):
             return redirect(f"/wishlist/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         elif 'cart' in request.POST:
             dict={}
             a=[]
@@ -894,7 +903,8 @@ def contact(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -964,7 +974,8 @@ def user_order_status(request,id):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            return redirect(f'/checkout_buy/{id}/{request.POST['buy']}')
+            bu = request.POST['buy']
+            return redirect(f'/checkout_buy/{id}/{bu}')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
