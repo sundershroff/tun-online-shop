@@ -1051,3 +1051,19 @@ def select_payment_buy(request,id,uid):
                 return redirect(f"/user_order_status/{id}")
             
     return render(request,"select_payment_buy.html",context)
+
+
+@login_required(login_url="/my-account/")
+def pdf(request,id):
+    my_data = userRegistrationModel.objects.filter(uid = id).values()[0]
+    cart = CartItem.objects.filter(user=id)
+    text=0
+    for i in cart:
+        text += i.quantity * i.product.selling_price
+
+    context={
+        'my_data':my_data,
+        'text':text,
+    }
+    return render(request,'pdf.html',context)
+

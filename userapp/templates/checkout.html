@@ -447,7 +447,7 @@
                                                 <th class="product-name">Product</th>
                                                 <th class="product-total">
                                                     {% for i in cart %}
-                                                    <span>{{i.product.name}}</span><br>
+                                                    <span>{{i.product.name}} x {{i.quantity}}</span><br>
                                                     {% endfor %}
                                                 </th>
                                             </tr>

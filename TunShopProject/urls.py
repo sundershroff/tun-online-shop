@@ -73,6 +73,7 @@ urlpatterns = [
     
     path('user_logged_index/<id>', user_views.user_logged_index),
     path('user_logged_my_account/<id>', user_views.user_logged_my_account),
+    path('user_pdf/<id>', user_views.pdf),
 
 
 

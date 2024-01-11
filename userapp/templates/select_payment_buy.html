@@ -4,6 +4,8 @@
   {% load static %}
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>CodePen - Checkout Form</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -16,7 +18,32 @@
   <header class="header">
     <h1>Checkout</h1>
   </header>
+  <div>
+    <h2>Shopping Bill</h2>
 
+    <table>
+      <tbody>
+        <tr>
+          <td>Shipping fee</td>
+          <td align="right">&#x20b9;0</td>
+        </tr>
+        <tr>
+          <td>Discount 10%</td>
+          <td align="right">-&#x20b9;0</td>
+        </tr>
+        <tr>
+          <td>Price Total</td>
+          <td align="right">&#x20b9;{{text}}.00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td align="right">&#x20b9;{{text}}.00</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div><br>
   <form class="form" method="POST">
     {% csrf_token %}
     <div>
@@ -55,32 +82,6 @@
       </div>
     </fieldset>
 
-    <div>
-      <h2>Shopping Bill</h2>
-
-      <table>
-        <tbody>
-          <tr>
-            <td>Shipping fee</td>
-            <td align="right">&#x20b9;0</td>
-          </tr>
-          <tr>
-            <td>Discount 10%</td>
-            <td align="right">-&#x20b9;0</td>
-          </tr>
-          <tr>
-            <td>Price Total</td>
-            <td align="right">&#x20b9;{{product1.selling_price}}.00</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Total</td>
-            <td align="right">&#x20b9;{{product1.selling_price}}.00</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
 
     <div>
       <button class="button button--full" type="submit" name="buy"><svg class="icon">
