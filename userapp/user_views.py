@@ -115,7 +115,7 @@ def user_logged_index(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         
         else:
             print(request.POST)
@@ -313,7 +313,7 @@ def user_logged_my_account(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         
         else:
             if Category.objects.filter(id=request.POST['menu']):
@@ -391,7 +391,7 @@ def about(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -442,7 +442,7 @@ def wishlist(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             print(request.POST)
             if Category.objects.filter(id=request.POST['menu']):
@@ -508,7 +508,7 @@ def cart(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -564,7 +564,8 @@ def product_details(request,id,uid):
 
             }
     if request.method == "POST":
-        if 'product' in request.POST:
+        print(request.POST)
+        if 'cart' in request.POST:
             dict={}
             a=[]
             print(request.POST)
@@ -587,8 +588,9 @@ def product_details(request,id,uid):
             return redirect(f"/cart/{id}")
         #buy
         elif "buy" in request.POST:
-            bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            bu = request.POST['product']
+            qut = request.POST['quantity']
+            return redirect(f'/checkout_buy/{id}/{bu}/{qut}')
         
         #Whislist
         elif "wishlist" in request.POST:
@@ -685,7 +687,7 @@ def checkout(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -697,7 +699,7 @@ def checkout(request,id):
     return render(request,"checkout.html",context)
 
 @login_required(login_url="/my-account/")
-def checkout_buy(request,id,uid):
+def checkout_buy(request,id,uid,qut):
     product = Product.objects.get(uid=uid)
     print(product)
     my_data = userRegistrationModel.objects.filter(uid = id).values()[0]
@@ -720,6 +722,7 @@ def checkout_buy(request,id,uid):
         'wishlist':wishlist,
         'text':text,
         'product':product,
+        'qut':qut,
 
     }
     if request.method == "POST":
@@ -765,7 +768,7 @@ def checkout_buy(request,id,uid):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -814,7 +817,7 @@ def shop(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         elif 'cart' in request.POST:
             dict={}
             a=[]
@@ -904,7 +907,7 @@ def contact(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -975,7 +978,7 @@ def user_order_status(request,id):
         #buy
         elif "buy" in request.POST:
             bu = request.POST['buy']
-            return redirect(f'/checkout_buy/{id}/{bu}')
+            return redirect(f'/checkout_buy/{id}/{bu}/1')
         else:
             if Category.objects.filter(id=request.POST['menu']):
                 product = Product.objects.filter(category_id=request.POST['menu'])
@@ -1019,7 +1022,7 @@ def select_payment(request,id):
     return render(request,"select_payment.html",context)
 
 @login_required(login_url="/my-account/")
-def select_payment_buy(request,id,uid):
+def select_payment_buy(request,id,uid,qut):
     product1 = Product.objects.get(uid = uid)
     print(product1.selling_price)
     my_data1 = userRegistrationModel.objects.get(uid = id)
@@ -1027,20 +1030,19 @@ def select_payment_buy(request,id,uid):
     # cart = CartItem.objects.filter(user=id)
     # text=0
     # for i in cart:
-    #     text += i.quantity * i.product.selling_price
+    text = int(qut) * int(product1.selling_price)
 
     context={
         'my_data':my_data,
-        # 'text':text,
+        'text':text,
         'product1':product1,
     }
     if request.method == "POST":
-        print("hii")
         if  request.POST['payment-method'] == "cod":
-                user_quantity = 1
+                user_quantity = qut
                 product_id = product1.id
                 user_id = my_data1.id
-                total_amount = product1.selling_price
+                total_amount = int(qut) * product1.selling_price
                 ordered = OrderList.objects.create(
                     user_quantity = user_quantity,
                     product_id = product_id,
@@ -1060,10 +1062,13 @@ def pdf(request,id):
     text=0
     for i in cart:
         text += i.quantity * i.product.selling_price
+    wishlist = WishList.objects.filter(user=id)
 
     context={
         'my_data':my_data,
         'text':text,
+        'cart':cart,
+        'wishlist':wishlist,
     }
     return render(request,'pdf.html',context)
 

@@ -159,36 +159,18 @@
             <h5>Enquiry</h5>
             <form id="register" method="POST">
                 {% csrf_token %}
-                <label for="username">Username or email address  <span>*</span></label>
-                <input id="username" type="text" name="name" value="{{my_data.name}}" placeholder="Enter Username">
-                <label for="email-id">Email Address <span>*</span></label>
-                <input id="email-id" type="text" name="email" value="{{my_data.email}}" placeholder="Email address...">
-                <label for="door_no">Door No : <span>*</span></label>
-                <input id="door_no" type="text" name="door_no" value="{{my_data.door_no}}" placeholder="Enter Door No">
-                <label for="street">Street Name  <span>*</span></label>
-                <input id="street" type="text" name="street" value="{{my_data.street}}" placeholder="Enter Street Name">
-                <label for="city">City Name  <span>*</span></label>
-                <input id="city" type="text" name="city" value="{{my_data.city}}" placeholder="Enter City Name">
-                <label for="state">State  <span>*</span></label>
-                <input id="state" type="text" name="state" value="{{my_data.state}}" placeholder="Enter State">
-                <label for="country">Country  <span>*</span></label>
-                <input id="country" type="text" name="country" value="{{my_data.country}}" placeholder="Enter Country Name">
-                <label for="pin_code">Pincode  <span>*</span></label>
-                <input id="pin_code" type="number" name="pin_code" value="{{my_data.pin_code}}" placeholder="Enter Pincode">
-                <label for="landmark">Near Landmark  <span>*</span></label>
-                <input id="landmark" type="text" name="near_land_mark" value="{{my_data.near_land_mark}}" placeholder="Enter Landmark">
-                <label for="mobile">Mobile  <span>*</span></label>
-                <input id="mobile" type="text" name="mobile" value="{{my_data.mobile}}" placeholder="Enter mobile">
-                <!-- <label for="userpass">Password <span>*</span></label>
-                <input id="userpass" type="password" name="password" value="{{my_data.password}}" placeholder="Enter password...">
-                <label for="password">Confirm Password <span>*</span></label>
-                <input id="password" type="password" name="confirm_password" value="" placeholder="Enter confirm password..."> -->
-
-                <div class="login-action mb-10 fix">
-                    <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy</a>.</p>
-                </div>
-                <input class="tp-in-btn w-100" type="submit" value="Update">
-                <p style="color:red"><b>{{error1}}</b></p>
+                <label for="Product name">Product Name <span>*</span></label>
+                <input id="username" type="text" name="name" placeholder="Enter Product Name">
+                <label for="Product name">Product Color <span>*</span></label>
+                <input id="username" type="text" name="name" placeholder="Enter Product Color">
+                <label for="Product name">Quantity <span>*</span></label>
+                <input id="username" type="text" name="name" placeholder="Enter Quantity">
+                <label for="door_no">Your Email<span>*</span></label>
+                <input id="door_no" type="email" name="door_no"  placeholder="Enter Your Email">
+                <label for="street">Your Contact Number <span>*</span></label>
+                <input id="street" type="text" name="street"  placeholder="Enter Your Contact Number ">
+                
+                <input class="tp-in-btn w-100" type="submit" value="Enquiry">
 
             </form>
         </div>

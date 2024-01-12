@@ -62,11 +62,11 @@ urlpatterns = [
     path('remove_from_wishlist/<id>/<uid>',user_views.remove_from_wishlist),
     path('product-details/<id>/<uid>', user_views.product_details),
     path('checkout/<id>', user_views.checkout),
-    path('checkout_buy/<id>/<uid>', user_views.checkout_buy),
+    path('checkout_buy/<id>/<uid>/<qut>', user_views.checkout_buy),
     path('shop/<id>', user_views.shop),
     path('contact/<id>', user_views.contact),
     path('select_payment/<id>', user_views.select_payment),
-    path('select_payment_buy/<id>/<uid>', user_views.select_payment_buy),
+    path('select_payment_buy/<id>/<uid>/<qut>', user_views.select_payment_buy),
     path('user_order_status/<id>', user_views.user_order_status),
 
     
